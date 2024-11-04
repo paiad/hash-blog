@@ -1,22 +1,31 @@
 ---
-pageLayout: home
-externalLinkIcon: false
+home: true
 config:
-  -
+ -
     type: hero
     full: true
     background: tint-plate
+    tintPlate:
+      r:
+        value: 220
+        offset: 36
+      g:
+        value: 220
+        offset: 36
+      b:
+        value: 220
+        offset: 36
     hero:
-      name: Theme Plume
-      tagline: VuePress Next Theme
-      text: 一个简约的，功能丰富的 vuepress 文档&博客 主题
+      name: Hash Site
+      tagline: Hurrach for the next
+      text: 向已故的人致敬, 为后继的人欢呼
       actions:
         -
           theme: brand
-          text: 博客
-          link: /blog/
+          text: 快速开始 →
+          link: /
         -
           theme: alt
-          text: Github →
-          link: https://github.com/pengzhanbo/vuepress-theme-plume
+          text: Github
+          link: /
 ---

@@ -15,8 +15,8 @@ pnpm i
 pnpm docs:dev
 # build for production
 pnpm docs:build
-# preview production build in local
-pnpm docs:preview
+# project production build in local
+pnpm docs:project
 # update vuepress and theme
 pnpm vp-update
 ```

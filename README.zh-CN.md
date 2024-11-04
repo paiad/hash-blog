@@ -16,7 +16,7 @@ pnpm docs:dev
 # 构建生产包
 pnpm docs:build
 # 本地预览生产服务
-pnpm docs:preview
+pnpm docs:project
 # 更新 vuepress 和主题
 pnpm vp-update
 ```

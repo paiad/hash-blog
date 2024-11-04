@@ -3,10 +3,16 @@ import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 
 export default defineUserConfig({
-  base: '/',
+  base: '/pai/',
   lang: 'zh-CN',
   title: 'Hash Site',
   description: '',
+  head: [
+    // 设置 favor.ico，.vuepress/public 下
+    [
+      'link', { rel: 'icon', href: 'https://avatar.moonshot.cn/avatar/cmtrlfecp7f7bqu0ue00' }
+    ]
+  ],
 
   bundler: viteBundler(),
 
@@ -15,6 +21,9 @@ export default defineUserConfig({
     // hostname: 'https://your_site_url',
 
     plugins: {
+      markdownPower: {
+        pdf: true,
+      },
       /**
        * Shiki 代码高亮
        * @see https://theme-plume.vuejs.press/config/plugins/code-highlight/

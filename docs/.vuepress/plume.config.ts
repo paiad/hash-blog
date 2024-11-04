@@ -28,4 +28,5 @@ export default defineThemeConfig({
     { icon: 'github', link: '/' },
   ],
 
+  footer:false,
 })
