@@ -10,7 +10,7 @@ export default defineUserConfig({
   head: [
     // 设置 favor.ico，.vuepress/public 下
     [
-      'link', { rel: 'icon', href: 'https://avatar.moonshot.cn/avatar/cmtrlfecp7f7bqu0ue00' }
+      'link', { rel: 'icon', href: 'https://himg.bdimg.com/sys/portrait/item/wise.1.f350032f.kpL0_u2d3DABVaMFBTRlLg.jpg?time=6077\u0026tieba_portrait_time=6077\u0026tieba_portrait_time=6077' }
     ]
   ],
 

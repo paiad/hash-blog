@@ -8,10 +8,10 @@ config:
     tintPlate:
       r:
         value: 220
-        offset: 36
+        offset: 30
       g:
         value: 220
-        offset: 36
+        offset: 45
       b:
         value: 220
         offset: 36
@@ -26,6 +26,6 @@ config:
           link: /
         -
           theme: alt
-          text: Github
-          link: /
+          text: 🌈 Go To Gitee
+          link: https://gitee.com/redemptionad/hash-site
 ---

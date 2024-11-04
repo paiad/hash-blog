@@ -25,7 +25,7 @@ export default defineThemeConfig({
   navbar,
   notes,
   social: [
-    { icon: 'github', link: '/' },
+    { icon: 'github', link: '/pai' },
   ],
 
   footer:false,
