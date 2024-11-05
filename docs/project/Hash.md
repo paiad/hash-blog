@@ -2,6 +2,8 @@
 title: 🚀Hash后端
 tags:
   - SpringBoot
+  - Mysql
+  - Redis
 createTime: 2024/11/04 12:36:04
 permalink: /article/htnsvz2j/
 ---

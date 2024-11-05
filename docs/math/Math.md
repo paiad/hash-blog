@@ -1,6 +1,7 @@
 ---
 title: 🔍Math
 tags: 
+  - Latex
   - Math
 createTime: 2024/11/04 19:50:54
 permalink: /article/9w55damt/
@@ -11,4 +12,4 @@ permalink: /article/9w55damt/
 > 
 > <https://zhuanlan.zhihu.com/p/663568166>
 
-@[pdf no-toolbar width="100%" ratio="15:10" zoom="112"](https://www.gsllsc.com:12555/api/pumpkin/assets/pdf/Math.pdf)
+@[pdf no-toolbar width="100%" ratio="15:10" zoom="112"](https://www.gsllsc.com:12555/api/pumpkin/assets/resources/Math.pdf)

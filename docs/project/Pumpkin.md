@@ -3,6 +3,7 @@ title: 🎃Pumpkin
 tags:
   - SpringBoot
   - Mysql
+  - Redis
 createTime: 2024/11/04 12:46:56
 permalink: /article/24o3igwr/
 ---

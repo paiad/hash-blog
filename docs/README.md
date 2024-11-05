@@ -2,23 +2,15 @@
 home: true
 config:
  -
-    type: hero
-    full: true
-    background: tint-plate
-    tintPlate:
-      r:
-        value: 220
-        offset: 30
-      g:
-        value: 220
-        offset: 45
-      b:
-        value: 220
-        offset: 36
+    type: banner
+    banner: https://www.gsllsc.com:12555/api/pumpkin/assets/resources/grass_wind.png
+    bannerMask:
+     light: 0.1
+     dark: 0.3
     hero:
       name: Hash Site
-      tagline: Hurrach for the next
-      text: 向已故的人致敬, 为后继的人欢呼
+      tagline: 种一棵树最好的时间是十年前，其次是现在。
+      text: "The best time to plant a tree was 10 years ago. The second best time is now."
       actions:
         -
           theme: brand
