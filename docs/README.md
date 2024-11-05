@@ -14,10 +14,10 @@ config:
       actions:
         -
           theme: brand
-          text: 快速开始 →
-          link: /
+          text: 🌈 Welcome to My Blog →
+          link: /blog/
         -
           theme: alt
-          text: 🌈 Go To Gitee
-          link: https://gitee.com/redemptionad/hash-site
+          text: 📍 Go To Github
+          link: https://github.com/Pai3141/pai
 ---
