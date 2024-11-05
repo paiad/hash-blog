@@ -8,7 +8,7 @@ createTime: 2024/11/04 12:36:04
 permalink: /article/htnsvz2j/
 ---
 # Let's Learn Hash 🎃
-><https://gitee.com/redemptionad/hash>
+> 🌈 项目地址： [Hash后端(Hash Back-end)](https://gitee.com/redemptionad/hash)
 ## 项目背景
 本项目旨在构建一个通用的后端框架，涵盖了MyBatisPlus、WebSocket、RabbitMQ等多种技术栈，并融入了代码生成器。
 我们的目标是通过一系列强大的工具和技术，使开发者能够专注于业务逻辑的实现，而不是在基础设施的构建和维护上浪费时间。
