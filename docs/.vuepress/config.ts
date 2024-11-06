@@ -2,6 +2,7 @@ import { viteBundler } from '@vuepress/bundler-vite'
 import { defineUserConfig } from 'vuepress'
 import { plumeTheme } from 'vuepress-theme-plume'
 
+
 export default defineUserConfig({
   base: '/pai/',
   lang: 'zh-CN',
@@ -10,7 +11,7 @@ export default defineUserConfig({
   head: [
     // 设置 favor.ico，.vuepress/public 下
     [
-      'link', { rel: 'icon', href: 'https://himg.bdimg.com/sys/portrait/item/wise.1.f350032f.kpL0_u2d3DABVaMFBTRlLg.jpg?time=6077\u0026tieba_portrait_time=6077\u0026tieba_portrait_time=6077' }
+      'link', { rel: 'icon', href: 'https://www.gsllsc.com:12555/api/pumpkin/assets/resources/Hash.png' }
     ]
   ],
 
