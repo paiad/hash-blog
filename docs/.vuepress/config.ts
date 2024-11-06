@@ -6,7 +6,7 @@ import { plumeTheme } from 'vuepress-theme-plume'
 export default defineUserConfig({
   base: '/pai/',
   lang: 'zh-CN',
-  title: 'Hash Site',
+  title: 'Hash',
   description: '',
   head: [
     // 设置 favor.ico，.vuepress/public 下

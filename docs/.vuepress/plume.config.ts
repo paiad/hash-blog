@@ -15,10 +15,10 @@ export default defineThemeConfig({
 
   profile: {
     avatar: '/Hash.png',
-    name: 'Hash Site',
+    name: 'Hash',
     description: '',
-    // circle: true,
-    // location: '',
+    circle: true,
+    location: 'Lake Baikal',
     // organization: '',
   },
 
