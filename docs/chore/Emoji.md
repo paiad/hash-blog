@@ -6,7 +6,7 @@ createTime: 2024/11/06 11:46:04
 permalink: /article/bdwfs36r/
 ---
 
-> 🌈 [Emoji](https://github.com/markdown-it/markdown-it-emoji/blob/master/lib/data/full.mjs)
+> 🌈 [Emoji](https://getemoji.com)
 ## 😀 表情符号
 - 😀 😃 😄 😁 😆 😅 😂 🤣 🥲 😊 😇 🙂 🙃 😉 😌 🥰 😍 🤩 🥳 😘 😗 😙 😚 😋 🥲
 - 🤑 😜 🤪 😝 😛 🥺 🤗 🤭 🫢 🤫 🤔 🤐 🤨 😐 😑 😶 😏 😒 🙄 😬 🤥 😌 😔 😪 🤤

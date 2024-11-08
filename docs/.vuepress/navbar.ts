@@ -6,7 +6,7 @@ export const navbar = defineNavbarConfig([
     {text: '🍃标签', link: '/blog/tags/'},
     {text: '⏰归档', link: '/blog/archives/'},
     {
-        text: '🐸笔记',
+        text: '🩵笔记',
         items: [{text: 'Python', link: '/notes/python/README.md'}],
     },
 ])
