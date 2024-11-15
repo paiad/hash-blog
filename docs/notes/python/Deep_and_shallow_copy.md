@@ -57,9 +57,15 @@ ls2 =ls1
 ls3 = ls1[:]
 ls4 = ls1.copy()
 print(id(ls1)==id(ls2), id(ls3)==id(ls1), id(ls4)==id(ls1), id(ls1[2])==id(ls4[2]))
-# True False False True
+# Output: True False False True
 ```
 
 
 >[!note]
 > 切片操作是一种**浅拷贝**
+>
+> copy 模块提供两个主要函数：
+>
+>>copy.copy(obj)：进行浅拷贝。
+>>
+>>copy.deepcopy(obj)：进行深拷贝。
