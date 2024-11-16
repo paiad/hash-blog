@@ -5,7 +5,7 @@ tags:
   - Mysql
   - Redis
 createTime: 2024/11/04 12:46:56
-permalink: /article/24o3igwr/
+permalink: /article/pjo3igwr/
 ---
 # 🎃南瓜溯源系统
 > 🌈 项目地址： [南瓜溯源系统(Pumpkin)](https://gitee.com/redemptionad/pumpkin)

@@ -20,6 +20,27 @@ export default defineUserConfig({
         // 添加您的部署域名
         // hostname: 'https://your_site_url',
 
+        //配置锁的页面
+        locales: {
+            '/': {
+                encryptButtonText: 'Confirm',
+                encryptPlaceholder: 'Enter password',
+                encryptPageText: '访问这篇文章需要联系管理员(@2369538173qq.com)',
+            }
+        },
+
+        //加密
+        encrypt: {
+            rules: {
+                //路由&交换
+                // '/article/o6pj1ty3/': ['h3c123456'],
+                //Website
+                '/article/76px1e7z/': 'website123456',
+                //all project
+                '^/article/pj[^/]+/$': 'dwh_pj_123456',
+            }
+        },
+
         plugins: {
             /**
              * Shiki 代码高亮

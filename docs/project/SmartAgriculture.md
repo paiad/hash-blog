@@ -5,7 +5,7 @@ tags:
   - MQTT
   - EMQX
 createTime: 2024/11/05 20:24:33
-permalink: /article/d9fmeyiw/
+permalink: /article/pjf9ey1w/
 ---
 
 # 🌱 **智慧农业系统**

@@ -5,7 +5,7 @@ tags:
   - Mysql
   - Redis
 createTime: 2024/11/04 12:36:04
-permalink: /article/htnsvz2j/
+permalink: /article/pjnsvz2j/
 ---
 # Let's Learn Hash 🎃
 > 🌈 项目地址： [Hash后端(Hash Back-end)](https://gitee.com/redemptionad/hash)
