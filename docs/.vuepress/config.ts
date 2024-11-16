@@ -42,6 +42,9 @@ export default defineUserConfig({
         },
 
         plugins: {
+            watermark: {
+                enabled: false,
+            },
             /**
              * Shiki 代码高亮
              * @see https://theme-plume.vuejs.press/config/plugins/code-highlight/

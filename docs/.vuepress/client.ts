@@ -42,7 +42,7 @@ export default defineClientConfig({
 
             // 点击时生成符号散落效果
             window.addEventListener('click', (event) => {
-                const symbolCount = 15; // 每次点击生成的符号数量
+                const symbolCount = 5; // 每次点击生成的符号数量
                 for (let i = 0; i < symbolCount; i++) {
                     createSymbol(event.pageX, event.pageY); // 使用 pageX 和 pageY 来获取相对文档的坐标
                 }
