@@ -23,8 +23,8 @@ export default defineUserConfig({
         //配置锁的页面
         locales: {
             '/': {
-                encryptButtonText: 'Confirm',
-                encryptPlaceholder: 'Enter password',
+                encryptButtonText: '确认',
+                encryptPlaceholder: '请输入密码',
                 encryptPageText: '访问这篇文章需要联系管理员(@2369538173qq.com)',
             }
         },
