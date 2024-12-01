@@ -26,7 +26,7 @@ export default defineUserConfig({
                 encryptButtonText: '确认',
                 encryptPlaceholder: '请输入密码',
                 encryptPageText: '访问这篇文章需要联系管理员(@2369538173qq.com)',
-            }
+            },
         },
 
         //加密
@@ -94,16 +94,17 @@ export default defineUserConfig({
              * 评论 comments
              * @see https://theme-plume.vuejs.press/guide/features/comments/
              */
-            // comment: {
-            //   provider: '', // "Artalk" | "Giscus" | "Twikoo" | "Waline"
-            //   comment: true,
-            //   repo: '',
-            //   repoId: '',
-            //   categoryId: '',
-            //   mapping: 'pathname',
-            //   reactionsEnabled: true,
-            //   inputPosition: 'top',
-            // },
+            comment: {
+              provider: "Giscus",
+              comment: true,
+              repo: "Pai3141/pai",
+              repoId: "R_kgDONKKpfg",
+              category: "General",
+              categoryId: "DIC_kwDONKKpfs4Ckx4R",
+              mapping: 'pathname',
+              reactionsEnabled: true,
+              inputPosition: 'top',
+            },
         },
     }),
 })

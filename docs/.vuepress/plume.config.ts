@@ -29,4 +29,6 @@ export default defineThemeConfig({
   ],
 
   footer:false,
+
+  outline: [2,4]
 })
