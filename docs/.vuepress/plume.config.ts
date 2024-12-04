@@ -25,7 +25,7 @@ export default defineThemeConfig({
   navbar,
   notes,
   social: [
-    { icon: 'github', link: 'https://github.com/Pai3141/pai' },
+    { icon: 'github', link: 'https://theme-plume.vuejs.press' },
   ],
 
   footer:false,

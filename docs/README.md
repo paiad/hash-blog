@@ -19,5 +19,5 @@ config:
         -
           theme: alt
           text: 📍 Go To Github
-          link: https://github.com/Pai3141/pai
+          link: https://theme-plume.vuejs.press
 ---

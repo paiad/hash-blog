@@ -410,25 +410,209 @@ fn change(some_string: &mut String) {
 > - 引用必须总是有效的
 
 
+## 复合类型
+### 字符串类型
+::: rust-repl Hash Running
+```rust
+use std::any::type_name;
 
+fn print_type<T>(_: T) {
+    println!("The type is: {}", type_name::<T>());
+}
 
+fn main() {
+    let s = "Hello, world!";
+    print_type(s);  // 传递 s，打印其类型
+}
 
+```
+:::
+> 字符串s是`&str`类型
+>
+> Rust 中的`字符`是 `Unicode` 类型，因此每个字符占据 4 个字节内存空间，但是在字符串中不一样，`字符串`是 `UTF-8` 编码，
+> 也就是字符串中的字符所占的字节数是变化的(1 - 4)，这样有助于大幅降低字符串所占用的内存空间。
 
+#### String 与 &str 的转换
+::: rust-repl Hash Running
+```rust
+fn main() {
+    let s = String::from("Hello, world!");
+    // String -> &str
+    say_hello(&s);
+    say_hello(&s[..]);
+    say_hello(s.as_str());
+}
 
+fn say_hello(s: &str){
+    println!("{}", s)
+}
+```
+:::
 
+#### 字符串索引与切片
+::: rust-repl Hash Running
+```rust
+fn main(){
+    let hello = String::from("中国人");
+    let h = hello[0];
+}
+```
+:::
 
+::: rust-repl Hash Running
+```rust
+fn main(){
+    let hello = "中国人";//每一个字符 3Byte
+    let s = &hello[0..2]; // error
+    /* let s1 = &hello[0..3];  
+       println!("{}", s1)   //中
+    */
+    println!("{}", s)
+}
+```
+:::
+>[!note]
+>在Rust中，
+> - `the type 'str' cannot be indexed by '{integer}'`，字符串索引是不被允许的
+> - 通过索引区间来访问字符串时，需要格外的小心，是按照字节`（Byte）`计数的
 
+#### 操作字符串
+##### push
+::: rust-repl Hash Running
+```rust
+fn main(){
+    let mut s = String::from("hello");
+    println!("原始s：{}", s);
+    s.push_str(",world!");
+    println!("push后的s：{}", s);
+}
+```
+:::
 
+##### insert
+::: rust-repl Hash Running
+```rust
+fn main(){
+    let mut s = String::from("hello");
+    println!("原始s：{}", s);
+    s.insert(5,",world!");
+    println!("insert后的s：{}", s);
+}
+```
+:::
 
+##### replace
+::: rust-repl Hash Running
+```rust
+fn main(){
+    let mut s = String::from("hello");
+    println!("原始s：{}", s);
+    let s_changed = s.replace("hello","hello, world!");
+    dbg!(s_changed);//dbg! 的输出包括源文件名、代码行号和变量内容。
+}
+```
+:::
 
+##### pop & remove
+**pop**
+::: rust-repl Hash Running
+```rust
+fn main() {
+    let mut string_pop = String::from("rust pop 中文!");
+    let p1 = string_pop.pop();
+    let p2 = string_pop.pop();
+    dbg!(p1);
+    dbg!(p2);
+    dbg!(string_pop);
+}
+```
+:::
 
+**remove**
+::: rust-repl Hash Running
+```rust
+fn main() {
+    let mut string_remove = String::from("测试remove方法");
+    println!(
+    "string_remove 占 {} 个字节",
+    std::mem::size_of_val(string_remove.as_str())
+    );
+    // 删除第一个汉字
+    string_remove.remove(0);
+    // 下面代码会发生错误
+    // string_remove.remove(1);
+    // 直接删除第二个汉字
+    // string_remove.remove(3);
+    dbg!(string_remove);
+}
+```
+:::
 
+##### 连接
+::: rust-repl Hash Running
+```rust
+fn main(){
+    let s1 = "hello,";
+    let s2 = "world!";
+    let s_add = s1 + &s2; //注意此时s1 所有权发生转移
+    println!("{}",s_add);
+}
+```
+:::
+>使用 + 或者 += 连接字符串，要求右边的参数必须为字符串的切片引用（&str）类型。
+> 
+> String + &str -> String
 
+### 元组
+::: rust-repl Hash Running
+```rust
+fn main() {
+    let tup: (i32, f64, u8) = (500, 6.4, 1);
+    println!("tup:{}", tup);
+    println!("{}, {}, {}}", tup.0, tup.1, tup.2);
+    
+    let tup = (500, 6.4, 1);
+    let (x, y, z) = tup;
+    println!("The value of y is: {}", y);
+}
+```
+:::
+::: rust-repl Hash Running
+```rust
+fn main() {
+    let s = String::from("hello");
+    let (s1, len) = get_s_and_len(&s);
+    println!("{}, {}", s1, len);
+}
 
+fn get_s_and_len(s: &str) -> (&str, usize){
+    let len = s.len();
+    (s, len) 
+}
+```
+:::
 
+### 结构体
+::: rust-repl Hash Running
+```rust
+struct User {
+    active: bool,
+    username: String,
+    email: String,
+    sign_in_count: u64,
+}
 
+fn main(){
+    let user1 = User {
+        email: String::from("someone@example.com"),
+        username: String::from("someusername123"),
+        active: true,
+        sign_in_count: 1,
+    };
 
-
+}
+```
+:::
 
 
 
