@@ -1,5 +1,5 @@
 ---
-title: Python基础入门
+title: Python基础
 createTime: 2024/12/04 16:31:17
 permalink: /python/dbql5ny7/
 ---

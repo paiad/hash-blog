@@ -5,7 +5,7 @@ const pythonNote = defineNoteConfig({
     link: '/python',
     sidebar: [
         {
-            text: 'Get Freedom From Python',
+            text: 'Python | Hash Learning',
         }
         ,{
         text: '🐛Python',

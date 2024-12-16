@@ -613,8 +613,26 @@ fn main(){
 }
 ```
 :::
+>有几点值得注意:
+>1. 初始化实例时，**每个字段**都需要进行初始化
+>2. 初始化时的字段顺序**不需要**和结构体定义时的顺序一致
 
+#### 访问结构体字段
+::: rust-repl Hash Running
+```rust
+fn main() {
+    let mut user1 = User {
+        email: String::from("someone@example.com"),
+        username: String::from("someusername123"),
+        active: true,
+        sign_in_count: 1,
+    };
 
+    user1.email = String::from("anotheremail@example.com");
+    println!("{}",user1.email);
+}
+```
+:::
 
 
 
