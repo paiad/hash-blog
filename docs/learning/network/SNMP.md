@@ -163,7 +163,7 @@ SNMP体系结构起初是一个`集中式模型`。在一个系统中只有一�
   2. 使用率度量数据对象。
   3. 使用率记录。
 
-## 2. 抽象语法表示
+## 2.抽象语法表示
 
 ### 2.1 网络数据表示
 
@@ -517,8 +517,261 @@ Xxxxxxx.1.2. + Index(0.0.0.0. + 99. + 0.0.0.0. + 0)
 
 ![img.png](snmp/img1.png)
 
+## 4.管理信息库
+### 4.1 MIB简介
+![img.png](snmp/img3.png)
+#### system(系统组)
+![img.png](snmp/img4.png)
+
+系统（System）组是MIB-2中最基本的一个组，包含一些最常用的被管对象。
+- 所有系统都必须包含System组。
+- 网络管理系统一旦发现新的系统被加到网络中，首先需要访问该系统的这个组，来获取系统的名称、物理地点和联系人等信息。
+
+用于失效管理（故障管理）的System组对象
+1. sysObjectID中的对象标识符标明了实体的生产商
+2. sysServices告知设备主要提供了哪些协议层服务。
+3. sysUpTime告知一个系统已经运行了多长时间。失效管理查询该对象可以确定实体是否已重新启动。
+
+- sysServices:协议层服务。设L是协议层编号，如果使用了L层的协议，则二进制数值的第L位为1，否则为0。例如，一个主要在第三层运行的路由器将返回值0000100B，即4，而一个运行第四层和第七层服务的主机将返回值1001000B，即72。在不知道设备的功能时，该信息对于问题的解决是有用的。
+- sysUpTime:失效管理查询该对象可以确定实体是否已重新启动，如果查询获得的是一个一直增加的值就认为实体是Up的，如果小于以前的值，则自上次查询后系统重新启动了。
+
+#### interfaces(接口组)
+![img.png](snmp/img5.png)
+
+**重点**
+1. ifIndex(1)接口表惟一的索引项，索引值为1-ifNumber范围
+2. ifAdminStatus(7)用于配置接口的管理状态，up(1) down(2) testing(3)[期待状态]
+3. ifOperStatus(8)提供一个接口的当前操作状态，up(1) down(2) testing(3)[实际状态]
+
+| **ifAdminStatus** | **ifOperStatus** | **含义**                             |
+|-------------------|------------------|-------------------------------------|
+| Up(1)            | Up(1)            | 接口正常运行                         |
+| Up(1)            | Down(2)          | 接口失败，管理员期望运行但实际不可用  |
+| Down(2)          | Down(2)          | 接口关闭，被管理员禁用               |
+| Testing(3)       | Testing(3)       | 接口处于测试状态，不可传输数据        |
+#### at(地址转换组)
+![img.png](snmp/img6.png)
+
+MIB-2中地址转换组的对象已被收编到各个网络协议组（如Ip组）中，保留地址转换组仅仅是为了与MIB-1兼容。
+#### ip(IP组)
+![img.png](snmp/img7.png)
+
+1. 用于失效管理的Ip组对象
+    - IP路由表（ipRouteTable）用于提供路由选择信息，IP路由表中的所有对象用于失效管理。
+    - ipRouteDest给出目标地址的网络号，ipRouteIfIndex给出实体外出的接口，ipRouteMetric给出到目标地址的跳数，ipRouteNextHop给出下一站地址。
+2. 用于配置管理的Ip组对象
+    - IP地址表（ipAddrTable）包含分配给该实体的IP地址的信息，每个地址被唯一地分配给一个物理地址。
+    - 在每个ipAddrEntry中，ipAdEntAddr和ipAdEntIfIndex分别告知IP地址和相应的接口，可以使用ipAdEntIfIndex把ipAddrTable项和一个Interfaces组ifTable项关联起来。ipAdEntNetMask给出了子网掩码，而ipAdEntBcastAddr告知广播地址。
+    - IP路由表（ipRouteTable）把它的许多对象定义为可读写的，出于配置管理的目的，可以修改、新增、删除路由信息。
+3. 用于性能管理的Ip组对象
+    - 使用Ip组对象，性能管理应用可以测量实体输入和输出IP流量的百分率。
+    - 利用Interfaces组对象，实体接收到的总数据报数为所有接口的ipInUcastPkts和ifNUcastPkts的和，用该和除以`ipInReceives`可以得出接收到的IP数据报的比率。使用对象ipOutRequest可以对实体发送的数据报作类似的计算。
+    - 由于缺少系统资源等原因会导致丢弃数据报。对象`ipInDiscards`和`ipOutDiscards`分别给出了数据报在输入和输出时被丢弃的个数。
+    
+   使用Ip组对象可以计算IP数据报的错误率:
+    - IP输入错误率 =(ipInDiscards + ipInHdrErrors + ipInAddrErrors)/ ipInReceives
+    - IP输出错误率 =(ipOutDiscards + ipOutNoRoutes)/ ipOutRequests
+   
+    `ipForwDatagrams`告知设备对IP数据报转发的速率，如果在时刻x和时刻y被两次查询，则可得IP转发速度:
+    - IP转发速度 = (ipForwGatagramsy − ipForwDatagramsx)/(y − x)
+    - IP输入速度 = (ipInReceivesy − ipInReceivesx)/(y − x)
+
+4. 用于计费管理的Ip组对象
+    - Ip组对象ipOutRequests和ipInDelivers可用于计费管理。
+
+#### icmp
+了解即可
+#### tcp
+#### udp
+#### egp
+#### transmission
+#### snmp
+请看第五章
+
+## 5. 简单网络管理协议
+### 5.1 SNMP的演变
+- 1987年11月提出简单网关监控协议(SGMP)
+- 简单网络管理协议第一版(SNMPv1)公布在1990年和1991年的几个RFC文件中，即RFC1155(SMI)、RFC1157(SNMP)、RFC 121(MIB)、RFC 113(MIB-2)
+- 双轨制策略:
+  - SNMP满足当前的网络管理需要，并可平稳过渡到新的网络管理标准。
+  - 0SI网络管理(CMOT)作为长期解决办法，可提供更全面的管理功能，但需较长开发及接受过程。但0SI MIB采用面向对象模型，开发缓慢，SNMP无法顺利过渡。
 
 
+![img.png](snmp/img8.png)
+
+### 5.2 SNMPv1
+#### SNMPv1协议数据单元
+| **PDU 类型**          | **触发方**          | **作用**                         | **方向**           |
+|-----------------------|---------------------|----------------------------------|--------------------|
+| GetRequest            | 管理站              | 请求指定 MIB 对象的值            | 管理站 → 代理设备   |
+| GetNextRequest        | 管理站              | 请求 MIB 树中下一个对象的值      | 管理站 → 代理设备   |
+| SetRequest            | 管理站              | 修改 MIB 对象的值                | 管理站 → 代理设备   |
+| GetResponse           | 代理设备            | 响应管理站的请求，返回结果        | 代理设备 → 管理站   |
+| Trap                  | 代理设备            | 主动通知管理站事件或异常          | 代理设备 → 管理站   |
+
+![img.png](snmp/img9.png)
+
+
+除Trap PDU之外的四种PDU格式是相同的，共有五个字段：
+- PDU类型：GetRequestPDU GetNextRequestPDU SetRequestPDU GetResponsePDU TrapPDU五种类型。
+- 请求标识(request-id)：赋予每个请求报文唯一的整数，用于区分不同的请求。由于在具体实现中请求多是在后台执行的，因而当应答报文返回时要根据其中的请求标识与请求报文配对。请求标识的另一个作用是检测由不可靠的传输服务产生的重复报文。
+- 错误状态(error-status)：表示代理在处理管理站的请求时可能出现的各种错误，共有6种错误状态，包括noError(0) tooBig (l) noSuchName(2) badValue (3) readOnly(4) genError(5)。对不同的操作，这些错误状态的含义不同。//ResponsePDU
+- 错误索引(error-index)：当错误状态非0时指向出错的变量。
+- 变量绑定表(variable-binding)：变量名和对应值的表，说明要检索或设置的所有变量及其值。在检索请求报文中，变量的值应为0。
+
+#### 报文发送与接收
+![img.png](snmp/img10.png)
+
+#### SNMPv1操作
+<mark>1. 检索简单对象</mark>
+
+检索简单标量对象值可用Get操作。如果变量绑定表中包含多个变量，则一次还可以检索多个标量对象的值。接收GetRequest的SNMP实体以请求标识相同的GetResponse响应。
+GetResponse 操作具有`原子性`，如果所有请求的对象值可以得到，则给予应答；只要有一个对象的值得不到，则可能返回下列错误条件：
+
+(1) 变量绑定表中的一个对象无法与MIB 中的任何对象标识符匹配，或者要检索的对象是一个数据块(子树或表)，没有对象实例生成。在此情况下，响应实体返回GetResponsePDU中错误状态为`noSuchName`，错误索引设置为一个数，指明有问题的变量。变量绑定表中不返回任何值。
+
+(2) 响应实体可以提供所有要检索的值，但是变量太多，一个响应PDU 装不下，这往往是由下层协议数据单元大小限制的。这时响应实体返回一个应答PDU，错误状态字段置为`tooBig`。
+
+(3) 响应实体如不能提供至少一个对象的值，则返回的PDU中错误状态字段置为`genError`，错误索引置一个数，指明有问题的变量。变量绑定表中不返回任何值。
+
+---
+为了说明简单对象的检索过程，这是UDP组的一部分。我们可以在索命令中直接指明对象实例的标识符:
+```html
+GetRequest( udpInDatagrams.0, udpNoPorts.0, udpInErrors.0, udpOutDatagrams.0)
+
+可以预期得到下面的响应:
+GetResponse(udpInDatagrams.0=100,udpNoPorts.0=1, udpInErrors.0=2, udpOutDatagrams.0=200)
+
+用GetNext命令以上的4个值
+直接指明对象标识符:
+GetNextRequest( udpInDatagrams, udpNoPorts, udpInErrors, udpOutDatagrams)
+得到的响应与上例是相同的:
+GetResponse( udpInDatagrams.0=100,udpNoPorts.0=l,udpInErrors.0=2,udpOutDatagrams.0=200)
+可见标量`对象实例标识符`(例如udpInDatagrams.0)总是紧跟在`对象标识符`(例如udpInDatagrams)后面的。
+```
+
+<mark>2. 检索未知对象</mark>
+
+GetNext命令检索变量名指示的下一个对象实例，但并不要求变量名是对象标识符或者是实例标识符。
+利用GetNext的检索未知对象的特性可以发现MIB的结构。
+```html
+例如管理站不知道udp组有哪些变量，先试着发出命令:
+GetNextRequest (udp)
+得到的响应是:
+GetResponse(udpInDatagrams.0=100)
+```
+<mark>3．检索表对象</mark>
+| **ipRouteDest** | **ipRouteMetric** | **ipRouteNextHop** |
+|-----------------|------------------|-------------------|
+| 9.1.2.3        | 1                | 99.0.0.3         |
+| 10.0.0.51      | 2                | 89.1.1.42        |
+| 10.0.0.99      | 3                | 89.1.1.42        |
+```html
+假定管理站不知道该表的行数而想检索整个表则可以连续使用GetNext命令:
+GetNextRequest(ipRouteDest,ipRouteMetricl, ipRouteNextHop)
+得到了第一实例对象:
+GetResponse(ipRouteDest.9.1.2.3=9.1.2.3, ipRouteMetric1.9.1.2.3=3, ipRouteNextHop.9.1.2.3=99.0.0.3)
+注意IpRouteDest是IpRouteTable的Index
+```
+
+<mark>4. 表的更新和删除</mark>
+
+Set命令用于设置或更新变量的值。其PDU与Get相同，但在变量绑定表中必须包含要设置的变量名和值。
+对于Set命令的应答也是GetResponse，同样是原子性的。
+
+```html
+//更新
+想改变列对象ipRouteMetric1的第一个值，则可以发出命令
+SetRequest(ipRouteMetric1.9.1.2.3=9)
+
+得到的应答是:
+GetResponse(ipRouteMetric1.9.1.2.3=9)
+其效果是该对象的值由3变成了9。
+
+//删除
+如果要删除表中的行，则可以把一个对象的值置为invalid:
+SetRequest(ipRouteType.7.3.5.3=invalid)
+
+得到的响应说明表行确已删除:
+GetResponse(ipRouteType.7.3.5.3=invalid)
+```
+>[!note]
+> 对于上述的表的删除是物理的还是逻辑的，是由具体实现决定的。在MIB-2中，只有两种表是可删除的:ipRouteTable包含ipRouteType，可取值invalid;
+> ipNetToMediaTable包含ipNetToMediaType，可取值invalid。
+
+#### SNMPv1的局限性
+
+| 序号 | 限制说明                                     |
+|----|---------------------------------------------|
+| 1  | 由于轮询性能限制，不适合管理大网络。         |
+| 2* | 不适合检索大量数据。                         |
+| 3* | 陷入报文是没有应答的，管理站是否收到陷入报文，代理不得而知。这样可能丢掉重要的管理信息。 |
+| 4* | 只提供简单团体名认证，安全措施不够。         |
+| 5* | 不能直接向被管理设备发送命令。               |
+| 6  | 管理信息库MIB-2支持的管理对象有限，不足以完成复杂的管理功能。 |
+| 7  | 不支持管理站之间的通信。                     |
+
+
+### 5.3 SNMPv2
+#### 对象的定义
+1. 数据类型: SNMPV2增加了两种新的数据类型Unsigned32和Counter64(计数器)。
+2. UNITS子句: 在SNMPv2的OBJECT-TYPE宏定义中增加了UNITS子句。用文字说明与对象有关的度量单位。 当管理对象表示一种度量手段（如时间）时这个子句是有用的。
+3. MAX-ACCESS子句: 类似于SNMPv1的ACCESS子句，说明最大的访问级别，与授权策略无关。
+
+   SNMPv2定义的访问类型中去掉了`write-only`类，增加了一个与概念行有关的访问类型`read-create（RFC1442）`，表示可读、可写和可生成。还增加了`aceessible-for-notify访问类（RFC1902）`。
+4. STATUS子句:
+   SNMPv2标准去掉了SNMPv1中的optional和mandatory，只有3种可选状态。
+   current表示在当前的标准中是有效的。
+   obsolete表示不必实现这种对象
+   deprecated表示对象已经过时了，但是为了兼容旧版本实现互操作，实现时还要支持这种对象。
+
+>[!important]
+> SNMPv2的5种访问级别由小到大排列如下： 
+> 
+> not-accessible；accessible-for-notify； read-only；read-write；read-create。
+
+#### 表的定义
+与SNMPv1一样，SNMPv2的管理操作只能作用于标量对象，复杂的信息要用表来表示。
+按照SNMPv2规范，表是行的序列，而行是列对象的序列。SNMPv2把表分为以下两类：
+
+1. 禁止删除和生成行的表。这种表的最高的访问级别是read-write。在很多情况下这种表由代理控制，表中只包含read-only型的对象。
+2. 允许删除和生成行的表。这种表开始时可能没有行，由管理站生成和删除行。行数可由管理站或代理改变。
+
+在SNMPv2表的定义中必含有INDEX或AUGMENTS子句(原表上扩充新的纵列)，但是只能有两者其中之一。
+
+#### 表的操作
+允许生成和删除行的表必须有一个列对象，其SYNTAX子句的值为`Rowstatus`，MAX-ACCESS子旬的值为`read-create`这种列叫做概念行的状态列。
+
+状态列(Rowstatus)可取以下6种值。
+1. Active(可读写):被管理设备可以使用概念行。
+2. NotlnService(可读写):概念行存在，但由于其他原因(下面解释)而不能使用。
+3. NotReady(只读):概念行存在，但因没有信息而不能使用。
+4. CreateAndGo(只写不读):管理站生成一个概念行实例时先设置成这种状态，生成过程结束时自动变为active，被管理设备就可以使用了。
+5. CreateAndWait(只写不读):管理站生成一个概念行实例时先设置成这种状态，但不会自动变成active。
+6. Destroy(只写不读):管理站需删除所有的概念行实例时设置成这种状态。
+
+#### 通知与信息模块
+=== 略 ===
+
+#### SNMPv2协议数据单元
+![img.png](snmp/img11.png)
+
+![img.png](snmp/img12.png)
+![img.png](snmp/img13.png)
+InformRequest PDU：
+这是管理站发送给管理站的消息，PDU格式与Get等操作相同，变量绑定表的内容与陷入报文一样。但是与陷入不同，这个消息是需要应答的。因此，管理站收到通知请求后首先要决定应答报文的大小，如果应答报文的大小超过本地或对方的限制，则返回错误状态tooBig。
+
+
+SNMPv2增加的管理站之间的通信机制是分布式网络管理所需要的功能特征，为此引入了通知报文InformRequest和管理站数据库（manager-to-manager MIB）。管理站数据库主要由3 个表组成。
+
+1. snmpAlarmTable：报警表提供被监视的变量的有关情况，类似于RMON 警报组的功能，但这个表记录的是管理站之间的报警信息。
+2. snmpEventTable：事件表记录SNMPv2实体产生的重要事件，或者是报警事件，或者是通知类型宏定义的事件。
+3. snmpEventNotifyTable：事件通知表定义了发送通知的目标和通知的类型。
+
+### 5.4 SNMPv3管理框架
+在RFC 2571描述的管理框架中，以前称做管理站和代理的实体现在统一称做SNMP实体（SNMP Entity）。
+
+实体 = 一个SNMP引擎（SNMP Engine） + 一个或多个有关的SNMP应用（SNMP Application）组成。
 ## 测试题
 ### 第一章：网络管理概论
 <mark>**填空题**</mark>
@@ -628,7 +881,6 @@ D.利用率
 > 在网络管理中，一般采用“管理者—代理”的基本管理模型来构建网络管理系统，进行实际的网络管理。
 > 网络管理系统的基本模型包括4个要素组成，分别是网络管理者、管理代理、管理信息库和网络管理协议。
 当前建立有效的网络管理模式，主要有3种方法：集中式网络管理模式、分布式网络管理模式、混合式网络管理模式。
-
 
 ### 第二章：抽象语法表示
 <mark>**填空题**</mark>
@@ -984,3 +1236,318 @@ B.词典顺序
 C.对象状态
 D.对象实例
 ```
+
+### 第四章：管理信息库
+<mark>**填空题**</mark>
+1. MIB-2 功能组的 IP 组包含三个表对象: IP 地址表、!!IP路由表!!和!!IP地址转化表!!。
+
+
+<mark>**选择题**</mark>
+```html
+1. 系统服务对象 sysServices 是7位二进制数，如果系统只提供应用层和传输层服务，则其值为()
+A.1001000
+B.1010000
+C.1000100
+D.1001100
+```
+::: details 点我查看答案 & 解析
+`A`
+[从左往右边] ->  [(应用层) ->(物理层)]
+000 0000
+因为提供应用层和传输层服务
+所以100 1000
+:::
+
+```html
+MIB-2 功能组中的系统组提供了系统的一般信息如果系统服务对象 sysServices 的值为十进制的 72，则系统提供()
+应用层和表示层服务
+应用层和传输层服务
+表示层和会话层服务
+会话层和传输层服务
+```
+::: details 点我查看答案 & 解析
+`A`
+Binary(72) = 100 1000
+所以为应用层和传输层
+:::
+
+```html
+MIB-2 接口组中的对象 ifAdminStatus 和ifOperStatus分别取值 up(1)和down(2)的含义是0)
+A.正常
+B.故障
+C.停机
+D.测试
+```
+::: details 点我查看答案 & 解析
+`B`
+:::
+
+```html
+MIB-2 中保留地址转换组是为了与 MIB-1()
+A.传输命令
+B.兼容
+C.接口关联
+D.不一致
+```
+::: details 点我查看答案 & 解析
+`B`
+:::
+
+```html
+MIB-2 的IP 组中IP 地址表中与接口组中的对象iflndex 取值一致的对象是()
+A.ipAdEntAddr
+B.ipAdEntlfIndex
+C.ipAdEntNetMask
+D.ipAdEntBcastAddr
+```
+
+### 第五章：简单网络管理协议
+<mark>**填空题**</mark>
+
+1.SNMPv2 SMI是对 SNMPV1 SMI的扩充，它引入了 4个关键的概念是:!!对象的定义!!、概念表、通知的定义、信息模块。
+
+<mark>**选择题**</mark>
+```html
+1. TCP/IP 网络管理最初使用的是
+A.SGMP(网管监控协议)
+B.SNMPv1
+C.SNMPv2
+D.CMOT
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+2. 在 SNMPv1 中定义管理信息结构，即规定管理对象的语法和语义的是()
+A.RFC1155
+B.RFC1157
+C.RFC1212
+D.RFC1213
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+3. 描述 SNMPv1 规范的RFC文档是
+A.RFC1155
+B.RFC1157
+C.RFC1212
+D.RFC1213
+```
+::: details 点我查看答案 & 解析
+`B`
+:::
+
+```html
+4. Internet 最初的网络管理框架由四个文件定义RFC1212 说明了()
+A.定义 MIB 模块的方法
+B.定义了管理信息结构
+C.定义了 MIB-2 管理对象的核心集合
+D.SNMPv1 协议的规范文件
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+5. SNMPv3不仅能与SNMPv1和SNMPv2兼容而且在SNMPv2C的基础上增加了()
+A.用户使用数量
+B.网络服务质量
+C.网络传输速度
+D.安全和高层管理功能
+```
+::: details 点我查看答案 & 解析
+`D`
+:::
+
+```html
+6.关于 SNMPv1 支持的操作，下面描述正确的是
+A.管理站可以增加或删除表中的一行
+B.管理站可以访问叶子节点
+C.管理站可以访问子树节点
+D.管理站可以一次性访问整个表内容
+```
+::: details 点我查看答案 & 解析
+`B`
+:::
+
+```html
+7. SNMP 报文的组成部分包括()
+A.版本号、团体号、 MIB
+B.版本号、主机号、协议数据单元(PDU)
+C.版本号、团体号、协议数据单元(PDU)
+D.版本号、用户号、协议数据单元(PDU)
+```
+::: details 点我查看答案 & 解析
+`C`
+:::
+
+```html
+8. 在 SNMP 协议中，团体名(Community)是用于
+A.身份认证
+B.定义上下文
+C.确定执行环境
+D.定义 SNMP 实体可访问的 MIB 对象子集
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+9. 此处添加题目描述下面几种 SNMPV1 PDU 具有相同格式的是()
+A.GetRequestPDU，GetNextRequestPDU，SetRequestPDU，TrapPDU
+B.GetRequestPDU，GetNextRequestPDU，SetRequestPDU
+C.GetRequestPDU，GetNextRequestPDU，TrapPDU，GetResponsePDU
+D.SeGetRequestPDU，TrapPDU，SetRequestPDU，GetResponsePDU
+```
+::: details 点我查看答案 & 解析
+`B`
+:::
+
+```html
+10. 在 SNMP 协议支持的服务原语中，提供从代理进程到管理站异步报告机制的是()
+A.Trap
+B.Get
+C.GetNext
+D.Set
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+11. 在 SNMP 协议支持的服务原语中，提供从代理程到管理站异步报告机制的是()
+A.Trap
+B.Get
+C.GetNext
+D.Set
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+12. SNMP 报文在管理站和代理之间传送。由代理发给管理站，不需应答的报文是()
+A.SetResquest
+B.GetResquest
+C.GetResponse
+D.Trap
+```
+::: details 点我查看答案 & 解析
+`D`
+:::
+
+```html
+13. SNMPv1 的操作中，如果要删除表中的行，行的所有者发出 SetRequest PDU，把行的状态对象置为()
+A.invalid
+B.valid
+C.createrequest
+D.undercreation
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+14. SNMPv1 的操作中，使用 Set 命令设置多个变量时若有一个变量的名字和要设置的值在类型、长度或实际值方面不匹配，则返回的错误条件是()
+A.badValue
+B.genError
+C.tooBig
+D.noSuchName
+```
+::: details 点我查看答案 & 解析
+`A`
+badValue: 本来是Integer，你管理站却要设置为Octet String, 显示badValue
+genError: 响应实体如不能提供至少一个对象的值
+noSuchName: 没有对象实例生成。
+:::
+
+```html
+15. SNMPv2定义的Gauge32的特性是()
+A.单增归零
+B.可增减归零
+C.单增不归零
+D.可增减不归零
+```
+::: details 点我查看答案 & 解析
+`D`
+:::
+
+```html
+16. SNMPv2定义的64位计数器是()
+A.单增归零
+B.可增减归零
+C.单增不归零
+D.可增减不归零
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+17. 下列()不是SNMPv2的STATUS子句的可选状态。
+A.current
+B.mandatory
+C.Deprecated
+D.obsolete
+```
+::: details 点我查看答案 & 解析
+`B`
+:::
+
+```html
+18. SNMPv2 定义的访问类型增加了一个与概念行有关的访问类型是
+A.read-only
+B.read-write
+C.write-only
+D.read-create
+```
+::: details 点我查看答案 & 解析
+`D`
+:::
+
+```html
+19. SNMPv2 的5种访问级别由小到大排列是()
+A.not-accessible, accessible-for-notify, read-only, read-write, read-create
+B.read-only, read-write, read-create,not-accessible, accessible-for-notify
+C.read-only,write-only, read-write, read-create, accessible-for-notify
+D.accessible-for-notify, not-accessible, read-only, read-write, read-create
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+20. 在 MIB 的管理信息结构中，表对象和行对象称为概念表和概念行，其访问特性应为()
+A.Not-Accessible
+B.Read-Create
+C.Read-Only
+D.Read-Write
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+21. 在 SNMPv2 中，下列哪项提供了一种在表中添加或删除行的标准方法(
+A.RowStatus
+B.EntryStatus
+C.OwnerString
+D.DisplayString
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+22. SNMPv2 中，管理站发出 set 命令，把状态列置为下列哪项， 可将概念行删除。
+A.invalid
+B.destroy
+C.notReady
+D.notinService
+```
+::: details 点我查看答案 & 解析
+`B`
+:::
