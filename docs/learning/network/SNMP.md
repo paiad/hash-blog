@@ -623,7 +623,7 @@ MIB-2中地址转换组的对象已被收编到各个网络协议组（如Ip组�
 ![img.png](snmp/img10.png)
 
 #### SNMPv1操作
-![img_1.png](img_1.png)
+![img_1.png](snmp/img15.png)
 <mark>1. 检索简单对象</mark>
 
 检索简单标量对象值可用Get操作。如果变量绑定表中包含多个变量，则一次还可以检索多个标量对象的值。接收GetRequest的SNMP实体以请求标识相同的GetResponse响应。
@@ -637,7 +637,7 @@ GetResponse 操作具有`原子性`，如果所有请求的对象值可以得到
 
 ---
 为了说明简单对象的检索过程，这是UDP组的一部分。我们可以在索命令中直接指明对象实例的标识符:
-![img.png](img.png)
+![img.png](snmp/img14.png)
 ```html
 GetRequest( udpInDatagrams.0, udpNoPorts.0, udpInErrors.0, udpOutDatagrams.0)
 

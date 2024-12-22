@@ -3,7 +3,7 @@ home: true
 config:
  -
     type: banner
-    banner: https://www.gsllsc.com:12555/api/pumpkin/assets/resources/grass_wind.png
+    banner: /grass_wind.png
     bannerMask:
      light: 0.1
      dark: 0.3

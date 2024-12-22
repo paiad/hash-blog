@@ -6,7 +6,7 @@ tags:
 createTime: 2024/11/04 19:50:54
 permalink: /article/9w55damt/
 cover:
-  url: https://www.gsllsc.com:12555/api/pumpkin/assets/resources/pai.png
+  url: ../pai.png
   layout: left
   ratio: 0.6
 excerpt:
@@ -21,4 +21,4 @@ sticky: 31415926
 
 > 🌈 [**第十五届全国大学生数学竞赛（非数学类）8套模拟卷**](https://zhuanlan.zhihu.com/p/663568166)
 
-@[pdf width="100%" ratio="15:15" zoom="112"](https://www.gsllsc.com:12555/api/pumpkin/assets/resources/Math.pdf)
+@[pdf width="100%" ratio="15:15" zoom="112"](./Math.pdf)

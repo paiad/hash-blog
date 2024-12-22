@@ -10,7 +10,7 @@ export default defineUserConfig({
     head: [
         // 设置 favor.ico，.vuepress/public 下
         [
-            'link', {rel: 'icon', href: 'https://www.gsllsc.com:12555/api/pumpkin/assets/resources/Hash.png'}
+            'link', {rel: 'icon', href: './Hash.png'}
         ]
     ],
 
