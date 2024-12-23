@@ -1,6 +1,9 @@
 ---
 title: ⏰网络信息安全
 createTime: 2024/11/18 18:45:40
+tags:
+  - network
+  - security
 permalink: /article/rmkxdy87/
 ---
 ## 一、单项选择题
@@ -107,7 +110,7 @@ D. 安全联盟SA
 IPSec是一种开放标准的网络层安全框架结构，通过使用加密为基础的安全服务以确保在IP网络上进行安全通信。
 比如，Windows系列用的就是IETF IPSec 工作组开发的标准。
 
-![IPSec构架.png](IPSec构架.png)
+![IPSec构架.png](./security/IPSec构架.png)
 
 - 1. AH(Authentication Header) 协议
 

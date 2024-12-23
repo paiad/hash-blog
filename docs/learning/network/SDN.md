@@ -1,6 +1,8 @@
 ---
 title: 🍀SDN
 createTime: 2024/11/26 17:06:52
+tags:
+  - SDN
 permalink: /article/imb9omso/
 ---
 

@@ -26,6 +26,7 @@ export default defineThemeConfig({
   notes,
   social: [
     { icon: 'github', link: 'https://theme-plume.vuejs.press' },
+    { icon: 'twitter', link: 'https://github.com/Pai3141/pai' },
   ],
 
   footer:false,
