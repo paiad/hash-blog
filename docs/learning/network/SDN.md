@@ -652,3 +652,289 @@ OpenFlow协议的消息类型：
 :::
 
 
+
+## 综合习题检测
+### 单项选择题
+```html
+1. 下面哪一选项不属于传统分布式网络架构的缺点?
+A.网络设备来源的多样性
+B.网络系统的可靠性不高
+C.网络运维的自动化程度不高
+D.面对网络新需求调整和应对的灵活性不够
+```
+::: details 点我查看答案 & 解析
+`D`
+:::
+```html
+2. 从SDN的应用领域来看，SDN第一阶段商用的主要场景是()
+A.数据中心
+B.运营商网络
+C.广域网
+D.政企网络
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+```html
+3. 下面哪个选项是关于南向接口正确的描述
+A.控制平面与数据平面之间的接口
+B.应用平面与管理平面之间的接口
+C.控制平面与管理平面之间的接口
+D.应用平面与控制平面之间的接口
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+```html
+4. 下面哪个选项最符合FPGA类型交换芯片的特点?
+A.通用性强，应用于网络设备的控制与管理
+B.可编程，应用于科研验证
+C.可编程，应用于复杂的多业务扩展
+D.性能高，开发周期长，应用于各种成熟的协议
+```
+::: details 点我查看答案 & 解析
+`B`
+
+![img.png](SDN/img4.png)
+:::
+```html
+5. 在OpenFlow协议中，下列哪个消息类型属于Asynchronous消息?
+A.OFPT HELLO
+B.OFPT PORT STATUS
+C.OFPT SET CONFIG
+D.OFPT FEATURES REQUEST
+```
+::: details 点我查看答案 & 解析
+`B`
+:::
+```html
+6. 在OpenFlow协议中，下列哪个消息类型不属于Controller-to-Switch消息?
+A.OFPT FLOW_MOD
+B.OFPT BARRIER_REQUEST
+C.OFPT FLOW_REMOVED
+D.OFPT PACKET_OUT
+```
+::: details 点我查看答案 & 解析
+`C`
+:::
+```html
+7. 下列哪个关于NETCONF协议的特点描述是错误的?
+A.NETCONF协议不区分配置数据和状态数据
+B.NETCONF协议的安全传输层支持SSH、TLS等协议
+C.NETCONF协议模型采用分层定义
+D.NETCONF协议提供锁定机制，防止多用户操作冲突
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+```html
+8. SDN控制器的链路发现主要基于下列哪个协议实现?
+A.SDLC
+B.LLDP
+C.ARP
+D.HDLC
+```
+::: details 点我查看答案 & 解析
+`B`
+:::
+```html
+9. 下列哪个选项符合RESTfuI设计?
+A. GET /users?role=admin
+B. GET /user/1234
+C. GET /users/1234/
+D. GET /deleteUser/1234
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+```html
+10. 下列哪个选项不符合对OpenFlow交换机模型的描述?
+A.实现了通用的流表结构
+B.实现了可编程的数据转发处理
+C.实现了协议无关转发
+D.实现了通用的转发模型
+```
+::: details 点我查看答案 & 解析
+`C`
+:::
+```html
+11. 关于OpenFlow1.0流表描述不正确的是()
+A.流表项主要由3部分组成，分别是分组头域(Head Field)，计数器(Counter)和动作表(Action)
+B.每条流表项会永久存在，不会自动删除
+C.一个数据分组进入OF交换机后需要先匹配流表，若没有配某条表项的特征，则封装为Packetin消息通过安全通道交给控制器，再由控制器决定如何处理
+D.一个数据分组进入OF交换机后需要先匹配流表，若符合其中某条表项的特征，则按照相应的动作进行转发
+```
+::: details 点我查看答案 & 解析
+`B`
+:::
+```html
+12. 组表项不包含以下哪个字段()
+A. Group Identifier
+B. Action Bucket
+C. Priority
+D. Group Type
+```
+::: details 点我查看答案 & 解析
+`C`
+:::
+```html
+13. 下列哪个SDN标准化组织是由设备厂商主导的?
+A. ITU-T
+B. ETSI
+C. ONF
+D. IETF
+```
+::: details 点我查看答案 & 解析
+`D`
+:::
+```html
+14. 下列哪个选项不属于OpenFlow v1.0交换机模型的组成部分?
+A.流表
+B.安全通道
+C.组表
+D.OpenFlow协议
+```
+::: details 点我查看答案 & 解析
+`C`
+:::
+```html
+15. 在OpenFlow协议中，下列哪个消息不属于Asynchronous消息?
+A. OPFT FLOW_MOD
+B. OFPT PACKET_IN
+C. OFPT FLOW_REMOVED
+D. OFPT PORT_STATUS
+```
+::: details 点我查看答案 & 解析
+`A`
+:::
+
+```html
+16. 在控制器体系结构中，下列哪个选项是每个控制器必须具备的功能层:
+A.协议适配层
+B.内置应用层
+C.配置管理层
+D.基础网络层
+```
+::: details 点我查看答案 & 解析
+`D`
+:::
+
+```html
+17. ASIC芯片的主要优点是?
+A.易扩展、通用性强
+B.可编程、可进行复杂的多业务扩展
+C.性能高、处理能力很强
+D.支持反复擦写、可编程
+```
+::: details 点我查看答案 & 解析
+`C`
+:::
+
+```html
+18. 下列那种类型的芯片主要应用于科研和验证?
+A.通用CPU
+B.ASIC芯片
+C.NP
+D.FPGA
+```
+::: details 点我查看答案 & 解析
+`D`
+:::
+
+### 多选题
+```html
+1. ONF提出的技术架构中，控制平面的主要任务包括()
+A.负责网元的初始化配置
+B.负责为SDN应用提供底层网络的抽象模型
+C.负责数据包的转发
+D.负责将应用层请求转换到数据平面的DataPath
+```
+::: details 点我查看答案 & 解析
+`BD`
+:::
+```html
+2. OpenFlow v1.0版本规范文件中定义的交换机模型的组成部分包括多选
+A.安全通道
+B.组表
+C.流表
+D.OpenFlow协议
+```
+::: details 点我查看答案 & 解析
+`ACD`
+:::
+
+```html
+3. 在OpenFlow1.0流表项中，下列哪些匹配字段属于网络层的标识
+A.IP服务类型
+B.目的IP地址
+C.VLAN优先级
+D.TCP/UDP目的端口号
+```
+::: details 点我查看答案 & 解析
+`AB`
+:::
+```html
+4. 下列哪些端口是OpenFlow交换机必须支持的保留端口?
+A.CONTROLLER
+B.ALL
+C.FLOOD
+D.IN_PORT
+```
+::: details 点我查看答案 & 解析
+`ABD`
+:::
+
+```html
+5. 在OpenFlow交换机中，下列哪些保留端口只能作为出端口使用?
+A.ALL
+B.CONTROLLER
+C.TABLE
+D.IN_PORT
+```
+::: details 点我查看答案 & 解析
+`ABD`
+:::
+
+```html
+6. 下列哪些选项属于基于意图的SDN北向接口的特点?
+A.重点在网络资源抽象及控制能力的开放
+B.对应了网络的业务模型，关注的是“我要什么
+C.自上而下看网络
+D.关注应用或者服务的需求，同具体的网络技术无关
+```
+::: details 点我查看答案 & 解析
+`BCD`
+:::
+
+```html
+7. 下列哪些选项属于REST设计必须满足的约束条件?多选
+A. 分层系统
+B.无状态
+C.统一接口
+D.按需代码
+```
+::: details 点我查看答案 & 解析
+`ABC`
+:::
+
+```html
+8. 相比于传统网络，SDN的主要优势在于?
+A.具有更强的伸缩性
+B.具有更好的灵活性
+C.具有更高的可靠性
+D.具有更强的可编程能力
+```
+::: details 点我查看答案 & 解析
+`ABD`
+:::
+
+```html
+9. OpenFlowv1.0 交换机模型的组件包括?
+A.安全通道
+B.控制器
+C.组表
+D.流表
+```
+::: details 点我查看答案 & 解析
+`AD`
+:::

@@ -19,7 +19,7 @@ config:
         -
           theme: alt
           text: 📍 Go To Github
-          link: https://theme-plume.vuejs.press
+          link: https://github.com
   -
     type: features
     features:
