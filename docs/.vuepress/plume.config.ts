@@ -1,6 +1,7 @@
 import { defineThemeConfig } from 'vuepress-theme-plume'
 import { navbar } from './navbar'
 import { notes } from './notes'
+import {hashIcon} from "./public/svg/Hash";
 
 /**
  * @see https://theme-plume.vuejs.press/config/basic/
@@ -26,10 +27,11 @@ export default defineThemeConfig({
   notes,
   social: [
     { icon: 'github', link: 'https://theme-plume.vuejs.press' },
-    { icon: 'twitter', link: 'https://github.com/Pai3141/pai' },
+    { icon: { svg: hashIcon, name: 'hashIcon' }, link: 'https://github.com/Pai3141/pai' },
   ],
+  navbarSocialInclude:['github','hashIcon'],
 
-  footer:false,
+  footer:{ message: '',copyright: '© Copyright 2024 All Rights Reserved. Proprietary Rights Reserved by Paiad.'},
 
   outline: [2,4]
 })
