@@ -3,6 +3,7 @@ title: 🐣SNMP
 createTime: 2024/12/06 11:37:01
 tags:
   - snmp
+  - network
 permalink: /article/n0rmn2lz/
 ---
 ## 1.网络管理概论
