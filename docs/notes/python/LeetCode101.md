@@ -11,4 +11,4 @@ permalink: /python/t7c9da0y/
 
 > 🌈 [**LeetCode 101: A Grinding Guide (Second Edition)**](https://github.com/changgyhub/leetcode_101)
 
-@[pdf width="100%" ratio="1:1" zoom="93"](https://www.gsllsc.com:12555/api/pumpkin/assets/resources/LeetCode101.pdf)
+@[pdf width="100%" ratio="1:1" zoom="93"](./LeetCode101.pdf)

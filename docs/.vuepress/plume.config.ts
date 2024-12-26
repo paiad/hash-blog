@@ -7,7 +7,7 @@ import {hashIcon} from "./public/svg/Hash";
  * @see https://theme-plume.vuejs.press/config/basic/
  */
 export default defineThemeConfig({
-  logo: '/Hash.png',
+  logo: 'https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/Hash.png',
   // your git repo url
   docsRepo: '',
   docsDir: 'docs',
@@ -15,7 +15,7 @@ export default defineThemeConfig({
   appearance: true,
 
   profile: {
-    avatar: '/Hash.png',
+    avatar: 'https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/Hash.png',
     name: 'Hash',
     description: '',
     circle: true,

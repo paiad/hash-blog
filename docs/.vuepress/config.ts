@@ -10,7 +10,7 @@ export default defineUserConfig({
     head: [
         // 设置 favor.ico，.vuepress/public 下
         [
-            'link', {rel: 'icon', href: './Hash.png'}
+            'link', {rel: 'icon', href: 'https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/Hash.png'}
         ]
     ],
 
@@ -41,6 +41,10 @@ export default defineUserConfig({
             }
         },
 
+        blog:{
+            //分页
+            pagination: 6,
+        },
         plugins: {
             watermark: {
                 enabled: false,
