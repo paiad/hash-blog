@@ -22,7 +22,7 @@ const rustNote = defineNoteConfig({
     sidebar: [
         {
         text: 'Rust',
-        items: ['Rust'],
+        items: ['Rust','Test'],
         collapsed: true},
     ]
 })
