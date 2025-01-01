@@ -2,6 +2,7 @@ import { defineThemeConfig } from 'vuepress-theme-plume'
 import { navbar } from './navbar'
 import { notes } from './notes'
 import {hashIcon} from "./public/svg/Hash";
+import {plumeIcon} from "./public/svg/Plume";
 
 /**
  * @see https://theme-plume.vuejs.press/config/basic/
@@ -26,10 +27,11 @@ export default defineThemeConfig({
   navbar,
   notes,
   social: [
-    { icon: 'github', link: 'https://theme-plume.vuejs.press' },
+    { icon: { svg: plumeIcon, name: 'plumeIcon' }, link: 'https://theme-plume.vuejs.press' },
     { icon: { svg: hashIcon, name: 'hashIcon' }, link: 'https://github.com/Pai3141/pai' },
+    { icon: 'github', link: 'https://github.com' },
   ],
-  navbarSocialInclude:['github','hashIcon'],
+  navbarSocialInclude:['plumeIcon','hashIcon','github'],
 
   footer:{ message: '',copyright: '© Copyright 2024 All Rights Reserved. Proprietary Rights Reserved by Paiad.'},
 
