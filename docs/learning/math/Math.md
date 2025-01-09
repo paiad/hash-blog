@@ -21,4 +21,4 @@ sticky: 31415926
 
 > 🌈 [**第十五届全国大学生数学竞赛（非数学类）8套模拟卷**](https://zhuanlan.zhihu.com/p/663568166)
 
-@[pdf width="100%" ratio="15:15" zoom="112"](./Math.pdf)
+@[pdf width="100%" ratio="15:15" zoom="112"](./pdf/Math.pdf)

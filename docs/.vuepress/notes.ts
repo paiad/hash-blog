@@ -16,19 +16,20 @@ const pythonNote = defineNoteConfig({
     ]
 })
 
-const rustNote = defineNoteConfig({
-    dir: 'rust',
-    link: '/rust',
+const networkNote = defineNoteConfig({
+    dir: 'network',
+    link: '/network',
     sidebar: [
         {
-        text: 'Rust',
-        items: ['Rust','Test'],
-        collapsed: true},
+            text: 'Network',
+            link: '/network/',
+            items: ['NetworkSecurity','OperatingSystem','RT-SW','SDN','Snmp','Rust'],
+            collapsed: true},
     ]
 })
 
 export const notes = defineNotesConfig({
     dir: 'notes',
     link: '/',
-    notes: [pythonNote, rustNote],
+    notes: [networkNote, pythonNote],
 })
