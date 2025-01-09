@@ -37,7 +37,7 @@ export default defineUserConfig({
                 //Website
                 '/article/76px1e7z/': 'website123456',
                 //all project
-                '^/article/pj[^/]+/$': 'dwh_pj_123456',
+                // '^/article/pj[^/]+/$': 'dwh_pj_123456',
             }
         },
 
