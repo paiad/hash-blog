@@ -4,6 +4,7 @@ config:
   -
     type: banner
     banner: https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/grass_wind.png
+    full: ture
     bannerMask:
       light: 0.1
       dark: 0.3
@@ -21,5 +22,6 @@ config:
           text: 📍 Go To Github
           link: https://github.com
   - type: blog
+
 ---
 
