@@ -36,6 +36,12 @@ permalink: /article/p9ts1au1/
   <LinkCard title="🌈 虚拟信用卡 WildCard 官方详细注册流程" href="https://www.laodengai.com/register-wildcard"></LinkCard>
 </CardGrid>
 
+==GitHub Pages启用 Cloudflare加速及HTTPS==
+
+<CardGrid>
+  <LinkCard title="🌈 GitHub Pages启用 Cloudflare加速及HTTPS" href="https://siriusq.top/github-pages-%E5%90%AF%E7%94%A8-cloudflare-%E5%8A%A0%E9%80%9F%E5%8F%8A-https.html"></LinkCard>
+</CardGrid>
+
 ---
 
 ## ⚙️ Namecheap Advanced DNS 配置
