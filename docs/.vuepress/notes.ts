@@ -21,6 +21,9 @@ const networkNote = defineNoteConfig({
     link: '/network',
     sidebar: [
         {
+            text: 'Network | Hash Learning',
+        },
+        {
             text: 'Network',
             link: '/network/',
             items: ['NetworkSecurity','OperatingSystem','RT-SW','SDN','Snmp','Rust'],

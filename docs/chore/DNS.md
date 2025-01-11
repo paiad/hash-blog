@@ -8,7 +8,16 @@ aside: false
 createTime: 2025/1/10 01:33:57
 permalink: /article/p9ts1au1/
 ---
+## 相关网站便捷跳转
+<CardGrid>
+  <LinkCard title="Cloudflare" href="https://www.cloudflare.com/zh-cn"></LinkCard>
+</CardGrid>
 
+<CardGrid>
+  <LinkCard title="Namecheap" href="https://www.namecheap.com"></LinkCard>
+</CardGrid>
+
+## 具体相关配置细则
 ==GitHub Pages 自定义域名配置指南==
 
 对于 GitHub 的 Pages 页的自定义域名配置，可以参考以下的文章：

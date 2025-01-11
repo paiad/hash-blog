@@ -17,7 +17,7 @@ export default defineThemeConfig({
 
   profile: {
     avatar: 'https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/Hash.png',
-    name: 'Hash',
+    name: 'Paiad',
     description: '',
     circle: true,
     location: 'Lake Baikal',

@@ -1,7 +1,9 @@
 import {defineClientConfig} from 'vuepress/client';
+import HelloWorld from "./components/HelloWorld.vue";
 
 export default defineClientConfig({
     enhance({app}) {
+        app.component('HelloWorld', HelloWorld)
         // 确保在客户端执行
         if (typeof window !== 'undefined') {
             // 创建光标效果的样式
