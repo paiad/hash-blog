@@ -2,10 +2,10 @@
   <div class="container">
     <div class="content">
       <h1 class="title">Hello World</h1>
-      <p class="description">Welcome to the Luxurious 3D World of Vue.js!</p>
+      <p class="description">{{ message }}</p>
       <button @click="changeText" class="cta-button">Click Me</button>
     </div>
-    <!-- 粒子背景 -->
+    <!-- 背景粒子效果 -->
     <div class="particle-background"></div>
   </div>
 </template>
@@ -15,12 +15,19 @@ export default {
   name: 'HelloWorld',
   data() {
     return {
-      message: 'Welcome to the Luxurious 3D World of Vue.js!',
+      message: 'Welcome to Hash 3D World!',
+      isFlag: true
     };
   },
   methods: {
     changeText() {
-      this.message = 'You clicked the button!';
+      if (this.isFlag) {
+        this.message = 'Stay Hungry, Stay Foolish!';
+        this.isFlag = !this.isFlag
+      }else{
+        this.message = 'Welcome to Hash 3D World!';
+        this.isFlag = !this.isFlag
+      }
     },
   },
 };
@@ -33,9 +40,9 @@ export default {
   justify-content: center;
   align-items: center;
   height: 100vh;
-  background: linear-gradient(45deg, #3b7cfc, #cf76f1, #f9a8d4, #ff5c8d);
+  background: linear-gradient(45deg, #1f1f1f, #4ca5dc, #a049f1, #ff4d8c);
   background-size: 400% 400%;
-  animation: gradientBackground 15s ease infinite;
+  animation: gradientBackground 12s ease infinite;
   overflow: hidden;
   position: relative;
 }
@@ -57,34 +64,34 @@ export default {
 .content {
   text-align: center;
   color: white;
-  font-family: 'Montserrat', sans-serif;
+  font-family: 'Roboto', sans-serif;
   z-index: 2;
-  transform: perspective(500px) rotateY(30deg) rotateX(20deg);
-  animation: floatAnimation 5s ease-in-out infinite, textGlow 1s ease-in-out forwards;
+  transform: perspective(600px) rotateY(20deg) rotateX(10deg);
+  animation: floatAnimation 6s ease-in-out infinite, textGlow 1.5s ease-in-out forwards;
 }
 
 /* 内容浮动效果 */
 @keyframes floatAnimation {
   0% {
-    transform: perspective(500px) rotateY(30deg) rotateX(20deg);
+    transform: perspective(600px) rotateY(20deg) rotateX(10deg);
   }
   50% {
-    transform: perspective(500px) rotateY(-20deg) rotateX(-10deg);
+    transform: perspective(600px) rotateY(-20deg) rotateX(-10deg);
   }
   100% {
-    transform: perspective(500px) rotateY(30deg) rotateX(20deg);
+    transform: perspective(600px) rotateY(20deg) rotateX(10deg);
   }
 }
 
 /* 标题样式 */
 .title {
-  font-size: 5rem;
+  font-size: 6rem;
   font-weight: 700;
   margin-bottom: 20px;
-  text-shadow: 4px 4px 12px rgba(0, 0, 0, 0.5), 0 0 25px rgba(255, 255, 255, 0.3);
-  letter-spacing: 6px;
+  text-shadow: 0 0 30px rgba(0, 255, 255, 0.7), 0 0 50px rgba(0, 255, 255, 0.3);
+  letter-spacing: 5px;
+  color: #00ff99;
   animation: titleAnimation 1s ease-in-out forwards;
-  color: #ffffff;
 }
 
 /* 标题动画 */
@@ -101,12 +108,12 @@ export default {
 
 /* 描述文字样式 */
 .description {
-  font-size: 1.8rem;
+  font-size: 2rem;
   margin-bottom: 40px;
   font-weight: 500;
-  text-shadow: 3px 3px 12px rgba(0, 0, 0, 0.4);
-  color: rgba(255, 255, 255, 0.85);
-  animation: descriptionAnimation 2s ease-in-out forwards;
+  color: rgba(255, 255, 255, 0.9);
+  animation: descriptionAnimation 2.5s ease-in-out forwards;
+  text-shadow: 2px 2px 12px rgba(0, 0, 0, 0.7);
 }
 
 /* 描述文字动画 */
@@ -123,30 +130,45 @@ export default {
 
 /* 按钮样式 */
 .cta-button {
-  background: linear-gradient(45deg, #ff7e5f, #feb47b);
+  background: linear-gradient(45deg, #ff007f, #f5c400);
   color: white;
-  padding: 20px 40px;
+  padding: 18px 36px;
   border: none;
   border-radius: 50px;
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   cursor: pointer;
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.5);
   transition: all 0.3s ease;
   position: relative;
   z-index: 3;
   text-transform: uppercase;
+  border: 2px solid #fff;
+  animation: buttonGlow 2s ease infinite;
 }
 
 /* 按钮悬停效果 */
 .cta-button:hover {
-  transform: translateY(-5px);
-  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.4);
+  transform: translateY(-8px);
+  box-shadow: 0 20px 50px rgba(0, 0, 0, 0.6);
 }
 
 /* 按钮点击效果 */
 .cta-button:active {
   transform: translateY(0);
-  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.4);
+}
+
+/* 按钮发光动画 */
+@keyframes buttonGlow {
+  0% {
+    box-shadow: 0 0 15px #ff007f, 0 0 30px #f5c400;
+  }
+  50% {
+    box-shadow: 0 0 25px #ff007f, 0 0 45px #f5c400;
+  }
+  100% {
+    box-shadow: 0 0 15px #ff007f, 0 0 30px #f5c400;
+  }
 }
 
 /* 背景粒子效果 */
@@ -156,23 +178,23 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: url('https://www.transparenttextures.com/patterns/white-light-weave.png');
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.1) 20%, rgba(0, 0, 0, 0.4) 80%);
   z-index: 1;
   pointer-events: none;
-  opacity: 0.3;
-  animation: particleAnimation 4s linear infinite;
+  opacity: 0.15;
+  animation: particleAnimation 3s linear infinite;
 }
 
 /* 粒子动画 */
 @keyframes particleAnimation {
   0% {
-    opacity: 0.3;
+    opacity: 0.15;
   }
   50% {
-    opacity: 0.6;
+    opacity: 0.4;
   }
   100% {
-    opacity: 0.3;
+    opacity: 0.15;
   }
 }
 </style>
