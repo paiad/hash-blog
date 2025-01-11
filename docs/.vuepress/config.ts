@@ -12,6 +12,14 @@ export default defineUserConfig({
         [
             'link', {rel: 'icon', href: 'https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/Hash.png'}
         ],
+        // 引入自定义字体
+        [
+            'link',
+            {
+                rel: 'stylesheet',
+                href: 'https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-SemiBold/result.css'
+            }
+        ]
     ],
 
     bundler: viteBundler(),
@@ -35,7 +43,7 @@ export default defineUserConfig({
                 //路由&交换
                 // '/article/o6pj1ty3/': ['h3c123456'],
                 //Website
-                '/article/76px1e7z/': 'website123456',
+                // '/article/76px1e7z/': 'website123456',
                 //all project
                 // '^/article/pj[^/]+/$': 'dwh_pj_123456',
             }

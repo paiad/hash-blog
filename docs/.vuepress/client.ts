@@ -1,6 +1,7 @@
 import {defineClientConfig} from 'vuepress/client';
-import HelloWorld from "./components/HelloWorld.vue";
-import HappyNewYear from "./components/HappyNewYear.vue";
+import HelloWorld from "./theme/components/HelloWorld.vue";
+import HappyNewYear from "./theme/components/HappyNewYear.vue";
+import './styles/index.css';
 
 export default defineClientConfig({
     enhance({app}) {

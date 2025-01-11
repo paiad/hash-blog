@@ -11,7 +11,7 @@ config:
     hero:
       name: Hash🔎
       tagline: 种一棵树最好的时间是十年前，其次是现在。
-      text: "The best time to plant a tree was 10 years ago. The second best time is now."
+      text: "The best time to plant a tree was 10 years ago.The second best time is now."
       actions:
         -
           theme: brand

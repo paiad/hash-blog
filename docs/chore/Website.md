@@ -9,6 +9,9 @@ permalink: /article/76px1e7z/
 ## 阿里云
 [Alibaba Cloud](https://cn.aliyun.com)
 
+## 
+[中文网字计划](https://chinese-font.netlify.app/zh-cn/cdn/)
+
 ## 英文打字软件
 [Qwerty Learner](https://qwerty.kaiyi.cool)
 
