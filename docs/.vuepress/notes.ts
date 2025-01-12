@@ -5,9 +5,10 @@ const pythonNote = defineNoteConfig({
     link: '/python',
     sidebar: [
         {
-            text: 'Python | Hash Learning',
-        }
-        ,{
+            icon: 'fluent-color:clipboard-text-edit-32',
+            text: 'Hash Learning',
+        },
+        {
         text: '🐛Python',
         link: '/python/',
         items: ['Basic_learning', 'Deep_and_shallow_copy', 'Iterator_and_generator', 'Examination', 'LeetCode101'],
@@ -21,13 +22,15 @@ const networkNote = defineNoteConfig({
     link: '/network',
     sidebar: [
         {
-            text: 'Network | Hash Learning',
+            icon: 'fluent-color:clipboard-text-edit-32',
+            text: 'Hash Learning',
         },
         {
             text: 'Network',
             link: '/network/',
             items: ['NetworkSecurity','OperatingSystem','RT-SW','SDN','Snmp','Rust'],
-            collapsed: true},
+            collapsed: true
+        },
     ]
 })
 
@@ -36,8 +39,9 @@ const websiteNote = defineNoteConfig({
     link: '/website',
 })
 
+
 export const notes = defineNotesConfig({
     dir: 'notes',
     link: '/',
-    notes: [networkNote, pythonNote,websiteNote],
+    notes: [networkNote, pythonNote, websiteNote],
 })

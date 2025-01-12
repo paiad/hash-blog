@@ -9,7 +9,7 @@ permalink: /article/76px1e7z/
 ## 阿里云
 [Alibaba Cloud](https://cn.aliyun.com)
 
-## 
+## 中文网字计划
 [中文网字计划](https://chinese-font.netlify.app/zh-cn/cdn/)
 
 ## 英文打字软件
@@ -24,10 +24,11 @@ permalink: /article/76px1e7z/
 [代理服务平台](https://xn--6nq44r2uh9rhj7f.com)
 
 ## 图标库
+[Iconify 图标库](https://icon-sets.iconify.design)
 
-[Typora Emoji图标](https://www.cnblogs.com/wangjs-jacky/p/12011208.html)
+[Typora Emoji图标库](https://www.cnblogs.com/wangjs-jacky/p/12011208.html)
 
-[IconFinder](https://www.iconfinder.com)
+[IconFinder 图标库](https://www.iconfinder.com)
 
 [Bootstrap 图标库](https://icons.bootcss.com/)
 
