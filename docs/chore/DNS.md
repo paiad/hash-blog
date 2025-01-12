@@ -4,27 +4,44 @@ tags:
   - DNS
   - Wildcard
   - Namecheap
-aside: false
+#aside: false
 createTime: 2025/1/10 01:33:57
+#cover:
+#  url: https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/why-domain-name.jpg
+#  layout: top
+#  ratio: 0.55
+#  width: 100
+excerpt:
+  GitHub Pages 是 GitHub 提供的免费托管静态网页的服务，可以用来展示个人网站、项目文档或博客，适合 HTML、CSS 和 JavaScript 文件。用户只需将网页文件上传到 GitHub 仓库并启用 GitHub Pages，GitHub 就会自动提供访问链接。
 permalink: /article/p9ts1au1/
 ---
+## 什么是域名?
+**域名** 是互联网上用于标识一个网站或网络服务的名称，方便用户访问。它由多个部分组成，通常包括顶级域（TLD）、二级域名和子域名。
+
+- **顶级域（TLD）**：如 `.com`、`.org`、`.cn` 等。
+- **二级域名**：如 `google` 在 `google.com` 中。
+- **子域名**：如 `www`、`mail` 等，位于二级域名左边。
+
+域名通过 **DNS（域名系统）** 进行解析，将域名转换为 IP 地址，使得浏览器可以访问对应的服务器。
+
+简而言之，域名是便于人们记忆的互联网地址，替代了数字化的 IP 地址，帮助用户轻松访问网站。
+
 ## 相关网站便捷跳转
 <CardGrid>
-  <LinkCard title="Cloudflare" href="https://www.cloudflare.com/zh-cn"></LinkCard>
+  <LinkCard icon= "devicon:cloudflare" title="Cloudflare" href="https://www.cloudflare.com/zh-cn"></LinkCard>
 </CardGrid>
 
 <CardGrid>
-  <LinkCard title="Namecheap" href="https://www.namecheap.com"></LinkCard>
+  <LinkCard icon= "logos:namecheap" title="Namecheap" href="https://www.namecheap.com"></LinkCard>
 </CardGrid>
 
-## 具体相关配置细则
-==GitHub Pages 自定义域名配置指南==
+## Github Page 配置自定义域名
+==自定义域名配置指南==
 
 对于 GitHub 的 Pages 页的自定义域名配置，可以参考以下的文章：
 <CardGrid>
 <LinkCard title="🌈 GitHub Pages 自定义域名配置指南" href="https://blog.csdn.net/qq_34902437/article/details/140298754"></LinkCard>
 </CardGrid>
-
 
 ==如何在 Namecheap 上购买国外域名?==
 
@@ -35,7 +52,6 @@ permalink: /article/p9ts1au1/
 </CardGrid>
 
 ---
-
 
 ==在国内购买 Namecheap 域名的支付方式==
 
@@ -53,7 +69,8 @@ permalink: /article/p9ts1au1/
 
 ---
 
-## ⚙️ Namecheap Advanced DNS 配置
+Namecheap Advanced DNS 配置
+
 以下是 Namecheap 的 Advanced DNS 配置，适用于将域名与 GitHub Pages 关联：
 
 | **Type**  | **Host** | **Value**             |
@@ -104,6 +121,6 @@ permalink: /article/p9ts1au1/
 | 二级域名 | `example.com`         | 主域名，通常用于表示网站或公司名称    |
 | 三级域名 | `blog.example.com`    | 子域名，表示该域名下的特定服务或部分 |
 
-### 总结：
+总结：
 - **二级域名**：是你购买的域名，通常是代表某个网站、公司或品牌。
 - **三级域名**：是你在二级域名下创建的子域，用来指向网站的不同部分或服务。

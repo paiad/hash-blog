@@ -34,6 +34,7 @@ export default defineUserConfig({
                 encryptButtonText: '确认',
                 encryptPlaceholder: '请输入密码',
                 encryptPageText: '访问这篇文章需要联系管理员(@2369538173qq.com)',
+                // notFound:{"code":"404","title":"页面未找到","quote":"但是，如果你不改变方向，并且一直寻找，最终可能会到达你要去的地方。","linkText":"返回首页"}
             },
         },
 
