@@ -4,6 +4,12 @@ tags:
   - SpringBoot
   - Mysql
   - Redis
+cover:
+  url: https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/pumpkin.png
+  layout: right
+  ratio: 0.6
+excerpt:
+  南瓜是一种营养丰富的食物，它富含维生素A、C、膳食纤维和抗氧化物，能促进眼睛健康、增强免疫力、改善消化、帮助减肥和调节血糖。此外，南瓜有助于提高睡眠质量、抗衰老和保持皮肤健康，是一种有益心血管的食品。
 createTime: 2024/11/04 12:46:56
 permalink: /article/pjo3igwr/
 ---

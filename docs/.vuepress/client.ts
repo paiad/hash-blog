@@ -5,6 +5,7 @@ import HelloWorld from "./theme/components/HelloWorld.vue";
 import HappyNewYear from "./theme/components/HappyNewYear.vue";
 import {createCursorEffect} from "./theme/utils/cursorEffect";
 import './theme/styles/index.css';
+import './theme/styles/custom.css';
 
 export default defineClientConfig({
     enhance({app}) {
