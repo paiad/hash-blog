@@ -5,7 +5,7 @@ const pythonNote = defineNoteConfig({
     link: '/python',
     sidebar: [
         {
-            icon: 'fluent-color:clipboard-text-edit-32',
+            icon: 'logos:ink',
             text: 'Hash Learning',
         },
         {
@@ -22,7 +22,7 @@ const networkNote = defineNoteConfig({
     link: '/network',
     sidebar: [
         {
-            icon: 'fluent-color:clipboard-text-edit-32',
+            icon: 'logos:ink',
             text: 'Hash Learning',
         },
         {
@@ -31,6 +31,7 @@ const networkNote = defineNoteConfig({
             items: ['NetworkSecurity','OperatingSystem','RT-SW','SDN','Snmp','Rust'],
             collapsed: true
         },
+
     ]
 })
 
@@ -41,6 +42,12 @@ const websiteNote = defineNoteConfig({
 
 
 export const notes = defineNotesConfig({
+    dir: 'notes',
+    link: '/',
+    notes: [networkNote, pythonNote, websiteNote],
+})
+
+export const notes1 = defineNotesConfig({
     dir: 'notes',
     link: '/',
     notes: [networkNote, pythonNote, websiteNote],

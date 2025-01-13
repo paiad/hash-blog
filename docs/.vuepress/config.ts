@@ -28,6 +28,12 @@ export default defineUserConfig({
         // 添加您的部署域名
         // hostname: 'https://your_site_url',
 
+        notes: {
+            link: '/',
+            dir: '/more',  // 将笔记目录从 'notes' 改为 'more'
+            notes: []
+        },
+
         //配置锁的页面
         locales: {
             '/': {
