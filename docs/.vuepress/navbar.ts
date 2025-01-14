@@ -35,5 +35,12 @@ export const navbar = defineNavbarConfig([
                 icon: 'gravity-ui:paper-plane',
                 link: '/site/d2hqf0sq/'
             },
-        ],},
+        ],
+    },
+    // 留言板
+    {
+        icon:'fluent:chat-24-regular',
+        text: '留言板',
+        link:'/chat/1o0gfkei/'
+    },
 ])

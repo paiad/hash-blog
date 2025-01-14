@@ -61,6 +61,14 @@ export default defineUserConfig({
             //分页
             pagination: 6,
         },
+
+        // bulletin: {
+        //     layout: 'top-right',
+        //     title: '公告板标题',
+        //     lifetime: "always",
+        //     content: '公告板内容',
+        // },
+
         plugins: {
             watermark: {
                 enabled: false,
