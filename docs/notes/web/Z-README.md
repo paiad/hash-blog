@@ -1,7 +1,7 @@
 ---
 title: 🌈Website
 createTime: 2025/01/11 10:24:35
-permalink: /website/
+permalink: /web/
 ---
 
 <CardGrid>
@@ -9,6 +9,8 @@ permalink: /website/
 </CardGrid>
 
 
-<CardGrid>
-  <LinkCard title="HappyNewYear" href="/happy-new-year/"></LinkCard>
-</CardGrid>
+[//]: # (<CardGrid>)
+
+[//]: # (  <LinkCard title="HappyNewYear" href="/happy-new-year/"></LinkCard>)
+
+[//]: # (</CardGrid>)

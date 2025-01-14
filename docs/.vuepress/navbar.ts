@@ -21,7 +21,7 @@ export const navbar = defineNavbarConfig([
                 text: 'Leaf',
                 icon: 'emojione-v1:four-leaf-clover',
                 items: [
-                    { icon: 'eos-icons:atom-electron', text: 'UI Design', link: '/notes/website/Z-README.md' },
+                    { icon: 'eos-icons:atom-electron', text: 'UI Design', link: '/notes/web/Z-README.md' },
                     { icon: 'carbon:network-public', text: 'Network', link: '/notes/network/Z-README.md' },
                 ],
             },

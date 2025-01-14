@@ -63,10 +63,11 @@ export default defineUserConfig({
         },
 
         // bulletin: {
-        //     layout: 'top-right',
-        //     title: '公告板标题',
-        //     lifetime: "always",
-        //     content: '公告板内容',
+        //     layout: 'bottom-right',
+        //     title: 'Try to scan it',
+        //     lifetime: "once",
+        //     content: '<center><img src="https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/qrcode_with_logo.png" width="150rpx"></center>',
+        //     contentType: "text"
         // },
 
         plugins: {

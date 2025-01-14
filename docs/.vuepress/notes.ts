@@ -36,8 +36,8 @@ const networkNote = defineNoteConfig({
 })
 
 const websiteNote = defineNoteConfig({
-    dir: 'website',
-    link: '/website',
+    dir: 'web',
+    link: '/web',
 })
 
 
