@@ -16,7 +16,7 @@ git init
 
 git add -A
 
-git commit -m 'deploy 1.5.6'
+git commit -m 'deploy 1.5.8'
 
 # 如果发布到 https://<USERNAME>.github.io/<REPO>
 

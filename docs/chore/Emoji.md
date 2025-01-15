@@ -6,9 +6,9 @@ createTime: 2024/11/06 11:46:04
 permalink: /article/bdwfs36r/
 ---
 
-> 🌈 [Emoji](https://getemoji.com)
+> 🌈 [GetEmoji](https://getemoji.com)
 > 
-> 🌈 [Emoji_PLUS](https://iconduck.com/emojis/98342/slightly-smiling-face)
+> 🌈 [IconDuck](https://iconduck.com/emojis/98342/slightly-smiling-face)
 ## 😀 表情符号
 - 😀 😃 😄 😁 😆 😅 😂 🤣 🥲 😊 😇 🙂 🙃 😉 😌 🥰 😍 🤩 🥳 😘 😗 😙 😚 😋 🥲
 - 🤑 😜 🤪 😝 😛 🥺 🤗 🤭 🫢 🤫 🤔 🤐 🤨 😐 😑 😶 😏 😒 🙄 😬 🤥 😌 😔 😪 🤤

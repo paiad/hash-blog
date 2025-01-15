@@ -3,6 +3,10 @@
     --vp-font-family-mono: "MapleMono-CN-SemiBold";
 }
 
+pre, code {
+    font-family: Consolas, 'Courier New', monospace; /* Adjust this with a preferred console font */
+}
+
 /*
     格子状blog实现
 */

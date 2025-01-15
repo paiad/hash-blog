@@ -2,7 +2,7 @@
 title: 🐢Git提交类型
 createTime: 2025/01/14 16:03:03
 tags:
-  - git
+  - Git
 permalink: /article/77o0qn29/
 ---
 
