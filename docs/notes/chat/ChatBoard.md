@@ -2,7 +2,7 @@
 title: 🫧留言板
 createTime: 2025/01/14 18:56:35
 aside: false
-permalink: /chat/1o0gfkei/
+permalink: /chat/
 ---
 如果你有任何问题、建议或者反馈，欢迎通过 GitHub 提供的工具与我们联系。你可以使用 **GitHub Discussions** 或 **GitHub Issues** 来提问或讨论相关内容。
 

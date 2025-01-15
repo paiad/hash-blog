@@ -33,7 +33,7 @@ export const navbar = defineNavbarConfig([
             {
                 text: '站点导航',
                 icon: 'gravity-ui:paper-plane',
-                link: '/site/d2hqf0sq/'
+                link: '/more/site/'
             },
         ],
     },
@@ -41,6 +41,6 @@ export const navbar = defineNavbarConfig([
     {
         icon:'fluent:chat-24-regular',
         text: '留言板',
-        link:'/chat/1o0gfkei/'
+        link:'/chat/'
     },
 ])

@@ -1,7 +1,7 @@
 ---
 title: 📍站点导航
 createTime: 2025/01/13 10:12:31
-permalink: /site/d2hqf0sq/
+permalink: /more/site/
 ---
 ## Hash
 <CardGrid>

@@ -3,7 +3,7 @@ home: true
 config:
   -
     type: banner
-    banner: https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/grass_wind.png
+    banner: ./grass_wind.png
     full: ture
     bannerMask:
       light: 0.1

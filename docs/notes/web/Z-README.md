@@ -5,12 +5,5 @@ permalink: /web/
 ---
 
 <CardGrid>
-  <LinkCard title="HelloWorld" href="/hello-world/"></LinkCard>
+  <LinkCard title="HelloWorld" href="/hello/world/"></LinkCard>
 </CardGrid>
-
-
-[//]: # (<CardGrid>)
-
-[//]: # (  <LinkCard title="HappyNewYear" href="/happy-new-year/"></LinkCard>)
-
-[//]: # (</CardGrid>)
