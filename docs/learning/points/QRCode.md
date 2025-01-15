@@ -18,7 +18,7 @@ permalink: /article/dncjusfd/
 > 2. 第37行: 若你需要在二维码中添加图片请将下方的Hash.png换为你自己已存在的图片路径
 > 3. 其他关于二维码的自定义细节，请自己调整代码实现
 
-Python:
+generated_code.py:
 ```python
 import qrcode
 from PIL import Image

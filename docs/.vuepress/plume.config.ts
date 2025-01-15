@@ -30,7 +30,10 @@ export default defineThemeConfig({
   ],
   navbarSocialInclude:['github','settings'],
 
-  footer:{ message: '',copyright: '© Copyright 2024 All Rights Reserved. Proprietary Rights Reserved by Paiad.'},
+  footer:{
+    message: '🍀The second best time is now.🍀',
+    copyright: '© Copyright 2024 All Rights Reserved. Proprietary Rights Reserved by Paiad.'
+  },
 
   outline: [2,4]
 })
