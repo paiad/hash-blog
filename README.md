@@ -1,27 +1,59 @@
-# hash-site
+# Hash
 
-The Site is generated using [vuepress](https://vuepress.vuejs.org/) and [vuepress-theme-plume](https://github.com/pengzhanbo/vuepress-theme-plume)
+## Project Overview
 
-## Install
+`Hash` is a documentation management tool based on VuePress and a custom theme, designed to provide a simple and efficient platform for developers. It supports fast building and deployment, with a local preview feature to easily switch between development and production environments.
 
-```sh
+## Installation
+
+Install the dependencies using `pnpm`:
+
+```bash
 pnpm i
 ```
 
 ## Usage
 
-```sh
-# start dev server
+### Start Development Server
+
+Start the development server for real-time preview and debugging:
+
+```bash
 pnpm docs:dev
-# build for production
+```
+
+### Build Production Package
+
+Build the production-ready documentation package, preparing it for deployment:
+
+```bash
 pnpm docs:build
-# project production build in local
+```
+
+### Preview Production Service Locally
+
+After building, use this command to preview the production environment locally:
+
+```bash
 pnpm docs:project
-# update vuepress and theme
+```
+
+### Update VuePress and Theme
+
+Update VuePress and the custom theme to the latest versions:
+
+```bash
 pnpm vp-update
 ```
 
-## Documents
+## Project Repository
 
-- [vuepress](https://vuepress.vuejs.org/)
-- [vuepress-theme-plume](https://theme-plume.vuejs.press/)
+GitHub Repository: [https://github.com/Pai3141/pai.git](https://github.com/Pai3141/pai.git)
+
+## Contributing
+
+Feel free to open Issues or submit PRs. Your feedback and contributions are important for improving the project.
+
+## License
+
+This project is licensed under the MIT License.
