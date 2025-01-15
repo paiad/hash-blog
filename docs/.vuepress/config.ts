@@ -59,7 +59,7 @@ export default defineUserConfig({
 
         blog:{
             //分页
-            pagination: 6,
+            pagination: 8,
         },
 
         // bulletin: {
