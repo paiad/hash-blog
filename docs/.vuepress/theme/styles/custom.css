@@ -59,8 +59,8 @@
 
 /** 深色模式 */
 [data-theme="dark"] {
-  --vp-c-bg-alt: url('https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/sky-star.png'); /* Replace with your image URL */
-  background-image: var(--vp-c-bg-alt);
+  /*--vp-c-bg-alt: url('https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/sky-star.png'); !* Replace with your image URL *!*/
+  /*background-image: var(--vp-c-bg-alt);*/
   /*
   --vp-c-brand-1: #8cccd5;
   --vp-c-brand-2: #6aa1b7;
