@@ -3,7 +3,7 @@ home: true
 config:
   -
     type: banner
-    banner: ./grass_wind.png
+    banner: ./image/grass_wind.png
     full: ture
     bannerMask:
       light: 0.1

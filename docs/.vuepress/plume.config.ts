@@ -6,7 +6,7 @@ import {notes, notes1} from './notes'
  * @see https://theme-plume.vuejs.press/config/basic/
  */
 export default defineThemeConfig({
-  logo: './Hash.png',
+  logo: './image/Hash.png',
 
   appearance: true,
 

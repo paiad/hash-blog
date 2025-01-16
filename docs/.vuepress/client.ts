@@ -10,9 +10,8 @@ export default defineClientConfig({
     enhance({app}) {
         app.component('HelloWorld', HelloWorld)
 
-
         // 调用光标效果函数
-        createCursorEffect()
+        // createCursorEffect()
     },
 
     // 404 no-found
