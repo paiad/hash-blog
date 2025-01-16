@@ -2,8 +2,9 @@
   <div class="container">
     <div class="content">
       <h1 class="title">404 Not Found</h1>
-      <p class="description">{{ message }}</p>
       <br>
+      <br>
+      <p class="description">{{ message }}</p>
       <button @click="goHome" class="cta-button">Go Home</button>
     </div>
     <!-- 背景粒子效果 -->
@@ -13,10 +14,10 @@
 
 <script>
 export default {
-  name: 'HelloWorld',
+  name: 'NotFound',
   data() {
     return {
-      message: '',
+      message: '😣哎呀，您要找的页面可能正在休假！😣',
     };
   },
   methods: {
