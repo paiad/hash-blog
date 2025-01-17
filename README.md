@@ -48,7 +48,7 @@ pnpm vp-update
 
 ## Project Repository
 
-GitHub Repository: [https://github.com/Pai3141/pai.git](https://github.com/Pai3141/pai.git)
+GitHub Repository: [Hash🔎](https://github.com/Pai3141/hash.git)
 
 ## Contributing
 
