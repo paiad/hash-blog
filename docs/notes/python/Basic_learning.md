@@ -42,7 +42,7 @@ from decimal import Decimal
 b = 8.1 / 3  # 2.6999999999999997
 print(f"b = {b}")
 
-# Decimal解决精度丢失
+# Decimal 解决精度丢失
 a = Decimal("8.1") / 3
 print(f"a = {a}")   # 2.7
 ```
