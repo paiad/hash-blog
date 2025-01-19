@@ -23,13 +23,21 @@ const networkNote = defineNoteConfig({
     sidebar: [
         {
             icon: 'logos:ink',
-            text: 'Hash Learning',
+            text: 'Network Learning',
         },
         {
-            text: 'Network',
+            dir:'30',
+            text: '大三上',
             link: '/network/',
             items: ['NetworkSecurity','OperatingSystem','RT-SW','SDN','Snmp','Rust'],
             collapsed: true
+        },
+        {
+            dir:'31',
+            text: '大三下',
+            link: '/network/',
+            items: ['CyberDefense','MachineLearning','CloudComputing','IoT','English'],
+            collapsed: false
         },
 
     ]
