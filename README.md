@@ -1,4 +1,4 @@
-# Hash
+# Hash🔎
 
 ## Project Overview
 
