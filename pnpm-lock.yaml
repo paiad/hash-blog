@@ -12,6 +12,9 @@ importers:
         specifier: 1.0.2
         version: 1.0.2
     devDependencies:
+      '@vuepress-reco/vuepress-plugin-bgm-player':
+        specifier: ^1.1.4
+        version: 1.1.4
       '@vuepress/bundler-vite':
         specifier: 2.0.0-rc.19
         version: 2.0.0-rc.19(@types/node@22.10.6)(less@4.2.1)(sass-embedded@1.83.4)(sass@1.83.4)(stylus@0.64.0)(typescript@5.7.3)
@@ -1109,6 +1112,9 @@ packages:
     resolution: {integrity: sha512-Gr5bLiJSES0OOJ8TpiPFGLugxgTxJG3J572u06pWfNpBzmhh/1kUz+XqGYVkf7zvPDUTGNSYY0gzmztNSbrgAg==}
     peerDependencies:
       vuepress: 2.0.0-rc.19
+
+  '@vuepress-reco/vuepress-plugin-bgm-player@1.1.4':
+    resolution: {integrity: sha512-DPSTwyAKmgBu6607D7PzM0ZlW5g5TuMZPEGmSKS50AIvSTFL5AO0J33NQFT63jqVKJhKmjZ0kDB8dtegPYaNlg==}
 
   '@vuepress/bundler-vite@2.0.0-rc.19':
     resolution: {integrity: sha512-Vn0wEVRcdAld+8NJeELSwrj5JEPObRn0xpRWtAau/UwVWHmMLo16RRkTvXdjSiwpDWeP/9ztC5buyTXVoeb7Dw==}
@@ -3932,6 +3938,8 @@ snapshots:
       - supports-color
       - typescript
       - vue
+
+  '@vuepress-reco/vuepress-plugin-bgm-player@1.1.4': {}
 
   '@vuepress/bundler-vite@2.0.0-rc.19(@types/node@22.10.6)(less@4.2.1)(sass-embedded@1.83.4)(sass@1.83.4)(stylus@0.64.0)(typescript@5.7.3)':
     dependencies:

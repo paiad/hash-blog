@@ -33,7 +33,7 @@ export const navbar = defineNavbarConfig([
             {
                 text: '站点导航',
                 icon: 'gravity-ui:paper-plane',
-                link: '/more/site/'
+                link: '/more/'
             },
         ],
     },
