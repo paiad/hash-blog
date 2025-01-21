@@ -5,7 +5,7 @@ draft: true
 permalink: /article/mlom62qg/
 ---
 
-![img.png](RFID_system.png)
+![RFID 系统中相位观测原理示意图](https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/RFID.png)
 相位是近年来受到广泛重视的 RFID 位置相关信息。现有的 RFID 读写器一般对
 标签反射回来的信号进行完全相干检测，图 2-2 给出了现有读写器内广泛采用的相位
 检测原理的示意图。假定读写器发射的前向信号表示为：

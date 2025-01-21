@@ -6,4 +6,6 @@ permalink: /web/
 
 <CardGrid>
   <LinkCard title="HelloWorld" href="/hello/world/"></LinkCard>
+
+[//]: # (  <LinkCard title="CrystalLaser" href="https://herbseeker.fun"></LinkCard>)
 </CardGrid>
