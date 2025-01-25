@@ -59,5 +59,9 @@ permalink: /site/guide/
   <LinkCard icon= "ci:font" title="Chinese-font" href="https://chinese-font.netlify.app/zh-cn/cdn"></LinkCard>
 </CardGrid>
 
+## Color Match
+<CardGrid>
+    <LinkCard icon= "unjs:theme-colors" title="ColorHunt" href="https://colorhunt.co/palettes/popular"></LinkCard>
+</CardGrid>
 
 

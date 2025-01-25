@@ -36,8 +36,8 @@
   --vp-c-brand-soft: rgba(131, 208, 218, 0.314);
 
 
-  --vp-c-bg-alt: url('https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/paper-plane.jpg'); /* Replace with your image URL */
-  background-image: var(--vp-c-bg-alt);
+  /*--vp-c-bg-alt: url('https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/paper-plane.jpg'); !* Replace with your image URL *!*/
+  /*background-image: var(--vp-c-bg-alt);*/
 
   .mini-search-button {
     background: #f5faf6 url('https://') no-repeat center center; /* Set color and image */
