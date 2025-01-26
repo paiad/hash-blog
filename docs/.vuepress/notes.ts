@@ -48,15 +48,23 @@ const websiteNote = defineNoteConfig({
     link: '/web',
 })
 
+const modelNote = defineNoteConfig({
+    dir: 'model',
+    link: '/article/model',
+    sidebar: [
+        {
+            text: '大模型',
+            link: '/article/model/',
+            items: ['Begin'],
+            collapsed: true
+        },
+    ]
+})
+
 
 export const notes = defineNotesConfig({
     dir: 'notes',
     link: '/',
-    notes: [networkNote, pythonNote, websiteNote],
+    notes: [networkNote, pythonNote, websiteNote, modelNote],
 })
 
-export const notes1 = defineNotesConfig({
-    dir: 'notes',
-    link: '/',
-    notes: [networkNote, pythonNote, websiteNote],
-})

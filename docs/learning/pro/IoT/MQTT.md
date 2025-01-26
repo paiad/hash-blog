@@ -14,3 +14,5 @@ MQTT是（Message Queuing Telemetry Transport，消息队列遥测传输协议�
 MQTT的主要特性：
 1. 使用发布订阅的模式，可以实现一对多的消息通信。
 2. 
+
+
