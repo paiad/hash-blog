@@ -5,15 +5,23 @@ const pythonNote = defineNoteConfig({
     link: '/python',
     sidebar: [
         {
-            icon: 'logos:ink',
+            icon: 'skill-icons:nix-light',
             text: 'Hash Learning',
         },
         {
-        text: '🐛Python',
-        link: '/python/',
-        items: ['Basic_learning', 'Deep_and_shallow_copy', 'Iterator_and_generator', 'Examination', 'LeetCode101'],
-        collapsed: true
-    },
+            dir: 'base',
+            text: '🐛Python',
+            link: '/python/',
+            items: ['Basic_learning', 'Deep_and_shallow_copy', 'Iterator_and_generator', 'Examination', 'LeetCode101'],
+            collapsed: true
+        },
+        {
+            dir: 'machine-learning',
+            text: '🪀Machine Learning',
+            link: '/python/',
+            items: [],
+            collapsed: true
+        },
     ]
 })
 
@@ -26,17 +34,17 @@ const networkNote = defineNoteConfig({
             text: 'Network Learning',
         },
         {
-            dir:'30',
+            dir: '30',
             text: '大三上',
             link: '/network/',
-            items: ['NetworkSecurity','OperatingSystem','RT-SW','SDN','Snmp','Rust'],
+            items: ['NetworkSecurity', 'OperatingSystem', 'RT-SW', 'SDN', 'Snmp', 'Rust'],
             collapsed: true
         },
         {
-            dir:'31',
+            dir: '31',
             text: '大三下',
             link: '/network/',
-            items: ['CyberDefense','MachineLearning','CloudComputing','IoT','English'],
+            items: ['CyberDefense', 'MachineLearning', 'CloudComputing', 'IoT', 'English'],
             collapsed: false
         },
 

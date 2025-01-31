@@ -14,4 +14,4 @@ permalink: /article/model/
 4. 大模型的工作流程
 
 5. 大模型的应用
-   :::
+:::
