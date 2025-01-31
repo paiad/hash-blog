@@ -11,16 +11,16 @@ const pythonNote = defineNoteConfig({
         {
             dir: 'base',
             text: '🐛Python',
-            link: '/python/',
+            link: '/python/base/',
             items: ['Basic_learning', 'Deep_and_shallow_copy', 'Iterator_and_generator', 'Examination', 'LeetCode101'],
             collapsed: true
         },
         {
             dir: 'machine-learning',
             text: '🪀Machine Learning',
-            link: '/python/',
-            items: [],
-            collapsed: true
+            link: '/python/ml/',
+            items: ['Linear-Regression'],
+            collapsed: false
         },
     ]
 })
