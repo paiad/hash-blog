@@ -3,17 +3,22 @@ title: 🐋本地部署大模型
 createTime: 2025/01/31 00:17:58
 permalink: /article/pjrtphxj/
 aside: left
+tags:
+  - Ollama
+  - Open WebUI
+  - DeepSeek
 ---
 在Windows中部署属大语言模型: [Ollama + open-webui + deepseek-r1](https://blog.csdn.net/qq_29371275/article/details/145368168)
 - Ollama：是一款开源的聊天机器人框架，主要目标是简化大型语言模型（LLMs）的部署和运行流程，支持多种语言模型，如 Llama 2、Code Llama、Mistral 和 Gemma 等，可让用户在本地机器或私有服务器上轻松运行这些模型，无需依赖云服务，具有简化部署、跨平台支持、自定义和扩展性等特点。
 - Open WebUI：是一个可扩展、功能丰富、用户友好的自托管 WebUI。旨在与大型语言模型进行交互，特别是那些由 Ollama 或与 OpenAI API 兼容的服务所支持的模型。它为用户提供了一个直观的界面来与语言模型进行交互，支持全 markdown 和 latex，能增强 LLM 体验的互动功能，还支持本地和远程的检索增强生成（RAG）集成等。
 - ==Ollama== 负责模型的部署和运行，==Open WebUI== 负责提供交互界面和其他辅助功能
+
 ### Steps
 ::: steps
 1. 下载并安装Ollama
 2. pip/conda下载Open WebUI
 3. 在终端执行命令open-webui serve
-4. 访问localhost:8080
+4. 访问[localhost:8080](http://localhost:8080)
 :::
 
 ### Ollama
@@ -25,6 +30,7 @@ aside: left
 ### Open WebUI
 > Github: [Open WebUI](https://github.com/open-webui/open-webui) 
 
+进入<Icon name="logos:pycharm" />Pycharm，在Command Prompt或者PowerShell中输入以下命令：
 ::: code-tabs
 @tab official
 ```sh
@@ -42,3 +48,29 @@ pip install -i https://mirrors.aliyun.com/pypi/simple/ open-webui
 pip install -i https://mirrors.tuna.tsinghua.edu.cn/pypi/web/simple open-webui
 ```
 :::
+--- 
+### Edit Configurations
+Pycharm的Edit Configurations配置：
+::: steps
+1. 步骤1
+
+    Execute: Script text
+
+2. 步骤2
+
+    Script text: open-webui serve
+
+3. 步骤3
+
+    Working directory: E:/PYCHARM/Ollama
+
+4. 步骤4
+
+    Interpreter path: powershell.exe
+
+5. 步骤5
+
+   - [x] Execute in the terminal: 勾选
+:::
+
+![Edit Configurations](https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/Ollama-1.png)

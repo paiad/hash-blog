@@ -4,10 +4,10 @@ const pythonNote = defineNoteConfig({
     dir: 'python',
     link: '/python',
     sidebar: [
-        {
-            icon: 'skill-icons:nix-light',
-            text: 'Hash Learning',
-        },
+        // {
+        //     icon: 'skill-icons:nix-light',
+        //     text: 'Hash Learning',
+        // },
         {
             dir: 'base',
             text: '🐛Python',
@@ -29,10 +29,10 @@ const networkNote = defineNoteConfig({
     dir: 'network',
     link: '/network',
     sidebar: [
-        {
-            icon: 'logos:ink',
-            text: 'Network Learning',
-        },
+        // {
+        //     icon: 'logos:ink',
+        //     text: 'Network Learning',
+        // },
         {
             dir: '30',
             text: '大三上',
