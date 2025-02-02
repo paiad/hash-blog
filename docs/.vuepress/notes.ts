@@ -3,6 +3,7 @@ import {defineNoteConfig, defineNotesConfig} from 'vuepress-theme-plume'
 const pythonNote = defineNoteConfig({
     dir: 'python',
     link: '/python',
+    // sidebar: "auto",
     sidebar: [
         // {
         //     icon: 'skill-icons:nix-light',
@@ -28,27 +29,28 @@ const pythonNote = defineNoteConfig({
 const networkNote = defineNoteConfig({
     dir: 'network',
     link: '/network',
-    sidebar: [
-        // {
-        //     icon: 'logos:ink',
-        //     text: 'Network Learning',
-        // },
-        {
-            dir: '30',
-            text: '大三上',
-            link: '/network/',
-            items: ['NetworkSecurity', 'OperatingSystem', 'RT-SW', 'SDN', 'Snmp', 'Rust'],
-            collapsed: true
-        },
-        {
-            dir: '31',
-            text: '大三下',
-            link: '/network/',
-            items: ['CyberDefense', 'MachineLearning', 'CloudComputing', 'IoT', 'English'],
-            collapsed: false
-        },
-
-    ]
+    sidebar: "auto"
+    // sidebar: [
+    //     // {
+    //     //     icon: 'logos:ink',
+    //     //     text: 'Network Learning',
+    //     // },
+    //     {
+    //         dir: '30',
+    //         text: '大三上',
+    //         link: '/network/',
+    //         items: ['NetworkSecurity', 'OperatingSystem', 'RT-SW', 'SDN', 'Snmp', 'Rust'],
+    //         collapsed: true
+    //     },
+    //     {
+    //         dir: '31',
+    //         text: '大三下',
+    //         link: '/network/',
+    //         items: ['CyberDefense', 'MachineLearning', 'CloudComputing', 'IoT', 'English'],
+    //         collapsed: false
+    //     },
+    //
+    // ]
 })
 
 const websiteNote = defineNoteConfig({
