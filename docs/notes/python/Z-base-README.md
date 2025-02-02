@@ -1,5 +1,5 @@
 ---
-title: 🐛Python
+title: 🐛Python Base
 createTime: 2024/11/04 10:59:31
 aside: false 
 permalink: /python/base/

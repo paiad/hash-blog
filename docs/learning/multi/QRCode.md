@@ -22,7 +22,7 @@ permalink: /article/dncjusfd/
 
 
 
-generated_code.py:
+generated_qrcode.py:
 ```python
 import qrcode
 from PIL import Image
