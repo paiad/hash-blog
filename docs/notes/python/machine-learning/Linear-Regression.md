@@ -2,8 +2,9 @@
 title: 线性回归
 createTime: 2025/01/31 23:37:06
 permalink: /python/cdvav9jp/
-aside: false
+#aside: false
 ---
+[普通最小二乘法（OLS）回归](https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html)
 ::: steps 
 1. Step1：回归问题概述
 
@@ -64,3 +65,224 @@ aside: false
 
 :::
 
+::: code-tabs
+@tab plot_ols_cn.py
+``` python
+"""
+==============================
+Ordinary Least Squares Example
+最小二乘法示例
+==============================
+
+This example shows how to use the ordinary least squares (OLS) model
+called :class:`~sklearn.linear_model.LinearRegression` in scikit-learn.
+这个例子向我们展示如何在scikit-learn使用最小二乘法模型。
+
+For this purpose, we use a single feature from the diabetes dataset and try to
+predict the diabetes progression using this linear model. We therefore load the
+diabetes dataset and split it into training and test sets.
+为了达到这个目的，我们从糖尿病数据集中利用了一个特征和尝试用线性模型去预测糖尿病进程。因此
+我们加载了这个糖尿病数据集并将他们分为了训练集和测试集。
+
+Then, we fit the model on the training set and evaluate its performance on the test
+set and finally visualize the results on the test set.
+之后，我们利用模型对训练集进行拟合并在测试集中评估他的性能，最后可视化测试集结果。
+"""
+
+# %%
+# Data Loading and Preparation
+# 数据加载与预处理
+# ----------------------------
+#
+# Load the diabetes dataset. For simplicity, we only keep a single feature in the data.
+# Then, we split the data and target into training and test sets.
+# 加载糖尿病数据集。为了简化，我们只保留了数据中的一个特征。
+# 之后我们将数据和目标分为了训练集和测试集。
+
+import matplotlib
+matplotlib.use('TkAgg')
+from sklearn.datasets import load_diabetes
+from sklearn.model_selection import train_test_split
+# X 是特征矩阵，包含多个特征（列）； y 是目标向量，表示糖尿病进展的定量测量
+X, y = load_diabetes(return_X_y=True) # 加载糖尿病数据集
+X = X[:, [2]]  # Use only one feature
+# 测试集包含 20 个样本，且不进行随机打乱
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=20, shuffle=False) 
+
+# %%
+# Linear regression model
+# 线性回归模型
+# -----------------------
+#
+# We create a linear regression model and fit it on the training data. Note that by
+# default, an intercept is added to the model. We can control this behavior by setting
+# the `fit_intercept` parameter.
+# 我们创建了一个线性回归模型并将它用在训练集上进行数据拟合。
+# 默认情况下，模型会添加一个截距。我们可以通过设置这个`fit_intercept`参数控制这一行为。
+
+from sklearn.linear_model import LinearRegression
+# 线性回归，进行数据拟合
+regressor = LinearRegression().fit(X_train, y_train)
+
+# %%
+# Model evaluation
+# 模型评价
+# ----------------
+#
+# We evaluate the model's performance on the test set using the mean squared error
+# and the coefficient of determination.
+# 我们使用均方误差和确定系数评估这个模型在测试集上的表现。
+
+
+from sklearn.metrics import mean_squared_error, r2_score
+
+y_pred = regressor.predict(X_test)
+
+print(f"Mean squared error: {mean_squared_error(y_test, y_pred):.2f}")
+print(f"Coefficient of determination: {r2_score(y_test, y_pred):.2f}")
+
+# %%
+# Plotting the results
+# --------------------
+#
+# Finally, we visualize the results on the train and test data.
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(ncols=2, figsize=(10, 5), sharex=True, sharey=True)
+
+ax[0].scatter(X_train, y_train, label="Train data points")
+ax[0].plot(
+    X_train,
+    regressor.predict(X_train),
+    linewidth=3,
+    color="tab:orange",
+    label="Model predictions",
+)
+ax[0].set(xlabel="Feature", ylabel="Target", title="Train set")
+ax[0].legend()
+
+ax[1].scatter(X_test, y_test, label="Test data points")
+ax[1].plot(X_test, y_pred, linewidth=3, color="tab:orange", label="Model predictions")
+ax[1].set(xlabel="Feature", ylabel="Target", title="Test set")
+ax[1].legend()
+
+fig.suptitle("Linear Regression")
+
+plt.show()
+
+# %%
+# Conclusion
+# ----------
+#
+# The trained model corresponds to the estimator that minimizes the mean squared error
+# between the predicted and the true target values on the training data. We therefore
+# obtain an estimator of the conditional mean of the target given the data.
+#
+# Note that in higher dimensions, minimizing only the squared error might lead to
+# overfitting. Therefore, regularization techniques are commonly used to prevent this
+# issue, such as those implemented in :class:`~sklearn.linear_model.Ridge` or
+# :class:`~sklearn.linear_model.Lasso`.
+
+```
+
+@tab plot_ols.py
+``` python
+"""
+==============================
+Ordinary Least Squares Example
+==============================
+
+This example shows how to use the ordinary least squares (OLS) model
+called :class:`~sklearn.linear_model.LinearRegression` in scikit-learn.
+
+For this purpose, we use a single feature from the diabetes dataset and try to
+predict the diabetes progression using this linear model. We therefore load the
+diabetes dataset and split it into training and test sets.
+
+Then, we fit the model on the training set and evaluate its performance on the test
+set and finally visualize the results on the test set.
+"""
+# Authors: The scikit-learn developers
+# SPDX-License-Identifier: BSD-3-Clause
+
+# %%
+# Data Loading and Preparation
+# ----------------------------
+#
+# Load the diabetes dataset. For simplicity, we only keep a single feature in the data.
+# Then, we split the data and target into training and test sets.
+import matplotlib
+matplotlib.use('TkAgg')
+from sklearn.datasets import load_diabetes
+from sklearn.model_selection import train_test_split
+X, y = load_diabetes(return_X_y=True)
+X = X[:, [2]]  # Use only one feature
+X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=20, shuffle=False)
+
+# %%
+# Linear regression model
+# -----------------------
+#
+# We create a linear regression model and fit it on the training data. Note that by
+# default, an intercept is added to the model. We can control this behavior by setting
+# the `fit_intercept` parameter.
+from sklearn.linear_model import LinearRegression
+
+regressor = LinearRegression().fit(X_train, y_train)
+
+# %%
+# Model evaluation
+# ----------------
+#
+# We evaluate the model's performance on the test set using the mean squared error
+# and the coefficient of determination.
+from sklearn.metrics import mean_squared_error, r2_score
+
+y_pred = regressor.predict(X_test)
+
+print(f"Mean squared error: {mean_squared_error(y_test, y_pred):.2f}")
+print(f"Coefficient of determination: {r2_score(y_test, y_pred):.2f}")
+
+# %%
+# Plotting the results
+# --------------------
+#
+# Finally, we visualize the results on the train and test data.
+import matplotlib.pyplot as plt
+
+fig, ax = plt.subplots(ncols=2, figsize=(10, 5), sharex=True, sharey=True)
+
+ax[0].scatter(X_train, y_train, label="Train data points")
+ax[0].plot(
+    X_train,
+    regressor.predict(X_train),
+    linewidth=3,
+    color="tab:orange",
+    label="Model predictions",
+)
+ax[0].set(xlabel="Feature", ylabel="Target", title="Train set")
+ax[0].legend()
+
+ax[1].scatter(X_test, y_test, label="Test data points")
+ax[1].plot(X_test, y_pred, linewidth=3, color="tab:orange", label="Model predictions")
+ax[1].set(xlabel="Feature", ylabel="Target", title="Test set")
+ax[1].legend()
+
+fig.suptitle("Linear Regression")
+
+plt.show()
+
+# %%
+# Conclusion
+# ----------
+#
+# The trained model corresponds to the estimator that minimizes the mean squared error
+# between the predicted and the true target values on the training data. We therefore
+# obtain an estimator of the conditional mean of the target given the data.
+#
+# Note that in higher dimensions, minimizing only the squared error might lead to
+# overfitting. Therefore, regularization techniques are commonly used to prevent this
+# issue, such as those implemented in :class:`~sklearn.linear_model.Ridge` or
+# :class:`~sklearn.linear_model.Lasso`.
+
+:::
