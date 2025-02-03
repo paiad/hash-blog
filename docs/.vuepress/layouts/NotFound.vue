@@ -159,7 +159,7 @@ export default {
   left: 0;
   width: 100%;
   height: 100%;
-  background: radial-gradient(circle, rgba(255, 255, 255, 0.05) 20%, rgba(0, 0, 0, 0.3) 80%);
+  background-image: url("https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/grass_wind.png");
   z-index: 1;
   pointer-events: none;
   opacity: 0.1;
