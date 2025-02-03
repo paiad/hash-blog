@@ -10,12 +10,12 @@ tags:
 $$损失函数：J(w,b)=\frac{1}{m}\sum_{i=1}^m(y_i-(w^Tx_i+b))^2$$
 
 就其二本质，笔者给出了自己的理解，如下所示：
-1. 最小二乘法的本质就是
+1. [最小二乘法](/python/cdvav9jp/)的本质就是
    - 对$w$，$b$求偏导，即$\frac{\partial J(w,b)}{\partial w}=\frac{\partial J(w,b)}{\partial b}=0$
    - 求解有n个未知数的n元一次线性方程
    - 最后求得n个解，将他们一一对应于$w$，$b$
 
-2. 梯度下降算法的本质就是
+2. [梯度下降算法](/python/2moeut57/)的本质就是
    - 初始化一组参数($w$，$b$)
    - 对$w$，$b$求偏导，即$\frac{\partial J(w,b)}{\partial w}=\frac{\partial J(w,b)}{\partial b}$
    - 更新$w$，$b$参数，即$w\leftarrow w-\alpha\nabla_wJ(w,b)$，$b\leftarrow b-\alpha\nabla_bJ(w,b)$

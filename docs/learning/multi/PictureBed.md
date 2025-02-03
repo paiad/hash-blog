@@ -46,5 +46,5 @@ tags:
 
    picgo中设置自定义域名：<Badge type="tip" text="https://cdn.jsdelivr.net/gh/用户名/仓库名@分支名" />
     
-   示例Example：<Badge type="tip" text="https://cdn.jsdelivr.net/gh/Paiad/PictureBed@main/image/xyz.png" />
+   示例Example：<Badge type="tip" text="https://cdn.jsdelivr.net/gh/username/PictureBed@main/image/xyz.png" />
 :::

@@ -11,7 +11,7 @@ const pythonNote = defineNoteConfig({
         // },
         {
             dir: 'base',
-            text: '🐛Python',
+            text: '🐛Python Base',
             link: '/python/base/',
             items: ['Basic_learning', 'Deep_and_shallow_copy', 'Iterator_and_generator', 'Examination', 'LeetCode101'],
             collapsed: true
