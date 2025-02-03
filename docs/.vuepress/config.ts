@@ -29,12 +29,6 @@ export default defineUserConfig({
         // 添加您的部署域名
         // hostname: 'https://your_site_url',
 
-        notes: {
-            link: '/',
-            dir: '/more',  // 将笔记目录从 'notes' 改为 'more'
-            notes: []
-        },
-
         //配置锁的页面
         locales: {
             '/': {
@@ -89,7 +83,7 @@ export default defineUserConfig({
              * @see https://theme-plume.vuejs.press/config/plugins/markdown-enhance/
              */
             markdownEnhance: {
-                demo: true,
+                demo: false
                 //   include: true,
                 //   chart: true,
                 //   echarts: true,
@@ -102,6 +96,7 @@ export default defineUserConfig({
              * @see https://theme-plume.vuejs.press/config/plugin/markdown-power/
              */
             markdownPower: {
+                demo: true,
                 pdf: true,
                 caniuse: true,
                 plot: true,
