@@ -4,7 +4,6 @@ createTime: 2025/01/31 23:37:06
 permalink: /python/cdvav9jp/
 #aside: false
 ---
-[普通最小二乘法（OLS）回归](https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html)
 ::: steps 
 1. Step1：回归问题概述
 
@@ -61,8 +60,8 @@ permalink: /python/cdvav9jp/
    >
    >我们需要做的就是怎么调整$\hat w$，使这个平方之和最小。
    >
-   >tips：最小二乘法是一种通过最小化数据点和回归模型之间误差的平方和来求解回归模型参数的方法，即使MSE最小化。(MSE: 均方误差)
-
+   >tips：[普通最小二乘法（OLS）](https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html)是一种通过最小化数据点和回归模型之间误差的平方和来求解回归模型参数的方法，即使MSE最小化。(MSE: 均方误差)
+   > 以几何的角度来说，最小二乘法就是在多维空间中找到一个最优的超平面，使得数据点与该超平面之间的误差最小化。
 :::
 
 ::: code-tabs
