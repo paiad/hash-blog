@@ -9,9 +9,8 @@ export default defineThemeConfig({
   logo: './image/Hash.png',
 
   appearance: true,
-
   profile: {
-    avatar: './image/Hash.png',
+    avatar: 'https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/Hash.png',
     name: 'Paiad',
     description: '',
     circle: true,
