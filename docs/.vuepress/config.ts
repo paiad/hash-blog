@@ -107,11 +107,11 @@ export default defineUserConfig({
                 replit: true,
                 codeSandbox: true,
                 jsfiddle: true,
-                // repl: {
-                //     go: true,
-                //     rust: true,
-                //     kotlin: true,
-                // },
+                repl: {
+                    go: true,
+                    rust: true,
+                    kotlin: true,
+                },
             },
 
             /**
