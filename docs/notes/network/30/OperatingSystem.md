@@ -4,7 +4,7 @@ createTime: 2024/12/24 16:21:23
 permalink: /network/qdes0sge/
 ---
 
-@[pdf width="100%" ratio="10:7" zoom="25"](./pdf/OS.pdf)
+[//]: # (@[pdf width="100%" ratio="10:7" zoom="25"]&#40;./pdf/OS.pdf&#41;)
 
 ## 1.操作系统概述
 操作系统(英语:Operating System，缩写:0S)是一组主管并控制计算机操作、运用和运行硬件、
