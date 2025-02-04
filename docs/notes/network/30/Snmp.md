@@ -3,7 +3,8 @@ title: 🐣计算机网络管理
 createTime: 2024/12/06 11:37:01
 permalink: /network/n0rmn2lz/
 ---
-@[pdf width="100%" ratio="10:7" zoom="25"](./pdf/Snmp.pdf)
+
+[//]: # (@[pdf width="100%" ratio="10:7" zoom="25"]&#40;./pdf/Snmp.pdf&#41;)
 ## 1.网络管理概论
 ### 1.1 网络管理的几个概念
 <mark>网络管理的任务：</mark>

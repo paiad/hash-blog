@@ -11,7 +11,7 @@ export default defineThemeConfig({
   appearance: true,
 
   profile: {
-    avatar: 'https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/Hash.png',
+    avatar: './image/Hash.png',
     name: 'Paiad',
     description: '',
     circle: true,
