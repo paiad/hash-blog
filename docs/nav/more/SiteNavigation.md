@@ -21,6 +21,11 @@ permalink: /site/guide/
     <LinkCard icon="fxemoji:spurtingwhale" title="DeepSeek" href="https://chat.deepseek.com"></LinkCard>
 </CardGrid>
 
+## API Platform
+<CardGrid>
+    <LinkCard icon="fxemoji:spurtingwhale" title="DeepSeek" href="https://platform.deepseek.com"></LinkCard>
+</CardGrid>
+
 ## Clash
 <CardGrid>
   <LinkCard icon= "arcticons:clash" title="Clash" href="https://doc.miyun.app"></LinkCard>
