@@ -23,7 +23,7 @@ permalink: /site/guide/
 
 ## API Platform
 <CardGrid>
-    <LinkCard icon="fxemoji:spurtingwhale" title="DeepSeek" href="https://platform.deepseek.com"></LinkCard>
+    <LinkCard icon="fxemoji:spurtingwhale" title="DeepSeek Platform" href="https://platform.deepseek.com"></LinkCard>
 </CardGrid>
 
 ## Clash
