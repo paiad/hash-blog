@@ -12,12 +12,22 @@ export default defineUserConfig({
         [
             'link', {rel: 'icon', href: 'https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/Hash.png'}
         ],
+
         // 引入自定义字体
         [
             'link',
             {
                 rel: 'stylesheet',
                 href: 'https://chinese-fonts-cdn.deno.dev/packages/maple-mono-cn/dist/MapleMono-CN-SemiBold/result.css'
+            }
+        ],
+
+        // 引入 Google 字体 Dancing Script
+        [
+            'link',
+            {
+                rel: 'stylesheet',
+                href: 'https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'
             }
         ]
     ],
