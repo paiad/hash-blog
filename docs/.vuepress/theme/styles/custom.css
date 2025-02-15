@@ -25,6 +25,21 @@
   --vp-c-text-2: rgba(60, 60, 67, 0.78);
   --vp-c-text-3: rgba(60, 60, 67, 0.56);
   */
+
+  /*
+  button
+  */
+  --vp-button-brand-hover-bg: rgb(68, 92, 128,0.3);
+  --vp-button-brand-bg: rgb(68, 92, 128,0.2);
+
+  --vp-button-brand-border: rgb(68, 92, 128);
+  --vp-button-brand-hover-border: rgb(65, 136, 180);
+  .vp-button.alt[data-v-f03b22cd] {
+    background-color: rgb(68, 92, 128,0.2);
+  }
+  --vp-button-alt-border: rgb(68, 92, 128);
+  --vp-button-alt-hover-border: rgb(65, 136, 180);
+
 }
 
 /** 浅色模式 */
@@ -39,10 +54,14 @@
   /*--vp-c-bg-alt: url('https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/paper-plane.jpg'); !* Replace with your image URL *!*/
   /*background-image: var(--vp-c-bg-alt);*/
 
-  .mini-search-button {
-    background: #f5faf6 url('https://') no-repeat center center; /* Set color and image */
-    background-size: cover; /* Ensure the image covers the background */
-  }
+  /*
+  搜索按钮
+  */
+  /*.mini-search-button {*/
+  /*  background: #f5faf6 url('https://') no-repeat center center; !* Set color and image *!*/
+  /*  background-size: cover; !* Ensure the image covers the background *!*/
+  /*}*/
+
   /*
   --vp-c-bg: #1b1b1f;
   --vp-c-bg-alt: #161618;
@@ -80,4 +99,5 @@
   --vp-c-text-2: rgba(235, 235, 245, 0.6);
   --vp-c-text-3: rgba(235, 235, 245, 0.38);
   */
+
 }
