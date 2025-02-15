@@ -152,7 +152,7 @@ export default {
   }
 }
 
-/* 背景粒子效果 */
+/* 背景粒子效果
 .particle-background {
   position: absolute;
   top: 0;
@@ -160,6 +160,18 @@ export default {
   width: 100%;
   height: 100%;
   background-image: url("https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/grass_wind.png");
+  z-index: 1;
+  pointer-events: none;
+  opacity: 0.1;
+  animation: particleAnimation 3s linear infinite;
+}*/
+
+.particle-background {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
   z-index: 1;
   pointer-events: none;
   opacity: 0.1;
