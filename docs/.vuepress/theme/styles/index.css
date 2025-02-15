@@ -4,7 +4,7 @@
 }
 
 pre, code {
-    font-family: Consolas, 'Courier New', monospace; /* Adjust this with a preferred console font */
+    font-family: Consolas, 'Courier New', monospace; /* 代码块字体配置 */
 }
 
 /*
@@ -43,7 +43,8 @@ pre, code {
 
 
 
-[data-theme="dark"] .vp-doc-container {
+[data-theme="dark"]
+.vp-doc-container {
     --vp-doc-blog-bg: rgba(30, 120, 120, 7%);
 }
 

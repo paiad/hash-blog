@@ -2,7 +2,7 @@
 title: 🐋本地部署大模型
 createTime: 2025/01/31 00:17:58
 permalink: /article/pjrtphxj/
-aside: left
+#aside: left
 tags:
   - Ollama
   - Open WebUI
