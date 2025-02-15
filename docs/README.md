@@ -3,13 +3,13 @@ home: true
 config:
   -
     type: banner
-    banner: ./image/grass_wind.png
+    banner: ./image/star-mountain.jpg
     full: ture
     bannerMask:
-      light: 0.1
+      light: 0
       dark: 0.3
     hero:
-      name: Hash🔎
+      name: Paiad
       tagline: 种一棵树最好的时间是十年前，其次是现在。
       text: "The best time to plant a tree was 10 years ago.The second best time is now."
       actions:
