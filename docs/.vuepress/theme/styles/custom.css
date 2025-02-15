@@ -36,19 +36,10 @@
 
   --vp-button-brand-border: rgb(68, 92, 128);
   --vp-button-brand-hover-border: rgb(65, 136, 180);
-  .vp-button.alt[data-v-f03b22cd] {
-    color: rgba(255, 255, 245, 0.86);
-    background-color: rgb(68, 92, 128,0.5);
-  }
+
   --vp-button-alt-border: rgb(68, 92, 128);
   --vp-button-alt-hover-border: rgb(65, 136, 180);
 
-
-
-  .vp-home-banner .content .hero-tagline[data-v-06fa4a2d]{
-    font-family: 'Dancing Script', cursive;
-    font-weight: bold;
-  }
 }
 
 /** 浅色模式 */
