@@ -27,13 +27,12 @@
   */
 
   /*
-  button
+  homepage左右两个点击 button
   1. Welcome to My Blog →
   2. Go To Github
   */
   --vp-button-brand-hover-bg: rgb(68, 92, 128,0.45);
   --vp-button-brand-bg: rgb(68, 92, 128,0.5);
-
   --vp-button-brand-border: rgb(68, 92, 128);
   --vp-button-brand-hover-border: rgb(65, 136, 180);
 
@@ -41,7 +40,7 @@
   --vp-button-alt-hover-border: rgb(65, 136, 180);
   --vp-button-alt-hover-bg: rgb(68, 92, 128,0.5);
 
-  /* 点击 */
+  /* homepage左右两个点击按钮 */
   --vp-button-brand-active-bg: rgb(68, 92, 128,0.45);;
   --vp-button-alt-active-bg: rgb(68, 92, 128,0.45);
 
@@ -60,6 +59,8 @@
     font-family: 'Dancing Script', cursive;
     /*font-weight: bold;*/
   }
+  --vp-button-alt-hover-text: rgba(255, 255, 255);
+  --vp-button-alt-active-text: rgba(255, 255, 255);
 
 }
 
