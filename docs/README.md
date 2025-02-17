@@ -20,7 +20,7 @@ config:
           theme: alt
           text: 📍 Go To Github
           link: https://github.com
-  - type: blog
+#  - type: blog
 
 ---
 

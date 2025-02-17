@@ -19,7 +19,8 @@ tags:
 <LinkCard icon="skill-icons:docker" title="Docker Hub" href="https://hub.docker.com/"></LinkCard>
 </CardGrid>
 
-### Run a new container
+### Docker Desktop
+#### Run a new container
 <CardGrid>
     <ImageCard
     image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/docker-options.png"
