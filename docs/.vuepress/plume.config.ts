@@ -28,14 +28,14 @@ export default defineThemeConfig({
         {icon: {svg: '<span class="vpi-social-iconify"></span>', name: 'iconify'}, link: 'https://icon-sets.iconify.design/'},
         {
             icon: {svg: '<span class="vpi-social-settings"></span>', name: 'settings'},
-            link: 'https://theme-plume.vuejs.press/config/intro'
+            link: 'https://theme-plume.vuejs.press/guide/intro/'
         },
     ],
     navbarSocialInclude: ['github', 'emoji', 'settings','iconify'],
 
     footer: {
-        message: '🍀The second best time is now.🍀',
-        copyright: `© Copyright ${new Date().getFullYear()} All Rights Reserved. Proprietary Rights Reserved by <a>Paiad</a>.`
+        message: '🍀𝓣𝓱𝓮 𝓼𝓮𝓬𝓸𝓷𝓭 𝓫𝓮𝓼𝓽 𝓽𝓲𝓶𝓮 𝓲𝓼 𝓷𝓸𝔀.🍀',
+        copyright: `© Copyright ${new Date().getFullYear()} All Rights Reserved. Proprietary Rights Reserved by <a>𝑷𝒂𝒊𝒂𝒅</a>.`
     },
 
     outline: [2, 4]
