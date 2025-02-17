@@ -76,4 +76,10 @@ permalink: /site/guide/
     <LinkCard icon= "unjs:theme-colors" title="ColorHunt" href="https://colorhunt.co/palettes/popular"></LinkCard>
 </CardGrid>
 
-
+## Mind Map
+<CardGrid>
+    <LinkCard icon= "vscode-icons:file-type-mermaid" title="Mermaid Docs" href="https://mermaid.nodejs.cn/intro/"></LinkCard>
+</CardGrid>
+<CardGrid>
+    <LinkCard icon= "vscode-icons:file-type-mermaid" title="Mermaid Online Website" href="https://mermaid.live/edit"></LinkCard>
+</CardGrid>
