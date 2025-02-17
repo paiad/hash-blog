@@ -5,7 +5,7 @@ import {plumeTheme} from 'vuepress-theme-plume'
 export default defineUserConfig({
     base: '/',
     lang: 'zh-CN',
-    title: 'Hash',
+    title: '𝑯𝒂𝒔𝒉',
     description: '',
     head: [
         // 设置 favor.ico，.vuepress/public 下

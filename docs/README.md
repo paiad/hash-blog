@@ -9,7 +9,7 @@ config:
       light: 0
       dark: 0.3
     hero:
-      name: Paiad
+      name: 𝑷𝒂𝒊𝒂𝒅
       tagline: "The best time to plant a tree was 10 years ago.The second best time is now."
       actions:
         -
