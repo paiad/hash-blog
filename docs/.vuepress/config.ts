@@ -93,7 +93,8 @@ export default defineUserConfig({
              * @see https://theme-plume.vuejs.press/config/plugins/markdown-enhance/
              */
             markdownEnhance: {
-                demo: false
+                demo: false,
+                mermaid: true,
                 //   include: true,
                 //   chart: true,
                 //   echarts: true,
