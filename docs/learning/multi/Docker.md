@@ -8,18 +8,116 @@ tags:
 ### Docker
 >Docker 是一个开源平台，用于容器化应用程序。它将应用及其依赖打包成一个轻量级、可移植的容器，可以在任何环境中一致运行。
 
-### Relevant Website
-==Docker Desktop Download:==
-<CardGrid>
-<LinkCard icon="skill-icons:docker" title="Docker Desktop" href="https://www.docker.com/get-started/"></LinkCard>
-</CardGrid>
+官网： [Docker](https://docs.docker.com)
 
-==Docker Hub==
-<CardGrid>
-<LinkCard icon="skill-icons:docker" title="Docker Hub" href="https://hub.docker.com/"></LinkCard>
-</CardGrid>
+- 镜像（image）：相当于一个模板，通过这个模板可以创建多个容器
+- 容器（container）：通过镜像进行创建，容器化应用程序
+- 仓库（repository）：存放镜像的地方
+
+>[!important]
+> Docker的工作机制：
+> Docker的守护进程运行在宿主机上，可以通过宿主机的与其端口映射，访问到所创建的docker容器。
+### Docker Hub
+>[Docker Hub](https://hub.docker.com/) 是 Docker 官方提供的一个云平台，用于存储和分享 Docker 镜像。
+> 它是 Docker 的中央仓库，用户可以在上面查找、下载、上传自己的 Docker 镜像。
+
+### Docker下载(CentOS)
+CentOS安装Docker： [Install Docker Engine on CentOS](https://docs.docker.com/engine/install/centos/)
+
+>1. 卸载旧版本Docker
+>```shell
+>sudo yum remove docker \
+>                  docker-client \
+>                  docker-client-latest \
+>                  docker-common \
+>                  docker-latest \
+>                  docker-latest-logrotate \
+>                  docker-logrotate \
+>                  docker-engine
+>```
+>
+>2. 设置 Docker 仓库
+>```shell
+>sudo yum -y install yum-utils
+>sudo yum-config-manager --add-repo http://mirrors.aliyun.com/docker-ce/linux/centos/docker-ce.repo
+>```
+>
+>3. 安装 Docker
+>```shell
+>sudo yum install docker-ce docker-ce-cli containerd.io
+>```
+>
+>4. 启动 Docker 服务
+>```shell
+>sudo systemctl start docker
+>sudo systemctl enable docker
+>```
+>
+>5. 验证 Docker 安装
+>```shell
+>sudo docker --version
+>```
+>
+>6. 测试运行hello-world容器
+>```shell
+>docker run hello-world
+>``` 
+>![img](https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/docker-e2.jpg)
+> >[!tip]
+> >若出现 如下错误：
+> ![img](https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/docker-e1.jpg)
+> >可尝试如下解决方法（配置镜像加速地址）：
+> > ```shell
+> >sudo mkdir -p /etc/docker
+> >sudo tee /etc/docker/daemon.json <<-'EOF'
+> >{
+> >"registry-mirrors": [
+> >"https://do.nark.eu.org",
+> >"https://dc.j8.work",
+> >"https://docker.m.daocloud.io",
+> >"https://dockerproxy.com",
+> >"https://docker.mirrors.ustc.edu.cn",
+> >"https://docker.nju.edu.cn"
+> >]
+> >}
+> >EOF
+> >sudo systemctl daemon-reload
+> >sudo systemctl restart docker
+> >systemctl status docker
+> >```
+
+### 关于Docker的常见命令
+下面是您提供的 Docker 命令的 Markdown 表格格式：
+
+| 命令                                     | 描述                                                        |
+|----------------------------------------|-----------------------------------------------------------|
+| `docker info`                          | 显示 Docker 系统的详细信息                                         |
+| `docker version`                       | 查看 Docker 版本                                              |
+| `docker images`                        | 查看镜像                                                      |
+| `docker pull xxx[:tag(版本)]`            | 下载镜像（不写版本，默认下载 latest）                                    |
+| `docker rmi -f [IMAGE-ID]`             | 删除镜像                                                      |
+| `docker ps`                            | 查看容器                                                      |
+| `docker run [可选参数] image`              | 运行容器（可选参数：`--name` 设置容器名字，`-d` 后台运行，`-it` 交互方式，`-p` 端口映射） |
+| `docker exec -it container_id /bin/bash` | 进入容器内部                                                    |
+| `exit/Ctrl + P + Q`                    | 停止容器并退出/不停止容器退出                                           |
+| `docker rm container-id`               | 删除指定容器                                                    |
+| `docker start container-id`            | 启动容器                                                      |
+| `docker restart container-id`          | 重启容器                                                      |
+| `docker stop container-id`             | 停止容器                                                      |
+| `docker kill container-id`             | 强制停止容器                                                    |
+
+### 暴露端口，访问容器
+1. 开放阿里云安全组端口8080
+2. 配置宿主机防火墙8080
+3. 映射容器端口80到宿主机端口8888
+
 
 ### Docker Desktop
+#### Docker Desktop下载
+<CardGrid>  
+    <LinkCard icon="skill-icons:docker" title="Docker Desktop" href="https://www.docker.com/get-started/"></LinkCard>
+</CardGrid>
+
 #### Run a new container
 <CardGrid>
     <ImageCard
@@ -45,6 +143,8 @@ Docker Desktop中的Volumes有两种主要类型：
 >1. **命名卷（Named Volumes）**：
     >    - Docker自动管理的存储卷，数据保存在Docker指定的地方。
 >    - 使用时通过名称引用，数据不会因容器删除而丢失。
+>    - 匿名挂载（系统分配）和具名挂载（用户命名）
+>    - 一般来说都在这个目录下(linux)：/var/lib/docker/volume/xxx
 >
 >2. **主机卷（Host Volumes）**：
     >    - 将宿主机目录挂载到容器中，数据直接存储在宿主机文件系统上。
