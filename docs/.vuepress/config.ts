@@ -36,8 +36,8 @@ export default defineUserConfig({
     shouldPrefetch: false,
 
     theme: plumeTheme({
-        // 添加您的部署域名
-        // hostname: 'https://your_site_url',
+        // 添加您的部署域名, 开启sitemap
+        hostname: 'http://paiad.online',
 
         //配置锁的页面
         locales: {
@@ -140,6 +140,15 @@ export default defineUserConfig({
               reactionsEnabled: true,
               inputPosition: 'top',
             },
+
+            /**
+             * Algolia DocSearch
+             */
+            docsearch: {
+                appId: "64GTZ021MP",
+                apiKey: "2d04158638978b8d8ac72c1c74210ad0",
+                indexName: "paiad",
+            }
         },
     }),
 })
