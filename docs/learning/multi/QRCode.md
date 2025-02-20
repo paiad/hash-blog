@@ -4,7 +4,7 @@ createTime: 2025/01/15 18:43:16
 tags:
   - QRCode
 cover:
-  url: https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/qrcode_with_logo.png
+  url: ../image/hash_qrcode.png
   layout: right
   ratio: 1.0
   width: 150

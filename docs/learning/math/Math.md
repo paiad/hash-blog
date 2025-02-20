@@ -6,7 +6,7 @@ tags:
 createTime: 2024/11/04 19:50:54
 permalink: /article/9w55damt/
 cover:
-  url: https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/math-pencil.png
+  url: ../image/math-pencil.png
   layout: left
   ratio: 0.6
 excerpt:
