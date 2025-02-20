@@ -4,6 +4,7 @@ createTime: 2025/01/31 23:37:06
 permalink: /python/cdvav9jp/
 #aside: false
 ---
+### 步骤分析
 ::: steps 
 1. Step1：回归问题概述
 
@@ -28,21 +29,21 @@ permalink: /python/cdvav9jp/
      \end{pmatrix}$$
 
 3. Step3：误差项
-   $$
-    \epsilon_i服从均值为零的正态分布，即\epsilon_i \sim N(0,\sigma^{2})
-   $$
+
+   $\epsilon_i$服从均值为零的正态分布，即$\epsilon_i \sim N(0,\sigma^{2})$
+   
    $$
    P(\varepsilon_{i})=\frac{1}{\sqrt{2\pi}\sigma}exp(-\frac{\varepsilon_{i}^{2}}{2\sigma^{2}})
    $$
    - 均值为零：表示误差项的平均影响为零，即正误差和负误差在长期中会相互抵消。
-   - 方差为$\sigma^2$: 给定一组数据值与均值之间差异的平方的平均值为$\sigma^2(数据的集中程度)$
+   - 方差为$\sigma^2$: 给定一组数据值与均值之间差异的平方的平均值为$\sigma^2$(数据的集中程度)
 
 4. Step4：极大似然估计求解$\hat w$
     $$P(y_i | x_i; \hat w)=\frac{1}{\sqrt{2\pi}\sigma}exp(-\frac{(y_i-X\hat w)^2}{2\sigma^{2}})$$
 
    >解释：将$P(\varepsilon_{i})$转化为关于$\hat w$的函数，目的是为了求解出$\hat w$。
    > 
-   >在给定输入$x_i、\hat w$的条件下，输出$y_i$的条件概率
+   >在给定输入$x_i$、$\hat w$的条件下，输出$y_i$的条件概率
    - 极大似然估计
    $$\begin{array} {rcl}L(\hat w) & = & \prod\limits_{i=1}^mp(y_{i}\mid x_{i};\hat w) & = & \prod\limits_{i=1}^m\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y_{i}-X\hat w)^2}{2\sigma^2}\right) \end{array}$$
    $$\ln L(\hat w)=\ln\prod_{i=1}^m\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y_{i}-X\hat w)^2}{2\sigma^2}\right)=m\ln\frac{1}{\sqrt{2\pi}\sigma}-\frac{1}{2\sigma^2}\sum_{i=1}^{m}(y_{i}-X\hat w)^2$$
@@ -51,10 +52,10 @@ permalink: /python/cdvav9jp/
 5. Step5：最后得到$\hat w$的值
 
    对函数$\frac{1}{m}\sum\limits_{i=1}^{m}(X\hat w-y_{i})^2$求$\hat w$的偏导以求其最小值，这里运用线性代数的知识：
-    >1. $\alpha为矩阵，则有\alpha^{2}=\alpha^{T}\alpha$
+    >1. $\alpha$为矩阵，则有$\alpha^{2}=\alpha^{T}\alpha$
     >2. $\frac{\partial \hat w^TX^TX\hat w}{\partial \hat w}=X^TX\hat w$
 
-   $最后令\text{偏导为}0，化简得:\hat w^*=\left(X^TX\right)^{-1}X^Ty$
+   最后令偏导为0，化简得:$\hat w^*=\left(X^TX\right)^{-1}X^Ty$
    >[!tip]
    > $\sum\limits_{i=1}^{m}(X\hat w-y_{i})^2$事实上为每一个X对应的拟合后平面的值与其真实值之间的差值的平方之和，
    >
@@ -64,15 +65,15 @@ permalink: /python/cdvav9jp/
    > 以几何的角度来说，最小二乘法就是在多维空间中找到一个最优的超平面，使得数据点与该超平面之间的误差最小化。
 :::
 
-简单线性回归代码示例
+### 简单线性回归代码示例
 <CardGrid>
 <ImageCard
-image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/lin-reg-1.png"
-title ="原始数据"
+    image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/lin-reg-1.png"
+    title ="原始数据"
 />
 <ImageCard
-image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/lin-reg-2.png"
-title ="线性拟合"
+    image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/lin-reg-2.png"
+    title="线性拟合"
 />
 </CardGrid>
 
@@ -101,10 +102,12 @@ plt.show()
 
 X_b = np.c_[np.ones((100, 1)), X] # 加入偏置项
 theta_best = np.linalg.inv(X_b.T.dot(X_b)).dot(X_b.T).dot(y)
+print("通过最小二乘法计算的权重：\n",theta_best)
 
 X_new = np.array([[0],[2]])
 X_new_b = np.c_[np.ones((2, 1)), X_new]
 y_predict = X_new_b.dot(theta_best)
+print("通过最小二乘法预测的数据(x=2 和 x=9)：\n", y_predict)
 
 plt.plot(X_new, y_predict, 'r--')
 plt.plot(X, y, 'b.')
@@ -112,17 +115,19 @@ plt.axis([0, 2, 0, 15])
 plt.show()
 
 """
-通过sklearn工具包
+通过sklearn工具包的LinearRegression库实现的线性回归算法
 """
 from sklearn.linear_model import LinearRegression
 lin_reg = LinearRegression()
 lin_reg.fit(X,y)
-print(lin_reg.intercept_)
-print(lin_reg.coef_)
+
+print("========通过sklearn工具包的LinearRegression库========")
+print("k=", lin_reg.coef_)
+print("b=", lin_reg.intercept_)
 ```
 :::
 
-案例（糖尿病数据集）
+### 案例（糖尿病数据集）
 :::code-tabs
 @tab plot_ols_cn.py
 ``` python
