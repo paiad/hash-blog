@@ -2,10 +2,11 @@
 title: 🤖最小二乘法和梯度下降算法
 createTime: 2025/02/03 20:26:14
 permalink: /article/njsg11zd/
-aside: false
+#aside: false
 tags:
    - Machine Learning
 ---
+### 算法理解
 一般的，通过最小二乘法和或梯度下降算法可以计算出线性回归的损失函数模型的最优参数。
 $$损失函数：J(w,b)=\frac{1}{m}\sum_{i=1}^m(y_i-(w^Tx_i+b))^2$$
 
@@ -27,7 +28,7 @@ $$损失函数：J(w,b)=\frac{1}{m}\sum_{i=1}^m(y_i-(w^Tx_i+b))^2$$
 > 
 > 梯度下降算法：初始化所有参数，根据梯度优化参数，迭代，达到结束条件，停止迭代
 
-## 梯度下降的三种方式
+### [梯度下降的三种方式](http://localhost:8080/python/2moeut57/#%E4%B8%89%E7%A7%8D%E4%B8%8D%E5%90%8C%E7%9A%84%E6%A2%AF%E5%BA%A6%E4%B8%8B%E9%99%8D%E7%AD%96%E7%95%A5)
 根据每次更新参数时使用的数据量不同，梯度下降可以分为以下三种方式：
 
 样本数据: $x_i$
