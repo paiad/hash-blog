@@ -4,6 +4,7 @@ createTime: 2025/02/01 12:38:04
 permalink: /python/2moeut57/
 #aside: false
 ---
+
 为了方便理解，这里以线性回归的损失函数为例：
 $$J(w,b)=\frac{1}{m}\sum_{i=1}^m(y_i-(w^Tx_i+b))^2$$
 ::: steps
@@ -28,6 +29,11 @@ $$J(w,b)=\frac{1}{m}\sum_{i=1}^m(y_i-(w^Tx_i+b))^2$$
    $$\nabla_wJ(w,b)=-\frac2m\sum_{i=1}^m(y_i-\hat{y}_i)x_i\\ \nabla_bJ(w,b)=-\frac2m\sum_{i=1}^m(y_i-\hat{y_i})$$
 
 4. Step4 梯度下降更新规则
+   <ImageCard
+   image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/gradient-descent.png"
+   width = 65%
+   center = true
+   />
 
    $$w\leftarrow w-\alpha\nabla_wJ(w,b)\\b\leftarrow b-\alpha\nabla_bJ(w,b)$$
    其中$\alpha$ 是学习率。

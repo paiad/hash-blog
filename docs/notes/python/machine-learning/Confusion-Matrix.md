@@ -54,12 +54,17 @@ $$ \frac{2 \cdot Precision \cdot Recall}{Precision + Recall}$$
 > 
 > 召回率: 预测正确的正例的样本数 / 实际的正例的样本数
 
-### 阈值对结果的影响
+### 阈值
+>在分类模型中，阈值（Threshold） 是一个用于将模型输出的置信度（或概率）转换为最终分类决策的关键参数。
+> 它决定了模型对某一类别的判定标准。
+
 <ImageCard
 image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/confusion_matrix-1.png"
+width = 90%
+center = true
 />
 
-分类模型对于每一个样本点都会输出一个置信度。通过设置置信度阈值，就可以完成分类。设置的阈值越低，召回率会越高，精确率会越小；反之，相反。
+分类模型对于每一个样本点都会输出一个置信度。通过设置置信度阈值，就可以完成分类。设置的阈值越低，召回率（Recall）会越高，精确率（Precision）会越小；反之，相反。
 ### PR曲线
 > PR曲线就是以精确度为纵坐标，以召回率为横坐标绘制出的曲线。
 <ImageCard
