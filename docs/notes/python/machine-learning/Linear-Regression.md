@@ -34,8 +34,8 @@ permalink: /python/cdvav9jp/
    $$
    P(\varepsilon_{i})=\frac{1}{\sqrt{2\pi}\sigma}exp(-\frac{\varepsilon_{i}^{2}}{2\sigma^{2}})
    $$
-   - 均值为零：$表示误差项的平均影响为零，即正误差和负误差在长期中会相互抵消。$
-   - 方差为$\sigma^2$: $给定一组数据值与均值之间差异的平方的平均值为\sigma^2(数据的集中程度)$
+   - 均值为零：表示误差项的平均影响为零，即正误差和负误差在长期中会相互抵消。
+   - 方差为$\sigma^2$: 给定一组数据值与均值之间差异的平方的平均值为$\sigma^2(数据的集中程度)$
 
 4. Step4：极大似然估计求解$\hat w$
     $$P(y_i | x_i; \hat w)=\frac{1}{\sqrt{2\pi}\sigma}exp(-\frac{(y_i-X\hat w)^2}{2\sigma^{2}})$$
@@ -64,7 +64,66 @@ permalink: /python/cdvav9jp/
    > 以几何的角度来说，最小二乘法就是在多维空间中找到一个最优的超平面，使得数据点与该超平面之间的误差最小化。
 :::
 
+简单线性回归代码示例
+<CardGrid>
+<ImageCard
+image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/lin-reg-1.png"
+title ="原始数据"
+/>
+<ImageCard
+image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/lin-reg-2.png"
+title ="线性拟合"
+/>
+</CardGrid>
+
 ::: code-tabs
+@tab linear_regression.py
+```python
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+matplotlib.use('TkAgg')
+# 一些基础参数配置
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['xtick.labelsize'] = 12
+plt.rcParams['ytick.labelsize'] = 12
+
+np.random.seed(42)
+
+X = 2 * np.random.rand(100, 1)
+y = 4 + 3 * X + np.random.randn(100, 1)
+
+plt.plot(X, y, 'b.')
+plt.xlabel('X_1')
+plt.ylabel('y')
+plt.axis([0, 2, 0, 15])
+plt.show()
+
+X_b = np.c_[np.ones((100, 1)), X] # 加入偏置项
+theta_best = np.linalg.inv(X_b.T.dot(X_b)).dot(X_b.T).dot(y)
+
+X_new = np.array([[0],[2]])
+X_new_b = np.c_[np.ones((2, 1)), X_new]
+y_predict = X_new_b.dot(theta_best)
+
+plt.plot(X_new, y_predict, 'r--')
+plt.plot(X, y, 'b.')
+plt.axis([0, 2, 0, 15])
+plt.show()
+
+"""
+通过sklearn工具包
+"""
+from sklearn.linear_model import LinearRegression
+lin_reg = LinearRegression()
+lin_reg.fit(X,y)
+print(lin_reg.intercept_)
+print(lin_reg.coef_)
+```
+:::
+
+案例（糖尿病数据集）
+:::code-tabs
 @tab plot_ols_cn.py
 ``` python
 """
