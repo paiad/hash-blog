@@ -24,6 +24,7 @@ export default defineThemeConfig({
         // { icon: { svg: plumeIcon, name: 'plumeIcon' }, link: 'https://theme-plume.vuejs.press' },
         // { icon: { svg: hashIcon, name: 'hashIcon' }, link: 'https://github.com/Pai3141/pai' },
         {icon: 'github', link: 'https://github.com'},
+        {icon:'discord',link:"https://discord.gg/psrws4UF"},
         {icon: {svg: '<span class="vpi-social-emoji"></span>', name: 'emoji'}, link: 'https://getemoji.com'},
         {icon: {svg: '<span class="vpi-social-iconify"></span>', name: 'iconify'}, link: 'https://icon-sets.iconify.design/'},
         {
@@ -31,7 +32,7 @@ export default defineThemeConfig({
             link: 'https://theme-plume.vuejs.press/guide/intro/'
         },
     ],
-    navbarSocialInclude: ['github', 'emoji', 'settings','iconify'],
+    navbarSocialInclude: ['github','discord'],
 
     footer: {
         message: '🍀𝓣𝓱𝓮 𝓼𝓮𝓬𝓸𝓷𝓭 𝓫𝓮𝓼𝓽 𝓽𝓲𝓶𝓮 𝓲𝓼 𝓷𝓸𝔀.🍀',

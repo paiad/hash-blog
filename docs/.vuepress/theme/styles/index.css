@@ -61,21 +61,21 @@ pre, code {
     outline: none; /* 去掉默认的焦点轮廓 */
 }
 
-.hero-name{
-    position: relative;
-    display: inline-block;
-}
+/*.hero-name{*/
+/*    position: relative;*/
+/*    display: inline-block;*/
+/*}*/
 
 
-.hero-name::after{
-    content: '⭐';
-    position: absolute;
-    top: -10px;
-    left: -5px;
-    font-size: 12px;
-    animation: rotate 2s linear infinite;
-    outline: none; /* 去掉默认的焦点轮廓 */
-}
+/*.hero-name::after{*/
+/*    content: '⭐';*/
+/*    position: absolute;*/
+/*    top: -10px;*/
+/*    left: -5px;*/
+/*    font-size: 12px;*/
+/*    animation: rotate 2s linear infinite;*/
+/*    outline: none; !* 去掉默认的焦点轮廓 *!*/
+/*}*/
 
 @keyframes rotate {
     0% {

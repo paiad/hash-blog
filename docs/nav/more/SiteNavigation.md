@@ -9,16 +9,26 @@ permalink: /site/guide/
 ## AI
 
 <CardGrid>
-    <LinkCard icon="arcticons:openai-chatgpt" title="Chatgpt" href="https://chatgpt.com"></LinkCard>
-    <LinkCard icon="fxemoji:spurtingwhale" title="DeepSeek" href="https://chat.deepseek.com"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/openai.png" title="Chatgpt" href="https://chatgpt.com"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/deepseek-color.png" title="DeepSeek" href="https://chat.deepseek.com"></LinkCard>
 </CardGrid>
 <CardGrid>
-    <LinkCard icon="fluent-emoji:full-moon" title="Kimi" href="https://kimi.moonshot.cn/"></LinkCard>
-    <LinkCard icon="token-branded:bean" title="豆包" href="https://www.doubao.com/"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/qwen-color.png" title="Qwen" href="https://chat.qwenlm.ai/"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/grok.png" title="Grok" href="https://grok.com/"></LinkCard>
 </CardGrid>
 <CardGrid>
-    <LinkCard icon="ri:alibaba-cloud-line" title="Qwen" href="https://chat.qwenlm.ai/"></LinkCard>
-    <LinkCard icon="material-symbols:1x-mobiledata" title="Qwen" href="https://grok.com/"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/kimi-color.png" title="Kimi" href="https://kimi.moonshot.cn/"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/doubao-color.png" title="豆包" href="https://www.doubao.com/"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobe-chat" href="https://lobechat.com/chat"></LinkCard>
+</CardGrid>
+
+## Icon Library
+
+<CardGrid>
+    <LinkCard icon="line-md:iconify2-static" title="Iconify" href="https://icon-sets.iconify.design/"></LinkCard>
+    <LinkCard icon="twemoji:slightly-smiling-face" title="GetEmoji" href="https://getemoji.com"></LinkCard>
+<LinkCard icon="ri:alibaba-cloud-fill" title="Iconfont" href="https://www.iconfont.cn/"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobe-chat" href="https://lobehub.com/zh/icons"></LinkCard>
 </CardGrid>
 
 ## Hash
@@ -31,7 +41,7 @@ permalink: /site/guide/
 ## API Platform
 
 <CardGrid>
-    <LinkCard icon="fxemoji:spurtingwhale" title="DeepSeek Platform" href="https://platform.deepseek.com"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/deepseek-color.png" title="DeepSeek Platform" href="https://platform.deepseek.com"></LinkCard>
 </CardGrid>
 
 ## Clash
@@ -40,24 +50,11 @@ permalink: /site/guide/
   <LinkCard icon= "arcticons:clash" title="Clash" href="https://doc.miyun.app"></LinkCard>
 </CardGrid>
 
-## Icon Library
-
-<CardGrid>
-    <LinkCard icon="line-md:iconify2-static" title="Iconify" href="https://icon-sets.iconify.design/"></LinkCard>
-    <LinkCard icon="twemoji:slightly-smiling-face" title="GetEmoji" href="https://getemoji.com"></LinkCard>
-</CardGrid>
-
-## Alibaba
-
-<CardGrid>
-    <LinkCard icon="ri:alibaba-cloud-fill" title="Iconfont" href="https://www.iconfont.cn/"></LinkCard>
-    <LinkCard icon="ri:alibaba-cloud-line" title="Alibaba Cloud" href="https://cn.aliyun.com"></LinkCard>
-</CardGrid>
-
 ## Cloud Platform
 
 <CardGrid>
-  <LinkCard icon= "devicon:cloudflare" title="Cloudflare" href="https://www.cloudflare.com/zh-cn"></LinkCard>
+  <LinkCard icon="ri:alibaba-cloud-line" title="Alibaba Cloud" href="https://cn.aliyun.com"></LinkCard>
+  <LinkCard icon= "logos:cloudflare-icon" title="Cloudflare" href="https://www.cloudflare.com/zh-cn"></LinkCard>
 </CardGrid>
 
 ## Domain Name
