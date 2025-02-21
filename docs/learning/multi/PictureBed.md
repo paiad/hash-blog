@@ -41,7 +41,11 @@ tags:
 4. Step4
    
    按需配置Picgo (Configure Picgo according to requirements)
-   ![picgo_eg.jpg](https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/picgo_eg.jpg)
+  <ImageCard
+   image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/picgo_eg.jpg"
+   width = 80%
+   center= true
+   />
 5. Step5
    >因为网络原因，直接访问github上的图片很慢，所以用jsDeliver进行托管，这样国内网站可以快速的加载图片。
 
