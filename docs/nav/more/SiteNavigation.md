@@ -18,6 +18,7 @@ permalink: /site/guide/
 </CardGrid>
 <CardGrid>
     <LinkCard icon="ri:alibaba-cloud-line" title="Qwen" href="https://chat.qwenlm.ai/"></LinkCard>
+    <LinkCard icon="material-symbols:1x-mobiledata" title="Qwen" href="https://grok.com/"></LinkCard>
 </CardGrid>
 
 ## Hash
