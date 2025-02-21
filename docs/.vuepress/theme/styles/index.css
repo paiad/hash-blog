@@ -42,6 +42,35 @@ pre, code {
     --icon: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgdmlld0JveD0iMCAwIDI0IDI0Ij48bWFzayBpZD0ibGluZU1kSWNvbmlmeTJTdGF0aWMwIj48ZyBmaWxsPSJub25lIiBzdHJva2U9IiNmZmYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIgc3Ryb2tlLXdpZHRoPSIyIj48cGF0aCBzdHJva2Utd2lkdGg9IjEuNSIgZD0iTTMuMjUgMjIuMjVoMTcuNSIvPjxwYXRoIGQ9Ik03IDN2M001IDh2MTFoMTR2LTExIi8+PHBhdGggc3Ryb2tlPSIjMDAwIiBzdHJva2Utd2lkdGg9IjQiIGQ9Ik0xMiAxNnY0LjVNMTIgM2w4LjUgNS41Ii8+PHBhdGggZD0iTTEyIDNsOC41IDUuNSIvPjxwYXRoIHN0cm9rZT0iIzAwMCIgc3Ryb2tlLXdpZHRoPSI0IiBkPSJNMTIgM2wtOC41IDUuNSIvPjxwYXRoIGQ9Ik0xMiAzbC04LjUgNS41TTEyIDExLjV2OSIvPjwvZz48Y2lyY2xlIGN4PSIxMiIgY3k9IjExLjUiIHI9IjMuNSIvPjxjaXJjbGUgY3g9IjEyIiBjeT0iMTEuNSIgcj0iMS41IiBmaWxsPSIjZmZmIi8+PC9tYXNrPjxyZWN0IHdpZHRoPSIyNCIgaGVpZ2h0PSIyNCIgZmlsbD0iY3VycmVudENvbG9yIiBtYXNrPSJ1cmwoI2xpbmVNZEljb25pZnkyU3RhdGljMCkiLz48L3N2Zz4=")
 }
 
+/*
+    Paiad旋转星星CSS
+*/
+.rotating-star {
+    position: relative;
+    display: inline-block;
+    font-size: 15px;
+}
+
+.rotating-star:hover::after {
+    content: '⭐';
+    position: absolute;
+    top: -10px;
+    right: -12px;
+    font-size: 12px;
+    animation: rotate 2s linear infinite;
+    outline: none; /* 去掉默认的焦点轮廓 */
+}
+
+@keyframes rotate {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
 [data-theme="dark"]
 .vp-doc-container {
     --vp-doc-blog-bg: rgba(30, 120, 120, 7%);

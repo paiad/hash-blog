@@ -35,7 +35,7 @@ export default defineThemeConfig({
 
     footer: {
         message: '🍀𝓣𝓱𝓮 𝓼𝓮𝓬𝓸𝓷𝓭 𝓫𝓮𝓼𝓽 𝓽𝓲𝓶𝓮 𝓲𝓼 𝓷𝓸𝔀.🍀',
-        copyright: `© Copyright ${new Date().getFullYear()} All Rights Reserved. Proprietary Rights Reserved by <a>𝑷𝒂𝒊𝒂𝒅</a>.`
+        copyright: `© Copyright ${new Date().getFullYear()} All Rights Reserved. Proprietary Rights Reserved by <a href="https://discord.gg/psrws4UF" target="_blank" class="rotating-star">𝑷𝒂𝒊𝒂𝒅</a>.`
     },
 
     outline: [2, 4]
