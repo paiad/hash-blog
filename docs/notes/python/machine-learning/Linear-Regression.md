@@ -65,7 +65,7 @@ permalink: /python/cdvav9jp/
    > 以几何的角度来说，最小二乘法就是在多维空间中找到一个最优的超平面，使得数据点与该超平面之间的误差最小化。
 :::
 
-### 简单线性回归代码示例
+### 简单线性回归代码
 <CardGrid>
 <ImageCard
     image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/lin-reg-1.png"
@@ -126,6 +126,78 @@ print("k=", lin_reg.coef_)
 print("b=", lin_reg.intercept_)
 ```
 :::
+
+### 多项式回归
+<CardGrid>
+<ImageCard
+    image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/poly-e1.png"
+    title ="原始数据"
+/>
+<ImageCard
+    image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/poly-e3.png"
+    title ="二次拟合"
+/>
+</CardGrid>
+<ImageCard
+    image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/poly-e2.png"
+    title="多项式回归拟合"
+    width="120%"
+/>
+
+:::code-tabs
+@tab polynomial_regression.py
+``` python
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+
+matplotlib.use('TkAgg')
+# 一些基础参数配置
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['xtick.labelsize'] = 12
+plt.rcParams['ytick.labelsize'] = 12
+
+np.random.seed(42)
+
+m = 100
+X = 6 * np.random.rand(m, 1) - 3
+y = 0.5 * X ** 2 + X + np.random.randn(m, 1)
+
+# 绘制散点图
+plt.plot(X, y, "b.")
+plt.xlabel('X_1')
+plt.ylabel('y')
+plt.axis([-3, 3, -5, 9])
+plt.show()
+
+from sklearn.preprocessing import PolynomialFeatures
+
+# 引入二次项特征
+poly_features = PolynomialFeatures(degree=2, include_bias=False)
+
+X_ploy = poly_features.fit_transform(X)  # X_ploy[x] = [x, x^2]
+
+from sklearn.linear_model import LinearRegression
+
+lin_reg = LinearRegression()
+# 数据拟合
+lin_reg.fit(X_ploy, y)
+
+X_new = np.linspace(-3, 3, num=100).reshape(100, 1)
+X_new_ploy = poly_features.transform(X_new)
+y_new = lin_reg.predict(X_new_ploy)
+
+plt.plot(X, y, "b.")
+plt.plot(X_new, y_new, "r--")
+plt.title("Polynomial Regression")
+plt.xlabel('X')
+plt.ylabel('y')
+plt.axis([-3, 3, -5, 9])
+plt.show()
+
+```
+:::
+
 
 ### 案例（糖尿病数据集）
 :::code-tabs
