@@ -39,27 +39,6 @@ export default defineUserConfig({
         // 添加您的部署域名, 开启sitemap
         // hostname: 'http://paiad.online',
 
-        //配置锁的页面
-        locales: {
-            '/': {
-                encryptButtonText: '确认',
-                encryptPlaceholder: '请输入密码',
-                encryptPageText: '访问这篇文章需要联系管理员(@2369538173qq.com)',
-                // notFound:{"code":"404","title":"页面未找到","quote":"但是，如果你不改变方向，并且一直寻找，最终可能会到达你要去的地方。","linkText":"返回首页"}
-            },
-        },
-
-        //加密
-        encrypt: {
-            rules: {
-                //路由&交换
-                // '/article/o6pj1ty3/': ['h3c123456'],
-                //Website
-                // '/article/76px1e7z/': 'website123456',
-                //all project
-                // '^/article/pj[^/]+/$': 'dwh_pj_123456',
-            }
-        },
 
         blog:{
             //分页
@@ -132,10 +111,10 @@ export default defineUserConfig({
             comment: {
               provider: "Giscus",
               comment: true,
-              repo: "Pai3141/pai",
-              repoId: "R_kgDONKKpfg",
-              category: "General",
-              categoryId: "DIC_kwDONKKpfs4Ckx4R",
+              repo: "Pai3141/hash",
+              repoId: "R_kgDONrr8kQ",
+              category: "Announcements",
+              categoryId: "DIC_kwDONrr8kc4CnNps",
               mapping: 'pathname',
               reactionsEnabled: true,
               inputPosition: 'top',
