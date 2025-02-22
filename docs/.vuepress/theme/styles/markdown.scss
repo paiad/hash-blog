@@ -1,0 +1,209 @@
+// 美化标题
+.vp-doc {
+  //h4 {
+  //  --prefix-icon: "🍁";
+  //}
+  //h5 {
+  //  --prefix-icon: "🌸";
+  //}
+  //h6 {
+  //  --prefix-icon: "🍂";
+  //}
+  h2,
+  h3 {
+    .header-anchor:hover {
+      color: rgb(77, 107, 254);
+    }
+  }
+
+  h2 {
+    border: none;
+    .header-anchor {
+      display: block;
+      border-bottom: 4px solid rgb(77, 107, 254);
+      position: relative;
+      font-size: 24px;
+      padding: 12px 0px;
+      color: rgb(77, 107, 254);
+      font-weight: 700;
+
+      &::before,
+      &::after {
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+        opacity: 1;
+      }
+
+      &::before {
+        opacity: 1;
+        width: 24px;
+        height: 24px;
+        left: 0;
+        top: 0;
+        margin: auto;
+      }
+
+      //&::after {
+      //  opacity: 1;
+      //  right: 0;
+      //  width: 400px;
+      //  height: 10px;
+      //  border-top-right-radius: 24px;
+      //  background: linear-gradient(90deg, transparent, #4dd0e1);
+      //  max-width: 50vw;
+      //}
+    }
+  }
+  h3 {
+    border: none;
+    .header-anchor {
+      margin: 30px 0;
+      font-size: 18px;
+      position: relative;
+      padding: 4px 32px;
+      width: max-content;
+      color: rgb(77, 107, 254);
+      font-weight: 700;
+
+      &::before,
+      &::after {
+        opacity: 1;
+        content: "";
+        display: block;
+        position: absolute;
+        bottom: 0;
+      }
+
+      &::before {
+        border-bottom: 2px solid rgb(77, 107, 254);
+        width: 100%;
+        content: "";
+        display: block;
+        height: 28px;
+        position: absolute;
+        left: 0;
+        top: 0;
+        bottom: -2px;
+        margin: auto;
+        background-size: 25px 25px;
+        background-image: url(https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/deepseek-color.png);
+        background-repeat: no-repeat;
+        animation: h3AnimationBefore 2s infinite alternate;
+      }
+
+      &::after {
+        content: "";
+        display: block;
+        width: 28px;
+        height: 28px;
+        position: absolute;
+        border: 2px solid rgb(77, 107, 254);
+        border-radius: 50%;
+        right: -15px;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        background-size: 28px 28px;
+        background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAABRklEQVRYR2NkGGDAOMD2M4w6YDQERkNg+ITAppcfY/8zMv3wF+NdTUrZQpUQ2PT6cz8Dw/8CkMWMDIwNvqK8jcQ6gmIHNN19EaXPx1XPyMCghrCUKcpPlGc5MY6gyAE+Fx52MjL8j3cU5a1UYWXtZGBkEAVb+p8hxU+Mby5NHQCxnKEMaskzJ37uFmUetkmMjAzrfUX4woixHBJlZAA0y2EmPPYU4enLkhGeQIqRJDsAh+UgO7duNpD3IcVykkOA2paT5ABaWE60A2hlOdEO8D3/4CMDIyMfWvySFefoaYSoROh74eFXBgYGLiTNVLGc+BC48PAnAwMDG9QBVLOcaAd8P5ox+x/jf5AjGLgYfnwnKqv9/8/PwPO/kFF/MSj0cAKiouD/0bgYoixFU8RovWgJIX1EOYCQIZTIjzpgNARGQ2DAQwAAvHBaIdB7zxsAAAAASUVORK5CYII=);
+        animation: h3AnimationAfter 2s infinite alternate;
+      }
+    }
+  }
+
+  h4,
+  h5,
+  h6 {
+    .header-anchor {
+      & > span {
+        &::before {
+          content: var(--prefix-icon);
+        }
+      }
+    }
+  }
+
+  // blockquote
+  //blockquote {
+  //  margin: 15px 0;
+  //  padding: 24px 32px;
+  //  border-left: 4px solid #26c6da;
+  //  background: rgba(77, 208, 225, 0.15);
+  //  position: relative;
+  //  &::before {
+  //    content: "❝";
+  //    top: 8px;
+  //    left: 8px;
+  //    color: rgb(77, 208, 225);
+  //    font-size: 30px;
+  //    line-height: 1;
+  //    font-weight: 700;
+  //    position: absolute;
+  //    opacity: 0.7;
+  //  }
+  //  &::after {
+  //    content: "❞";
+  //    font-size: 30px;
+  //    position: absolute;
+  //    right: 8px;
+  //    bottom: 0px;
+  //    color: rgb(77, 208, 225);
+  //    opacity: 0.7;
+  //  }
+  //}
+  // code
+  //:not(pre) > code {
+  //  background-color: rgba(77, 208, 225, 0.08);
+  //  color: #26c6da;
+  //}
+
+  //table {
+  //  width: 100%;
+  //  display: table;
+  //}
+}
+
+@keyframes h3AnimationBefore {
+  0% {
+    width: 28px;
+  }
+
+  25% {
+    width: 100%;
+  }
+  50% {
+    width: 100%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes h3AnimationAfter {
+  0% {
+    transform: rotate(0);
+  }
+  10% {
+    transform: rotate(0);
+  }
+  50% {
+    transform: rotate(-1turn);
+  }
+
+  100% {
+    transform: rotate(-1turn);
+  }
+}
+
+.vp-doc div[class*="language-"].has-collapsed .collapsed-lines::before {
+  background: rgba($color: #ffffff, $alpha: 0.8);
+}
+
+.vp-doc .vp-tab {
+  padding: 0;
+  div[class*="language-"] {
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+}

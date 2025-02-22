@@ -32,7 +32,7 @@ export default defineThemeConfig({
             link: 'https://theme-plume.vuejs.press/guide/intro/'
         },
     ],
-    navbarSocialInclude: ['github','discord'],
+    navbarSocialInclude: ['github','discord','settings'],
 
     footer: {
         message: '🍀𝓣𝓱𝓮 𝓼𝓮𝓬𝓸𝓷𝓭 𝓫𝓮𝓼𝓽 𝓽𝓲𝓶𝓮 𝓲𝓼 𝓷𝓸𝔀.🍀',
