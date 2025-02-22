@@ -38,6 +38,11 @@ export const navbar = defineNavbarConfig([
                 icon: 'gravity-ui:paper-plane',
                 link: '/site/guide/'
             },
+            {
+                text: 'Github',
+                icon: 'mdi:github',
+                link: '/github/guide/'
+            },
         ],
     },
     // 留言板

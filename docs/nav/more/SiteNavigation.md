@@ -5,7 +5,7 @@ draft: true
 aside: left
 permalink: /site/guide/
 ---
-### 🥥AI and Icon
+### AI and Icon
 #### AI
 
 <CardGrid>
@@ -31,7 +31,7 @@ permalink: /site/guide/
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobe-chat" href="https://lobehub.com/zh/icons"></LinkCard>
 </CardGrid>
 
-### 🥑Help Assistant
+### Help Assistant
 #### Hash
 
 <CardGrid>
