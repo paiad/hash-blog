@@ -23,7 +23,7 @@
       border-bottom: 4px solid rgb(77, 107, 254);
       position: relative;
       font-size: 24px;
-      padding: 12px 0px;
+      padding: 12px 32px;
       color: rgb(77, 107, 254);
       font-weight: 700;
 
@@ -43,6 +43,8 @@
         left: 0;
         top: 0;
         margin: auto;
+        background-size: 24px 24px;
+        background-image: url(https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/zhipu-color.png)
       }
 
       //&::after {

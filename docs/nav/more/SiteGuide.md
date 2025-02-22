@@ -29,6 +29,7 @@ permalink: /site/guide/
     <LinkCard icon="twemoji:slightly-smiling-face" title="GetEmoji" href="https://getemoji.com"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/alibabacloud-color.png" title="Iconfont" href="https://www.iconfont.cn/"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobe-chat" href="https://lobehub.com/zh/icons"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/bytedance-color.png" title="IconPark" href="https://iconpark.oceanengine.com/official"></LinkCard>
 </CardGrid>
 
 ### Help Assistant

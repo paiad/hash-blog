@@ -195,6 +195,24 @@ plt.ylabel('y')
 plt.axis([-3, 3, -5, 9])
 plt.show()
 
+# 针对不同的degree参数进行数据拟合
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import StandardScaler
+plt.figure(figsize=(12,6))
+for style, width, degree in (('g-', 1, 100), ('b-', 1, 2), ('r-+', 1, 1)):
+    poly_features = PolynomialFeatures(degree=degree, include_bias=False)
+    std = StandardScaler()
+    lin_reg = LinearRegression()
+    poly_reg = Pipeline([('poly_features', poly_features), ('StandardScaler', std), ('LinearRegression', lin_reg)])
+    poly_reg.fit(X, y)
+    y_new = poly_reg.predict(X_new)
+    plt.plot(X_new, y_new, style,label=str(degree) ,linewidth=width)
+plt.plot(X, y, "b.")
+plt.xlabel('X')
+plt.ylabel('y')
+plt.axis([-3, 3, -5, 9])
+plt.legend(loc='upper right')
+plt.show()
 ```
 :::
 
