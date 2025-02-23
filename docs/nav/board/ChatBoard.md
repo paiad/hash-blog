@@ -11,7 +11,7 @@ permalink: /chat/
 
 GitHub Discussions 是一个社区讨论平台，适合进行更开放的对话、分享建议或者提问。如果你有任何关于项目的想法或者问题，可以在这里发起讨论。
 
-> 1. 访问笔者的 GitHub Discussions 页面：[GitHub Discussions](https://github.com/Pai3141/hash/discussions)
+> 1. 访问笔者的 GitHub Discussions 页面：[GitHub Discussions](https://github.com/Pai3141/hash-blog/discussions)
 > 2. 点击 **New Discussion** 按钮。
 > 3. 选择讨论的类型（例如：问题、建议、讨论）。
 > 4. 输入你的标题和描述，提供尽可能详细的信息。
@@ -21,7 +21,7 @@ GitHub Discussions 是一个社区讨论平台，适合进行更开放的对话�
 
 如果你遇到具体的问题或者 Bug，需要笔者的帮助，可以通过 GitHub Issues 提交一个问题。
 
-> 1. 访问笔者的 GitHub Issues 页面：[GitHub Issues](https://github.com/Pai3141/hash/issues)
+> 1. 访问笔者的 GitHub Issues 页面：[GitHub Issues](https://github.com/Pai3141/hash-blog/issues)
 > 2. 点击 **New Issue** 按钮。
 > 3. 选择问题的模板（例如：Bug Report、Feature Request）。
 > 4. 输入标题和详细描述。
