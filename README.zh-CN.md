@@ -53,7 +53,7 @@ pnpm docs:project
 🔄 **更新 VuePress 和主题**：
 
 ```bash
-pnpm vp-update
+pnpm dlx vp-update
 ```
 
 ## 项目地址

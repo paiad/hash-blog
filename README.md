@@ -1,8 +1,7 @@
-# Hash🔎
-
+# Hash Blog
 ## Project Overview
 
-`Hash` is a documentation management tool based on VuePress and a custom theme, designed to provide a simple and efficient platform for developers. It supports fast building and deployment, with a local preview feature to easily switch between development and production environments.
+`Hash` is a documentation management tool based on VuePress and a custom theme, designed to provide a simple and efficient platform for developers. It supports fast building and deployment, with a local preview feature to easily switch between development and production environments. This blog is built on a theme inspired by [Plume](https://theme-plume.vuejs.press).
 
 ## Installation
 
@@ -53,7 +52,7 @@ Update VuePress and the custom theme to the latest versions:
 🔄 **Update VuePress and theme**:
 
 ```bash
-pnpm vp-update
+pnpm dlx vp-update
 ```
 
 ## Project Repository
@@ -73,4 +72,3 @@ Feel free to open Issues or submit PRs. Your feedback and contributions are impo
 This project is licensed under the MIT License.
 
 📝 **License**: This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
-

@@ -39,8 +39,8 @@ export const navbar = defineNavbarConfig([
                 link: '/site/guide/'
             },
             {
-                text: 'Github',
-                icon: 'mdi:github',
+                text: 'Github Repo',
+                icon: 'line-md:github',
                 link: '/github/guide/'
             },
         ],
