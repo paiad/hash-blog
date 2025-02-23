@@ -43,6 +43,13 @@ pre, code {
 }
 
 /*
+    Grok 图标
+*/
+.vpi-social-grok {
+    --icon: url("https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/grok.png")
+}
+
+/*
     Paiad旋转星星CSS
 */
 .rotating-star {
