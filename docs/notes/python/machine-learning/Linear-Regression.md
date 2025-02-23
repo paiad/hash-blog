@@ -216,6 +216,202 @@ plt.show()
 ```
 :::
 
+### 数据样本数量对结果的影响
+<ImageCard
+    image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/training-set-size-e1.png"
+    title ="数据样本数量对结果的影响"
+    width = 70%
+    center = true
+/>
+
+:::code-tabs
+@tab training_set_size_influence.py
+``` python
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+
+matplotlib.use('TkAgg')
+# 一些基础参数配置
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['xtick.labelsize'] = 12
+plt.rcParams['ytick.labelsize'] = 12
+
+np.random.seed(42)
+
+m = 100
+X = 6 * np.random.rand(m, 1) - 3
+y = 0.5 * X ** 2 + X + np.random.randn(m, 1)
+
+from sklearn.metrics import mean_squared_error
+from sklearn.model_selection import train_test_split
+from sklearn.linear_model import LinearRegression
+def plot_learning_curves(model, X, y):
+    X_train, X_val, y_train, y_val = train_test_split(X, y, test_size=0.2, random_state=1)
+    train_errors, val_errors = [], []
+    for m in range(1, len(X_train)):
+        # 对于不同数量的测试数据，进行数据拟合
+        model.fit(X_train[:m], y_train[:m])
+        y_train_predict = model.predict(X_train[:m])
+        y_val_predict = model.predict(X_val)
+        # 训练集MSE & 验证机MSE    MSE: 均方误差
+        train_errors.append(mean_squared_error(y_train[:m], y_train_predict[:m]))
+        val_errors.append(mean_squared_error(y_val, y_val_predict))
+
+    plt.plot(np.sqrt(train_errors), 'r-', linewidth=2, label='Train Error')
+    plt.plot(np.sqrt(val_errors), 'b-', linewidth=3, label='Validation Error')
+    plt.xlabel('Training Set Size')
+    plt.ylabel('RMSE')
+    plt.legend(loc='upper right')
+
+lin_reg = LinearRegression()
+plot_learning_curves(lin_reg, X, y)
+plt.axis([0, 80, 0, 3])
+plt.show()
+```
+:::
+
+### 岭回归和Lasso(正则化)
+<ImageCard
+    image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/ml/ridge-lasso-e1.png"
+    title ="岭回归实验结果"
+/>
+
+#### 损失函数
+>`岭回归:`
+>$$
+>\min_{\theta} \left( \sum_{i=1}^{m} (y_i - \mathbf{x}_i^T \boldsymbol{\theta})^2 + \alpha \sum_{j=1}^{n} \theta_j^2 \right)
+>$$
+>
+>`Lasso:`
+>$$
+>\min_{\theta} \left( \sum_{i=1}^{m} (y_i - \mathbf{x}_i^T \boldsymbol{\theta})^2 + \alpha \sum_{j=1}^{n} |\theta_j| \right)
+>$$
+>
+>- $y_i$ 是实际目标值。
+>- ${x}_i$ 是输入特征向量。
+>- $\theta$ 是模型参数向量。
+>- $\alpha$ 是正则化参数，控制模型复杂度，防止过拟合。
+
+:::code-tabs
+@tab ridge.py
+``` python
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+
+matplotlib.use('TkAgg')
+# 一些基础参数配置
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['xtick.labelsize'] = 12
+plt.rcParams['ytick.labelsize'] = 12
+
+np.random.seed(42)
+
+m = 100
+X = 6 * np.random.rand(m, 1) - 3
+y = 0.5 * X ** 2 + X + np.random.randn(m, 1)
+
+from sklearn.linear_model import Ridge
+
+np.random.seed(42)
+m = 20
+X = 3 * np.random.randn(m, 1)
+y = 0.5 * X + np.random.randn(m, 1) / 1.5 + 1
+X_new = np.linspace(0, 3, 100).reshape(100, 1)
+
+
+def plot_model(model_class, poly, alphas, **model_kwargs):
+    # 创(Ridge回归模型，传入alpha和其它参数
+    for alpha, style in zip(alphas, ('b-', 'g--', 'r:')):
+        model = model_class(alpha, **model_kwargs)
+        if poly:
+            model = Pipeline(
+                [('poly_features', PolynomialFeatures(degree=10, include_bias=False)), ('Std', StandardScaler()),
+                 ('ridge_regressor', model)])
+        model.fit(X, y)
+        y_new_predict = model.predict(X_new)
+        lw = 2 if alpha > 0 else 1
+        plt.plot(X_new, y_new_predict, style, linewidth=lw, label='alpha={}'.format(alpha))
+
+    plt.plot(X, y, 'b.', linewidth=3)
+    plt.axis([0, 3, 0, 2.5])
+    plt.legend(loc='upper right')
+
+# Ridge
+plt.figure(figsize=(10, 5))
+
+plt.subplot(121)
+plot_model(Ridge, poly=False, alphas=(0, 10, 100))
+
+plt.subplot(122)
+plot_model(Ridge, poly=True, alphas=(0, 10 ** -5, 1))
+
+plt.show()
+```
+
+@tab lasso.py
+``` python
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+from sklearn.pipeline import Pipeline
+from sklearn.preprocessing import PolynomialFeatures, StandardScaler
+
+matplotlib.use('TkAgg')
+# 一些基础参数配置
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['xtick.labelsize'] = 12
+plt.rcParams['ytick.labelsize'] = 12
+
+np.random.seed(42)
+
+m = 100
+X = 6 * np.random.rand(m, 1) - 3
+y = 0.5 * X ** 2 + X + np.random.randn(m, 1)
+
+from sklearn.linear_model import Ridge
+
+np.random.seed(42)
+m = 20
+X = 3 * np.random.randn(m, 1)
+y = 0.5 * X + np.random.randn(m, 1) / 1.5 + 1
+X_new = np.linspace(0, 3, 100).reshape(100, 1)
+
+
+def plot_model(model_class, poly, alphas, **model_kwargs):
+    # 创(Ridge回归模型，传入alpha和其它参数
+    for alpha, style in zip(alphas, ('b-', 'g--', 'r:')):
+        model = model_class(alpha, **model_kwargs)
+        if poly:
+            model = Pipeline(
+                [('poly_features', PolynomialFeatures(degree=10, include_bias=False)), ('Std', StandardScaler()),
+                 ('ridge_regressor', model)])
+        model.fit(X, y)
+        y_new_predict = model.predict(X_new)
+        lw = 2 if alpha > 0 else 1
+        plt.plot(X_new, y_new_predict, style, linewidth=lw, label='alpha={}'.format(alpha))
+
+    plt.plot(X, y, 'b.', linewidth=3)
+    plt.axis([0, 3, 0, 2.5])
+    plt.legend(loc='upper right')
+
+# Lasso
+from sklearn.linear_model import Lasso
+plt.figure(figsize=(10,5))
+
+plt.subplot(121)
+plot_model(Lasso, poly=False, alphas=(0,0.1,1))
+
+plt.subplot(122)
+plot_model(Lasso, poly=True, alphas=(0,10**-1,1))
+
+
+plt.show()
+```
+:::
 
 ### 案例（糖尿病数据集）
 :::code-tabs
