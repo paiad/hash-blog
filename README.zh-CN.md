@@ -34,16 +34,6 @@ pnpm docs:dev
 pnpm docs:build
 ```
 
-### 本地预览生产服务
-
-构建完成后，使用此命令在本地预览生产环境：
-
-👁️ **本地预览生产环境**：
-
-```bash
-pnpm docs:project
-```
-
 ### 更新 VuePress 和主题
 
 将 VuePress 和自定义主题更新至最新版本：

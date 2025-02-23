@@ -1,7 +1,7 @@
 # Hash Blog🚀
 ## Project Overview
 ![](https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/paiad-hash-blog.png)
-`Hash` is a personal blog built using VuePress and custom themes. The theme of this blog is inspired by [Plume]（ https://theme-plume.vuejs.press ）.
+`Hash` is a personal blog built using VuePress and custom themes. The theme of this blog is inspired by [Plume](https://theme-plume.vuejs.press).
 
 ## Installation
 
@@ -33,16 +33,6 @@ Build the production-ready blog package, preparing it for deployment:
 
 ```bash
 pnpm docs:build
-```
-
-### Preview Production Service Locally
-
-After building, use this command to preview the production environment locally:
-
-👁️ **Preview production locally**:
-
-```bash
-pnpm docs:project
 ```
 
 ### Update VuePress and Theme
