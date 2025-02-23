@@ -20,7 +20,7 @@ const pythonNote = defineNoteConfig({
             dir: 'machine-learning',
             text: '🪀Machine Learning',
             link: '/python/ml/',
-            items: ['Linear-Regression','Gradient-Descent','Cross-Validation','Confusion-Matrix'],
+            items: ['Linear-Regression','Gradient-Descent','Cross-Validation','Confusion-Matrix','Logistic-Regression'],
             collapsed: false
         },
     ]

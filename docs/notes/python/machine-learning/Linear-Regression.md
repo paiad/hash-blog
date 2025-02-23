@@ -45,17 +45,33 @@ permalink: /python/cdvav9jp/
    > 
    >在给定输入$x_i$、$\hat w$的条件下，输出$y_i$的条件概率
    - 极大似然估计
+   > 极大似然估计（Maximum Likelihood Estimation，简称 MLE）是一种统计估计方法，旨在通过选择参数值使得观测数据在该参数下出现的概率最大化。它是基于数据的已知分布模型来估计未知参数的一种常用方法。
    $$\begin{array} {rcl}L(\hat w) & = & \prod\limits_{i=1}^mp(y_{i}\mid x_{i};\hat w) & = & \prod\limits_{i=1}^m\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y_{i}-X\hat w)^2}{2\sigma^2}\right) \end{array}$$
    $$\ln L(\hat w)=\ln\prod_{i=1}^m\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y_{i}-X\hat w)^2}{2\sigma^2}\right)=m\ln\frac{1}{\sqrt{2\pi}\sigma}-\frac{1}{2\sigma^2}\sum_{i=1}^{m}(y_{i}-X\hat w)^2$$
    >为了使每一个$y_i$的值出现的概率尽可能大(所有$y_i$的乘积最大)，所以要有$\sum\limits_{i=1}^{m}(X\hat w-y_{i})^2$尽可能小。
 
 5. Step5：最后得到$\hat w$的值
 
-   对函数$\frac{1}{m}\sum\limits_{i=1}^{m}(X\hat w-y_{i})^2$求$\hat w$的偏导以求其最小值，这里运用线性代数的知识：
+   对于函数损失函数$J(\hat w) = \frac{1}{m}\sum\limits_{i=1}^{m}(X\hat w-y_{i})^2$求$\hat w$的偏导以求其最小值，这里运用线性代数的知识：
     >1. $\alpha$为矩阵，则有$\alpha^{2}=\alpha^{T}\alpha$
     >2. $\frac{\partial \hat w^TX^TX\hat w}{\partial \hat w}=X^TX\hat w$
 
-   最后令偏导为0，化简得:$\hat w^*=\left(X^TX\right)^{-1}X^Ty$
+    >$$J(\hat{w}) = \frac{1}{m} \sum_{i=1}^{m} (X \hat{w} - y_i)^2 \tag{1}$$
+    >$$J(\hat{w}) = \frac{1}{m} \| X \hat{w} - y \|^2 \tag{2}$$
+    >
+    >$$J(\hat{w}) = \frac{1}{m} (X \hat{w} - y)^T (X \hat{w} - y) \tag{3}$$
+    >
+    >$$\frac{\partial J(\hat{w})}{\partial \hat{w}} = \frac{2}{m} X^T (X \hat{w} - y) \tag{4}$$
+    >
+    >$$\frac{2}{m} X^T (X \hat{w} - y) = 0 \tag{5}$$
+    >
+    >$$X^T (X \hat{w} - y) = 0 \tag{6}$$
+    >
+    >$$X^T X \hat{w} = X^T y \tag{7}$$
+    >
+    >$$\hat{w} = (X^T X)^{-1} X^T y \tag{8}$$
+
+   即令偏导为0，化简得:$\hat w^*=\left(X^TX\right)^{-1}X^Ty$
    >[!tip]
    > $\sum\limits_{i=1}^{m}(X\hat w-y_{i})^2$事实上为每一个X对应的拟合后平面的值与其真实值之间的差值的平方之和，
    >
