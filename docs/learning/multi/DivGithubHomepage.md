@@ -117,6 +117,7 @@ image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/github-e6.png"
 :::
 
 ### snake.yml
+![](https://cdn.jsdelivr.net/gh/Pai3141/Pai3141@output/github-contribution-grid-snake.svg)
 ::: code-tabs
 @tab snake.yml
 ```shell
@@ -166,3 +167,38 @@ jobs:
 ```
 :::
 
+### profile-3d.yml
+<ImageCard
+image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/github-3d-e1.png"
+/>
+
+<CardGrid>
+<RepoCard repo="yoshi389111/github-profile-3d-contrib" />
+</CardGrid>
+
+```shell
+name: GitHub-Profile-3D-Contrib
+
+on:
+  schedule: # 03:00 JST == 18:00 UTC
+    - cron: "0 18 * * *"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    name: generate-github-profile-3d-contrib
+    steps:
+      - uses: actions/checkout@v3
+      - uses: yoshi389111/github-profile-3d-contrib@0.7.1
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          USERNAME: ${{ github.repository_owner }}
+      - name: Commit & Push
+        run: |
+          git config user.name github-actions
+          git config user.email github-actions@github.com
+          git add -A .
+          git commit -m "generated"
+          git push
+```
