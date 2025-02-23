@@ -1,10 +1,8 @@
-# Hash Blog
+# Hash Blog🚀
 ## Project Overview
+![](https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/paiad-hash-blog.png)
+`Hash` is a personal blog built using VuePress and custom themes. The theme of this blog is inspired by [Plume]（ https://theme-plume.vuejs.press ）.
 
-`Hash` is a documentation management tool based on VuePress and a custom theme, designed to provide a simple and efficient platform for developers. It supports fast building and deployment, with a local preview feature to easily switch between development and production environments. This blog is built on a theme inspired by [Plume](https://theme-plume.vuejs.press).
-<ImageCard
-image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/hash-blog.png"
-/>
 ## Installation
 
 Install the dependencies using `pnpm`:
@@ -29,7 +27,7 @@ pnpm docs:dev
 
 ### Build Production Package
 
-Build the production-ready documentation package, preparing it for deployment:
+Build the production-ready blog package, preparing it for deployment:
 
 📦 **Build production package**:
 
@@ -59,15 +57,14 @@ pnpm dlx vp-update
 
 ## Project Repository
 
-GitHub Repository: [Hash🔎](https://github.com/Pai3141/hash.git)  ![GitHub](https://img.shields.io/badge/GitHub-Repository-blue?style=flat&logo=github)
+📌GitHub Repository: [Hash Blog🚀](https://github.com/Pai3141/hash.git)
 
-📌 **Project Repository**: Visit our [GitHub repository](https://github.com/Pai3141/hash.git) for more details.
 
 ## Contributing
 
-Feel free to open Issues or submit PRs. Your feedback and contributions are important for improving the project.
+Feel free to open Issues or submit PRs. Your feedback and contributions are welcome to help improve the blog.
 
-🤝 **Contributing**: Open Issues or Pull Requests to help improve the project.
+🤝 **Contributing**: Open Issues or Pull Requests to help enhance the project.
 
 ## License
 
