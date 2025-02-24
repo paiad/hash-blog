@@ -97,6 +97,7 @@ export default defineUserConfig({
                 replit: true,
                 codeSandbox: true,
                 jsfiddle: true,
+                artPlayer: true,
                 repl: {
                     go: true,
                     rust: true,

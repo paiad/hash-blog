@@ -30,6 +30,7 @@
     "vuepress-theme-plume": "1.0.0-rc.132"
   },
   "dependencies": {
+    "artplayer": "^5.2.2",
     "mermaid": "^11.4.1",
     "vuepress-plugin-tags": "1.0.2"
   }
