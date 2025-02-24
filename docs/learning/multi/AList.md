@@ -84,3 +84,7 @@ image = "https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/img/docker-alist-e7.
 />
 
 @[bilibili](BV1ut4y1u7SM)
+
+### 文件的上传与刷新
+- 进入需要上传的文件夹，注意==主页==右下角有<Icon name = "icon-park:more-two"/>，其中有上传<Icon name = "hugeicons:cloud-upload"/>。
+- 百度网盘上传文件后可以点击右下角<Icon name = "icon-park:more-two"/>， 在点击<Icon name = "tabler:refresh"/>之后，文件将显示同步后的状态。
