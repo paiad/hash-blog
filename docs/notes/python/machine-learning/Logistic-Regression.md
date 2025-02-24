@@ -15,6 +15,7 @@ permalink: /python/9laenv5d/
     - 输入特征向量：$x_i$
     - 线性组合：$z = w^Tx_i + b$
     - Sigmoid 函数：将线性输出映射到概率
+      <ImageCard image="https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/sigmoid-fun.png"/>
       $$
       \hat{y}_i = \sigma(z) = \frac{1}{1 + e^{-z}} = \frac{1}{1 + e^{-(w^Tx_i + b)}}
       $$
@@ -85,4 +86,95 @@ permalink: /python/9laenv5d/
    > 与线性回归的最小二乘法不同，逻辑回归通过迭代优化来逼近最优解。常用的优化算法包括梯度下降、随机梯度下降（SGD）或更高级的优化器（如 Adam）。
    >
    > Tips：[逻辑回归实现](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html) 可参考 scikit-learn 提供的实现。
-   :::
+:::
+
+::: code-tabs
+@tab plot_logistic.py
+```python
+"""
+=========================================================
+Logistic function
+=========================================================
+
+Shown in the plot is how the logistic regression would, in this
+synthetic dataset, classify values as either 0 or 1,
+i.e. class one or two, using the logistic curve.
+
+"""
+import matplotlib
+# Authors: The scikit-learn developers
+# SPDX-License-Identifier: BSD-3-Clause
+
+import matplotlib.pyplot as plt
+import numpy as np
+from scipy.special import expit
+
+from sklearn.linear_model import LinearRegression, LogisticRegression
+
+matplotlib.use('TkAgg')
+# Generate a toy dataset, it's just a straight line with some Gaussian noise:
+xmin, xmax = -5, 5
+n_samples = 100
+np.random.seed(0)
+X = np.random.normal(size=n_samples)
+y = (X > 0).astype(float)
+X[X > 0] *= 4
+X += 0.3 * np.random.normal(size=n_samples)
+
+X = X[:, np.newaxis]
+
+# Fit the classifier
+clf = LogisticRegression(C=1e5)
+clf.fit(X, y)
+
+# and plot the result
+plt.figure(1, figsize=(4, 3))
+plt.clf()
+plt.scatter(X.ravel(), y, label="example data", color="black", zorder=20)
+X_test = np.linspace(-5, 10, 300)
+
+loss = expit(X_test * clf.coef_ + clf.intercept_).ravel()
+plt.plot(X_test, loss, label="Logistic Regression Model", color="red", linewidth=3)
+
+ols = LinearRegression()
+ols.fit(X, y)
+plt.plot(
+    X_test,
+    ols.coef_ * X_test + ols.intercept_,
+    label="Linear Regression Model",
+    linewidth=1,
+)
+plt.axhline(0.5, color=".5")
+
+plt.ylabel("y")
+plt.xlabel("X")
+plt.xticks(range(-5, 10))
+plt.yticks([0, 0.5, 1])
+plt.ylim(-0.25, 1.25)
+plt.xlim(-4, 10)
+plt.legend(
+    loc="lower right",
+    fontsize="small",
+)
+plt.tight_layout()
+plt.show()
+
+```
+:::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
