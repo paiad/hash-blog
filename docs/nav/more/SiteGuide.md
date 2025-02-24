@@ -19,6 +19,7 @@ permalink: /site/guide/
 <CardGrid>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/kimi-color.png" title="Kimi" href="https://kimi.moonshot.cn/"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/doubao-color.png" title="Doubao" href="https://www.doubao.com/"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/gemini-color.png" title="Gemini" href="https://gemini.google.com/app"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobe-chat" href="https://lobechat.com/chat"></LinkCard>
 </CardGrid>
 
