@@ -5,8 +5,10 @@ permalink: /article/q08d949i/
 tags:
   - Github
   - Homepage
----
+excerpt:
+  <img src="https://raw.githubusercontent.com/paiad/paiad/output/github-contribution-grid-snake.svg" alt="GitHub Contribution Grid Snake" />
 
+---
 ### 步骤导向
 :::steps
 1. 以自己的Github用户名创建一个仓库

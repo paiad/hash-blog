@@ -1,8 +1,15 @@
 ---
 title: 🥕AList
 createTime: 2025/02/24 17:36:28
+tags:
+   - AList
+   - WebDAV
 permalink: /article/x2mapzmu/
+#excerpt:
+#   <mark>Alist</mark>为用户通过统一界面管理本地和云存储（如阿里云盘、百度云盘），支持文件浏览、上传下载、预览和 WebDAV，适合自建服务的爱好者。
 ---
+> Alist是一个开源工具，用 Go 和 Solidjs 开发，
+> 帮用户通过统一界面管理本地和云存储（如阿里云盘、百度云盘），支持文件浏览、上传下载、预览和 WebDAV，适合自建服务的爱好者。
 <RepoCard repo="AlistGo/alist" />
 
 ### Docker下载
@@ -10,7 +17,8 @@ docker cli
 ```bash
 docker run -d --restart=unless-stopped -v /etc/alist:/opt/alist/data -p 5244:5244 -e PUID=0 -e PGID=0 -e UMASK=022 --name="alist" xhofe/alist:latest
 ```
-
+---
+进入容器内部，执行以下命令：
 ```bash
 # 随机生成一个密码
 docker exec -it alist ./alist admin random
@@ -64,3 +72,15 @@ width = 70% />
 
 
 :::
+
+### 本地同步百度网盘
+>在 RaiDrive 中配置 WebDAV 的目的是为了将支持 WebDAV 协议的远程存储挂载到你的电脑上，让它像本地磁盘一样使用。
+
+勾选
+- [x] Webdav 读取
+- [x] Webdav 管理
+<ImageCard
+image = "https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/img/docker-alist-e7.png"
+/>
+
+@[bilibili](BV1ut4y1u7SM)
