@@ -54,6 +54,7 @@ export default defineUserConfig({
         // },
 
         plugins: {
+            seo: false,
             watermark: {
                 enabled: false,
             },
