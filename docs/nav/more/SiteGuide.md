@@ -20,7 +20,7 @@ permalink: /site/guide/
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/kimi-color.png" title="Kimi" href="https://kimi.moonshot.cn/"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/doubao-color.png" title="Doubao" href="https://www.doubao.com/"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/gemini-color.png" title="Gemini" href="https://gemini.google.com/app"></LinkCard>
-    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobe-chat" href="https://lobechat.com/chat"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobehub-chat" href="https://lobechat.com/chat"></LinkCard>
 </CardGrid>
 
 #### Icon Library
@@ -29,7 +29,7 @@ permalink: /site/guide/
     <LinkCard icon="line-md:iconify2-static" title="Iconify" href="https://icon-sets.iconify.design/"></LinkCard>
     <LinkCard icon="twemoji:slightly-smiling-face" title="GetEmoji" href="https://getemoji.com"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/alibabacloud-color.png" title="Iconfont" href="https://www.iconfont.cn/"></LinkCard>
-    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobe-icon" href="https://lobehub.com/zh/icons"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobehub-icon" href="https://lobehub.com/zh/icons"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/bytedance-color.png" title="IconPark" href="https://iconpark.oceanengine.com/official"></LinkCard>
     <LinkCard icon="https://www.gstatic.com/android/keyboard/emojikitchen/20201001/u1f431/u1f431_u1f422.png" title="emojimix" href="https://tikolu.net/emojimix/"></LinkCard>
 </CardGrid>

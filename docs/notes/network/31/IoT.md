@@ -18,3 +18,17 @@ permalink: /network/57j0dndx/
 
 
 感知控制层：三大传感技术
+
+无源RFID：身份证切割磁感线
+
+三网融合，哪三网？百分之70考
+第六七章，不是重点。
+
+
+物联网相关应用架构：EPD/UID M2M CPS 中英文翻译
+
+
+
+WSN、EPC、CPS、M2M的辨析
+
+
