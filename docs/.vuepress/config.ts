@@ -127,7 +127,7 @@ export default defineUserConfig({
              */
             docsearch: {
                 appId: "64GTZ021MP",
-                apiKey: "2d04158638978b8d8ac72c1c74210ad0",
+                apiKey: "ce1af6876bc7ef652b0bef27c82b0086",
                 indexName: "paiad",
             }
         },
