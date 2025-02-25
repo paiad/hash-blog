@@ -1,6 +1,10 @@
 :root {
     --vp-font-family-base: 'Maple Mono CN SemiBold';
     --vp-font-family-mono: "MapleMono-CN-SemiBold";
+    .DocSearch-Button-Key--pressed {
+        box-shadow: none !important; /* 移除阴影 */
+        transform: none !important; /* 移除位移 */
+    }
 }
 
 pre, code {
