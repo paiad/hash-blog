@@ -36,11 +36,12 @@ image = "https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/img/docker-alist-e2.
 width = 70% />
 
 ### 本地挂载百度网盘
-- [本地挂载'百度网盘'文档](https://alist.nn.ci/zh/guide/drivers/baidu.html)
 #### 步骤向导
 ::: steps
 1. Step1
 
+    [本地挂载'百度网盘'文档](https://alist.nn.ci/zh/guide/drivers/baidu.html)
+   
     另起页面，登陆网页版百度网盘
 
 2. Step2

@@ -1,18 +1,8 @@
-// 美化标题
 .vp-doc {
-  //h4 {
-  //  --prefix-icon: "🍁";
-  //}
-  //h5 {
-  //  --prefix-icon: "🌸";
-  //}
-  //h6 {
-  //  --prefix-icon: "🍂";
-  //}
   h2,
   h3 {
     .header-anchor:hover {
-      color: rgb(77, 107, 254);
+      color: #8cccd5; /* 修改为 #8cccd */
     }
   }
 
@@ -20,11 +10,11 @@
     border: none;
     .header-anchor {
       display: block;
-      border-bottom: 4px solid rgb(77, 107, 254);
+      border-bottom: 4px solid #8cccd5; /* 修改为 #8cccd */
       position: relative;
       font-size: 24px;
       padding: 12px 32px;
-      color: rgb(77, 107, 254);
+      color: #8cccd5; /* 修改为 #8cccd */
       font-weight: 700;
 
       &::before,
@@ -44,18 +34,8 @@
         top: 0;
         margin: auto;
         background-size: 24px 24px;
-        background-image: url(https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/zhipu-color.png)
+        background-image: url(https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/icon/palm-color.png);
       }
-
-      //&::after {
-      //  opacity: 1;
-      //  right: 0;
-      //  width: 400px;
-      //  height: 10px;
-      //  border-top-right-radius: 24px;
-      //  background: linear-gradient(90deg, transparent, #4dd0e1);
-      //  max-width: 50vw;
-      //}
     }
   }
   h3 {
@@ -66,7 +46,7 @@
       position: relative;
       padding: 4px 32px;
       width: max-content;
-      color: rgb(77, 107, 254);
+      color: #8cccd5; /* 修改为 #8cccd */
       font-weight: 700;
 
       &::before,
@@ -79,7 +59,7 @@
       }
 
       &::before {
-        border-bottom: 2px solid rgb(77, 107, 254);
+        border-bottom: 2px solid #8cccd5; /* 修改为 #8cccd */
         width: 100%;
         content: "";
         display: block;
@@ -90,7 +70,7 @@
         bottom: -2px;
         margin: auto;
         background-size: 25px 25px;
-        background-image: url(https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/deepseek-color.png);
+        background-image: url(https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/icon/gemini-color.png);
         background-repeat: no-repeat;
         animation: h3AnimationBefore 2s infinite alternate;
       }
@@ -101,7 +81,7 @@
         width: 28px;
         height: 28px;
         position: absolute;
-        border: 2px solid rgb(77, 107, 254);
+        border: 2px solid #8cccd5; /* 修改为 #8cccd */
         border-radius: 50%;
         right: -15px;
         top: 0;
