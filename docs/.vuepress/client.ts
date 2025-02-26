@@ -7,6 +7,7 @@ import {createCursorEffect} from "./theme/utils/cursorEffect";
 import { adjustIframeHeight } from './theme/utils/iframeUtils';
 import './theme/styles/index.css';
 import './theme/styles/custom.css';
+import './theme/styles/search.css';
 import './theme/styles/markdown.scss';
 
 export default defineClientConfig({
