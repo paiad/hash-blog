@@ -13,7 +13,7 @@ permalink: /site/guide/
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/deepseek-color.png" title="DeepSeek" href="https://chat.deepseek.com"></LinkCard>
 </CardGrid>
 <CardGrid>
-    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/qwen-color.png" title="Qwen" href="https://chat.qwenlm.ai/"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/qwen-e1.png" title="Qwen" href="https://chat.qwenlm.ai/"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/grok.png" title="Grok" href="https://grok.com/"></LinkCard>
 </CardGrid>
 <CardGrid>
