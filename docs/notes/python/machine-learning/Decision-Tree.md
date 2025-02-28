@@ -21,8 +21,8 @@ image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/decision-tree-e1.pn
         - **内部节点**：表示特征条件，用于将数据进一步划分。
         - **叶节点**：表示最终的预测结果（类别或值）。
     - **目标函数**：根据任务类型优化不同的准则：
-        - **分类任务**：使用信息增益（Information Gain）、信息增益率（Gain Ratio）或基尼指数（Gini Index）来选择最佳分割特征。
-        - **回归任务**：使用方差减少（Variance Reduction）或均方误差（Mean Squared Error, MSE）来选择分割。
+        - **分类任务**：使用==信息增益==（Information Gain）、==信息增益率==（Gain Ratio）或==基尼指数==（Gini Index）来选择最佳分割特征。
+        - **回归任务**：使用==方差减少==（Variance Reduction）或==均方误差==（Mean Squared Error, MSE）来选择分割。
     - **假设**：特征之间独立，目标变量可以通过特征的层次分割进行预测。
 
 3. **Step 3：算法流程**
@@ -76,8 +76,7 @@ image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/decision-tree-e1.pn
    >
    > Tips：[决策树实现](https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html) 可参考 scikit-learn 提供的实现。
    :::
-
-好的，我已经将你的例子中的公式用 `$` 符号包围，使其更符合数学公式的标准格式。以下是修改后的内容：
+   
 
 ---
 
@@ -204,5 +203,113 @@ image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/decision-tree-e1.pn
 >
 >1. **选择最优特征**：首先基于“是否有车”分裂数据集。
 >2. **递归分裂**：对于每个子集，继续选择最优特征进行分裂，直到所有子集都是纯的，或者满足停止条件。
->
----
+
+### 决策树分类之鸢尾花
+对 6 组特征对（例如花萼长度 vs. 花萼宽度）分别训练决策树，然后用图展示决策边界和数据点：
+<ImageCard
+    image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/decision-tree-e5.png"
+/>
+
+使用鸢尾花数据集的所有 4 个特征训练一个决策树：
+<ImageCard
+    image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/decision-tree-e4.png"
+/>
+
+#### 鸢尾花代码示例
+::: code-tabs
+@tab plot_iris_dtc.py
+```python
+"""
+=======================================================================
+Plot the decision surface of decision trees trained on the iris dataset
+=======================================================================
+
+Plot the decision surface of a decision tree trained on pairs
+of features of the iris dataset.
+
+See :ref:`decision tree <tree>` for more information on the estimator.
+
+For each pair of iris features, the decision tree learns decision
+boundaries made of combinations of simple thresholding rules inferred from
+the training samples.
+
+We also show the tree structure of a model built on all of the features.
+"""
+
+# Authors: The scikit-learn developers
+# SPDX-License-Identifier: BSD-3-Clause
+
+# %%
+# First load the copy of the Iris dataset shipped with scikit-learn:
+from sklearn.datasets import load_iris
+
+iris = load_iris()
+
+
+# %%
+# Display the decision functions of trees trained on all pairs of features.
+import matplotlib.pyplot as plt
+import numpy as np
+import matplotlib
+matplotlib.use('TkAgg')
+from sklearn.datasets import load_iris
+from sklearn.inspection import DecisionBoundaryDisplay
+from sklearn.tree import DecisionTreeClassifier
+
+# Parameters
+n_classes = 3
+plot_colors = "ryb"
+plot_step = 0.02
+
+
+for pairidx, pair in enumerate([[0, 1], [0, 2], [0, 3], [1, 2], [1, 3], [2, 3]]):
+    # We only take the two corresponding features
+    X = iris.data[:, pair]
+    y = iris.target
+
+    # Train
+    clf = DecisionTreeClassifier().fit(X, y)
+
+    # Plot the decision boundary
+    ax = plt.subplot(2, 3, pairidx + 1)
+    plt.tight_layout(h_pad=0.5, w_pad=0.5, pad=2.5)
+    DecisionBoundaryDisplay.from_estimator(
+        clf,
+        X,
+        cmap=plt.cm.RdYlBu,
+        response_method="predict",
+        ax=ax,
+        xlabel=iris.feature_names[pair[0]],
+        ylabel=iris.feature_names[pair[1]],
+    )
+
+    # Plot the training points
+    for i, color in zip(range(n_classes), plot_colors):
+        idx = np.where(y == i)
+        plt.scatter(
+            X[idx, 0],
+            X[idx, 1],
+            c=color,
+            label=iris.target_names[i],
+            edgecolor="black",
+            s=15,
+        )
+
+plt.suptitle("Decision surface of decision trees trained on pairs of features")
+plt.legend(loc="lower right", borderpad=0, handletextpad=0)
+_ = plt.axis("tight")
+
+# %%
+# Display the structure of a single decision tree trained on all the features
+# together.
+from sklearn.tree import plot_tree
+
+plt.figure()
+clf = DecisionTreeClassifier().fit(iris.data, iris.target)
+plot_tree(clf, filled=True)
+plt.title("Decision tree trained on all the iris features")
+plt.show()
+
+```
+:::
+

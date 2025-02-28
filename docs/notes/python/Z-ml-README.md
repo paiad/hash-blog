@@ -23,3 +23,5 @@ permalink: /python/ml/
 - [逻辑回归](machine-learning/Logistic-Regression.md)
 - [聚类算法](machine-learning/Clustering-Algorithm.md)
 - [决策树](machine-learning/Decision-Tree.md)
+- [集成学习](machine-learning/Ensemble-Learning)
+- [支持向量机](machine-learning/Support-Vector-Machine.md)
