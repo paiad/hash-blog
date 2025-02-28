@@ -57,7 +57,7 @@ permalink: /python/9laenv5d/
       $$
       \ln L(\hat{w}) = \sum_{i=1}^m \left[ y_i \ln \hat{y}_i + (1 - y_i) \ln (1 - \hat{y}_i) \right]
       $$
-    - 损失函数（负对数似然）：
+    - ==损失函数（负对数似然）=={.important}：
       $$
       J(\hat{w}) = -\frac{1}{m} \ln L(\hat{w}) = -\frac{1}{m} \sum_{i=1}^m \left[ y_i \ln \hat{y}_i + (1 - y_i) \ln (1 - \hat{y}_i) \right]
       $$

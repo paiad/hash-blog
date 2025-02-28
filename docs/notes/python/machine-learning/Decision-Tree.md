@@ -3,6 +3,10 @@ title: 决策树
 createTime: 2025/02/27 21:59:24
 permalink: /python/3v0oq7qs/
 ---
+<ImageCard
+image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/decision-tree-e1.png"
+/>
+
 ### 步骤分析
 ::: steps
 1. **Step 1：分类或回归问题概述**

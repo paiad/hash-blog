@@ -24,7 +24,7 @@ export default defineThemeConfig({
         // { icon: { svg: plumeIcon, name: 'plumeIcon' }, link: 'https://theme-plume.vuejs.press' },
         // { icon: { svg: hashIcon, name: 'hashIcon' }, link: 'https://github.com/Pai3141/pai' },
         {icon: 'github', link: 'https://github.com'},
-        {icon:'discord',link:"https://discord.gg/psrws4UF"},
+        {icon:'discord',link:"https://discord.gg/6p9kP9rdhD"},
         // {icon: {svg: '<span class="vpi-social-emoji"></span>', name: 'emoji'}, link: 'https://getemoji.com'},
         // {icon: {svg: '<span class="vpi-social-iconify"></span>', name: 'iconify'}, link: 'https://icon-sets.iconify.design/'},
         {
@@ -40,7 +40,7 @@ export default defineThemeConfig({
 
     footer: {
         message: '🍀𝓣𝓱𝓮 𝓼𝓮𝓬𝓸𝓷𝓭 𝓫𝓮𝓼𝓽 𝓽𝓲𝓶𝓮 𝓲𝓼 𝓷𝓸𝔀.🍀',
-        copyright: `© Copyright ${new Date().getFullYear()} All Rights Reserved. Proprietary Rights Reserved by <a href="https://discord.gg/psrws4UF" target="_blank" class="rotating-star">𝑷𝒂𝒊𝒂𝒅</a>.`
+        copyright: `© Copyright ${new Date().getFullYear()} All Rights Reserved. Proprietary Rights Reserved by <a href="https://discord.gg/6p9kP9rdhD" target="_blank" class="rotating-star">𝑷𝒂𝒊𝒂𝒅</a>.`
     },
 
     outline: [2, 4]

@@ -3,7 +3,13 @@ title: 聚类算法
 createTime: 2025/02/24 10:08:04
 permalink: /python/ol2i7fiq/
 ---
-[聚类可视化平台](http://naftaliharris.com/blog/visualizing-k-means-clustering)
+<ImageCard
+title = "http://naftaliharris.com/blog/visualizing-k-means-clustering"
+image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/clustering-e3.png"
+href = "http://naftaliharris.com/blog/visualizing-k-means-clustering"
+description="聚类可视化平台，(页面用图形（如 Voronoi 图）展示过程，旨在帮助学习者直观理解 K-means 算法，属于教育性质的个人技术博客内容。"
+/>
+
 ### K-means 步骤分析
 ::: steps
 1. Step1：聚类问题概述
@@ -78,7 +84,7 @@ permalink: /python/ol2i7fiq/
 
    ==**肘部法则（Elbow Method）**==：绘制 $K$ 与 $J$ 的关系曲线，选择 $J$ 下降趋于平缓的 $K$ 值。
    <ImageCard
-   image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/clustering-silhouette-score-e1.png"
+   image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/clustering-elbow-method-e1.png"
    width = 70%
    center = true
    />

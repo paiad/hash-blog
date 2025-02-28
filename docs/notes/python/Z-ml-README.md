@@ -20,3 +20,6 @@ permalink: /python/ml/
 - [梯度下降](machine-learning/Gradient-Descent.md)
 - [交叉验证](machine-learning/Cross-Validation.md)
 - [混淆矩阵](machine-learning/Confusion-Matrix.md)
+- [逻辑回归](machine-learning/Logistic-Regression.md)
+- [聚类算法](machine-learning/Clustering-Algorithm.md)
+- [决策树](machine-learning/Decision-Tree.md)
