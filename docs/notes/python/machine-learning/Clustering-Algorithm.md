@@ -11,23 +11,38 @@ permalink: /python/ol2i7fiq/
    ==K-means==算法是一种无监督学习方法，用于将数据集划分为 $K$ 个簇（clusters）。目标是根据样本的特征，将相似的样本分配到同一个簇，使得簇内样本尽可能相似，簇间样本尽可能不同。K-means 通过最小化簇内方差（即样本到簇中心的距离平方和）来实现聚类。
 
 2. Step2：K-means 模型
-    - 数据集：$X = \{x_1, x_2, \dots, x_n\}$，其中 $x_i \in \mathbb{R}^d$ 是 $d$ 维特征向量。
-    - 簇数量：$K$，需预先指定。
-    - 簇中心：$\mu_k$，表示第 $k$ 个簇的质心，$k = 1, 2, \dots, K$。
-    - 分配标签：$c_i$，表示样本 $x_i$ 所属的簇，$c_i \in \{1, 2, \dots, K\}$。
-    - 目标函数（损失函数）：最小化簇内平方和（Within-Cluster Sum of Squares, WCSS）：
-      $$
-      J = \sum_{i=1}^n \sum_{k=1}^K r_{ik} \| x_i - \mu_k \|^2
-      $$
-      其中，$r_{ik}$ 是一个指示变量：
-        - 若 $x_i$ 属于簇 $k$，则 $r_{ik} = 1$；
-        - 否则，$r_{ik} = 0$。
+
+   ==目标函数（损失函数）=={.important}：最小化簇内平方和（Within-Cluster Sum of Squares, WCSS）：
+   $$
+   J = \sum_{i=1}^n \sum_{k=1}^K r_{ik} \| x_i - \mu_k \|^2
+   $$
+   其中，$r_{ik}$ 是一个指示变量：
+   - 若 $x_i$ 属于簇 $k$，则 $r_{ik} = 1$；
+   - 否则，$r_{ik} = 0$。
+   >数据集：$X = \{x_1, x_2, \dots, x_n\}$，其中 $x_i \in \mathbb{R}^d$ 是 $d$ 维特征向量。
+   > 
+   >簇数量：$K$，需预先指定。
+   > 
+   >簇中心：$\mu_k$，表示第 $k$ 个簇的质心，$k = 1, 2, \dots, K$。
+   > 
+   >分配标签：$c_i$，表示样本 $x_i$ 所属的簇，$c_i \in \{1, 2, \dots, K\}$。
+
    > 解释：$\| x_i - \mu_k \|^2$ 是样本 $x_i$ 到簇中心 $\mu_k$ 的欧几里得距离平方，$J$ 表示所有样本到其所属簇中心的总距离平方和。
 
 3. Step3：算法流程
 
-   K-means 采用迭代优化的方式实现聚类，主要包括以下两个步骤：
-    - **步骤 1：分配样本到最近的簇中心**
+   K-means 采用迭代优化的方式实现聚类
+   <CardGrid>
+   <ImageCard
+   image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/clustering-e2.png"
+   />
+   <ImageCard
+   image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/clustering-e1.png"
+   />
+   </CardGrid>
+   主要包括以下三个步骤：
+
+   ==步骤 1=={.important}：分配样本到最近的簇中心
       对于每个样本 $x_i$，计算其与所有簇中心 $\mu_k$ 的距离，选择距离最小的簇：
       $$
       c_i = \arg\min_k \| x_i - \mu_k \|^2
@@ -35,13 +50,15 @@ permalink: /python/ol2i7fiq/
       更新指示变量 $r_{ik}$：
         - 若 $c_i = k$，则 $r_{ik} = 1$；
         - 否则，$r_{ik} = 0$。
-    - **步骤 2：更新簇中心**
+
+   ==步骤 2=={.important}：更新簇中心
       根据当前分配的样本，重新计算每个簇的中心（取均值）：
       $$
       \mu_k = \frac{\sum_{i=1}^n r_{ik} x_i}{\sum_{i=1}^n r_{ik}}
       $$
       其中，分母 $\sum_{i=1}^n r_{ik}$ 是簇 $k$ 中的样本数量。
-    - **迭代**：重复上述步骤，直到簇中心 $\mu_k$ 不再变化（收敛）或达到最大迭代次数。
+
+   ==步骤 3=={.important}：迭代，重复上述步骤，直到簇中心 $\mu_k$ 不再变化（收敛）或达到最大迭代次数。
 
 4. Step4：初始化与收敛
 
@@ -58,8 +75,21 @@ permalink: /python/ol2i7fiq/
 5. Step5：优化与评估
 
    K-means 的目标是最小化 $J$，但需要选择合适的 $K$ 值：
-    - **肘部法则（Elbow Method）**：绘制 $K$ 与 $J$ 的关系曲线，选择 $J$ 下降趋于平缓的 $K$ 值。
-    - **轮廓系数（Silhouette Score）**：衡量簇内紧密度与簇间分离度的指标，取值范围 $[-1, 1]$，越高越好。
+
+   ==**肘部法则（Elbow Method）**==：绘制 $K$ 与 $J$ 的关系曲线，选择 $J$ 下降趋于平缓的 $K$ 值。
+   <ImageCard
+   image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/clustering-silhouette-score-e1.png"
+   width = 70%
+   center = true
+   />
+
+   ==**轮廓系数（Silhouette Score）**==：衡量簇内紧密度与簇间分离度的指标，取值范围 $[-1, 1]$，越高越好。
+   <ImageCard
+   image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/ml/clustering-silhouette-score-e1.png"
+   width = 70%
+   center = true
+   />
+
     - 计算公式：
       $$
       s(i) = \frac{b(i) - a(i)}{\max(a(i), b(i))}
@@ -73,6 +103,155 @@ permalink: /python/ol2i7fiq/
    > Tips：[K-means 实现](https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html) 可参考 scikit-learn 提供的实现。
 :::
 
+::: code-tabs
+@tab clustering-algorithm.py
+```python
+import numpy as np
+import matplotlib
+import matplotlib.pyplot as plt
+
+matplotlib.use('TkAgg')
+# 一些基础参数配置
+plt.rcParams['axes.labelsize'] = 14
+plt.rcParams['xtick.labelsize'] = 12
+plt.rcParams['ytick.labelsize'] = 12
+
+np.random.seed(42)
+
+from sklearn.datasets import make_blobs
+
+blobs_centers = np.array([
+    [0.2, 2.3],
+    [-1.5, 2.3],
+    [-2.8, 1.8],
+    [-2.8, 2.8],
+    [-2.8, 1.3],
+])
+
+blob_std = np.array([0.4, 0.3, 0.1, 0.1, 0.1])
+
+X, y = make_blobs(n_samples=200, centers=blobs_centers, cluster_std=blob_std, random_state=8)
+
+
+def plot_clusters(X, y=None):
+    plt.scatter(X[:, 0], X[:, 1], c=y, s=1)
+    plt.xlabel("$X_1$", fontsize=14)
+    plt.ylabel("$X_2$", fontsize=14, rotation=0)
+
+
+plt.figure(figsize=(8, 4))
+plot_clusters(X)
+plt.show()
+
+from sklearn.cluster import KMeans
+
+k = 5
+kmeans = KMeans(n_clusters=k, random_state=42)
+# 得到预测结果
+y_pred = kmeans.fit_predict(X)
+
+print(y_pred, kmeans.cluster_centers_)
+
+X_new = np.array([[0, 2], [3, 2], [-3, 3], [-3.2, 5]])
+kmeans.predict(X_new)
+
+
+# 绘图函数
+def plot_data(X):
+    plt.plot(X[:, 0], X[:, 1], 'k.', markersize=2)
+
+
+def plot_centroids(centroids, weights=None, circle_color='w', cross_color='r'):
+    if weights is not None:
+        centroids = centroids[weights > weights.max() / 10]
+    plt.scatter(centroids[:, 0],
+                centroids[:, 1], marker='o', s=30, linewidths=8, color=circle_color, zorder=10, alpha=0.9)
+    plt.scatter(centroids[:, 0],
+                centroids[:, 1], marker='x', s=50, linewidths=1, color=cross_color, zorder=11, alpha=1.0)
+
+
+def plot_decision_boundary(clusterer, X, resolution=1000, show_centroids=True, show_xlabels=True, show_ylabels=True):
+    mins = X.min(axis=0) - 0.1
+    maxs = X.max(axis=0) + 0.1
+    xx, yy = np.meshgrid(np.linspace(mins[0], maxs[0], resolution), np.linspace(mins[1], maxs[1], resolution))
+    Z = clusterer.predict(np.c_[xx.ravel(), yy.ravel()])
+    Z = Z.reshape(xx.shape)
+
+    plt.contourf(Z, extent=[mins[0], maxs[0], mins[1], maxs[1]], cmap="Pastel2")
+    plt.contour(Z, extent=[mins[0], maxs[0], mins[1], maxs[1]], linewidths=1, colors='k')
+    plot_data(X)
+    if show_centroids:
+        plot_centroids(clusterer.cluster_centers_)
+
+    if show_xlabels:
+        plt.xlabel("$x_1$", fontsize=14)
+    else:
+        plt.tick_params(labelbottom='off')
+    if show_ylabels:
+        plt.ylabel("$x_2$", fontsize=14, rotation=0)
+    else:
+        plt.tick_params(labelleft='off')
+
+
+# 绘图
+plt.figure(figsize=(8, 4))
+plot_decision_boundary(kmeans, X)
+plt.show()
+
+kmeans_iter1 = KMeans(n_clusters=5, init='random', n_init=1, max_iter=1, random_state=42)
+kmeans_iter2 = KMeans(n_clusters=5, init='random', n_init=1, max_iter=2, random_state=42)
+kmeans_iter3 = KMeans(n_clusters=5, init='random', n_init=1, max_iter=3, random_state=42)
+
+kmeans_iter1.fit(X)
+kmeans_iter2.fit(X)
+kmeans_iter3.fit(X)
+
+plt.figure(figsize=(10, 8))
+
+plt.subplot(321)
+plot_data(X)
+plot_centroids(kmeans_iter1.cluster_centers_, circle_color='r', cross_color='k')
+plt.title("Update cluster_centers")
+
+plt.subplot(322)
+plot_decision_boundary(kmeans_iter1, X, resolution=1000, show_xlabels=False, show_ylabels=False)
+plt.title("Label")
+
+plt.subplot(323)
+plot_decision_boundary(kmeans_iter1, X, resolution=1000, show_xlabels=False, show_ylabels=False)
+plot_centroids(kmeans_iter2.cluster_centers_, circle_color='r', cross_color='k')
+
+plt.subplot(324)
+plot_decision_boundary(kmeans_iter2, X, resolution=1000, show_xlabels=False, show_ylabels=False)
+
+plt.subplot(325)
+plot_decision_boundary(kmeans_iter2, X, resolution=1000, show_xlabels=False, show_ylabels=False)
+plot_centroids(kmeans_iter3.cluster_centers_, circle_color='r', cross_color='k')
+
+plt.subplot(326)
+plot_decision_boundary(kmeans_iter3, X, resolution=1000, show_xlabels=False, show_ylabels=False)
+
+plt.show()
+
+# 肘部法则
+kmeans_per_k = [KMeans(n_clusters=k).fit(X) for k in range(1, 10)]
+inertia = [model.inertia_ for model in kmeans_per_k]
+plt.figure(figsize=(8, 4))
+plt.plot(range(1, 10), inertia, 'bo-')
+plt.show()
+
+# 轮廓系数
+from sklearn.metrics import silhouette_score
+
+silhouette_score(X, kmeans.labels_)
+# 去除k = 1时的这种情况
+silhouette_scores = [silhouette_score(X, model.labels_) for model in kmeans_per_k[1:]]
+plt.figure(figsize=(8, 4))
+plt.plot(range(2, 10), silhouette_scores, 'bo-')
+plt.show()
+
+```
+:::
 
 
 ### DBSCAN 步骤分析
