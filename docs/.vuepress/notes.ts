@@ -22,7 +22,7 @@ const pythonNote = defineNoteConfig({
             link: '/python/ml/',
             items: ['Linear-Regression','Gradient-Descent','Cross-Validation',
                 'Confusion-Matrix','Logistic-Regression','Clustering-Algorithm',
-                'Decision-Tree'],
+                'Decision-Tree','Ensemble-Learning','Support-Vector-Machine'],
             collapsed: false
         },
     ]
