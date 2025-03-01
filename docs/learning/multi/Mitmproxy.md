@@ -101,9 +101,12 @@ width = 60%
 
 ### 步骤4：运行脚本代码
 在代码所属文件夹终端运行以下命令：
+:::code-tabs
+@tab bash
 ```bash
 mitmdump -s script.py
 ```
+:::
 
 ### 步骤5：配置mitmproxy证书
 
@@ -115,4 +118,41 @@ mitmdump -s script.py
 >根据页面提示下载并安装证书。
 
 ### 步骤6：数据爬取与分析处理
+格式转换：txt --> docx
+:::code-tabs
+@tab bash
+```bash
+pip install python-docx
+```
+:::
+::: code-tabs
+@tab transform.py
+```python
+from docx import Document
+
+def txt_to_word(input_txt_path, output_docx_path):
+    # 创建一个新的 Word 文档
+    doc = Document()
+
+    # 读取 .txt 文件内容
+    with open(input_txt_path, 'r', encoding='utf-8') as file:
+        lines = file.readlines()
+
+    # 将每一行写入 Word 文档
+    for line in lines:
+        # 去除每行末尾的换行符（因为 add_paragraph 会自动添加换行）
+        line = line.strip()
+        doc.add_paragraph(line)
+
+    # 保存 Word 文档
+    doc.save(output_docx_path)
+    print(f"文件已成功转换为 {output_docx_path}")
+
+# 调用
+input_txt_path = 'crawling_data.txt'  # 修改为自己的 txt 文件路径
+output_docx_path = 'data.docx'  # 修改为自己的 docx 名称，自定义存储路径
+txt_to_word(input_txt_path, output_docx_path)
+```
+:::
+
 ...
