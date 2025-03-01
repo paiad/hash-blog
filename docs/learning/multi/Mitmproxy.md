@@ -6,19 +6,23 @@ tags:
   - python
   - mitmproxy
 ---
-
 > mitmproxy 是一个功能强大的开源代理工具，不仅支持 HTTP 和 HTTPS 流量的拦截与代理，
 > 还提供了实时查看、修改请求和响应的能力，非常适合开发者、测试人员和安全研究人员使用。
+
+在反向代理模式下，[mitmproxy](https://docs.mitmproxy.org/stable/concepts-modes/)充当普通服务器。客户端的请求将被转发到预配置的目标服务器，响应将被转发回客户端：
+<ImageCard
+image="https://docs.mitmproxy.org/stable/schematics/proxy-modes-reverse.png"
+/>
 
 ### 步骤1：下载mitmproxy
 ::: code-tabs
 @tab pip
-```python
-   pip install mitmproxy
+```bash
+pip install mitmproxy
 ```
 @tab conda
-```python
-   conda install mitmproxy
+```bash
+conda install mitmproxy
 ```
 :::
 ### 步骤2：编写代码
@@ -89,6 +93,12 @@ def save_to_file(data, filename="crawling_data.txt"):
 > 
 > mitmproxy 默认端口 8080。(可根据自身需要修改)
 
+<ImageCard
+image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/img/mitmproxy-e1.png"
+width = 60%
+/>
+
+
 ### 步骤4：运行脚本代码
 在代码所属文件夹终端运行以下命令：
 ```bash
@@ -104,5 +114,5 @@ mitmdump -s script.py
 > 
 >根据页面提示下载并安装证书。
 
-### 步骤六：数据爬取与分析处理
+### 步骤6：数据爬取与分析处理
 ...
