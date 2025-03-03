@@ -5,80 +5,102 @@ permalink: /python/cdvav9jp/
 #aside: false
 ---
 ### 步骤分析
-::: steps 
-1. Step1：回归问题概述
+::: steps
 
-    预测一个连续的数值型输出变量(目标变量)与自变量之间的关系。
+1. **Step 1：回归问题概述**  
+   ==线性回归==是一种监督学习方法，用于根据输入特征预测连续的目标变量。
 
-2. Step2：线性回归方程
-   - 权重向量：$w$
-   - 偏置项：$b$
-   - 实际值：$y_i$
-   - 预测值：$w^Tx_i+b$
-   $$y_i=w_1x_1+w_2x_2+\cdots+w_nx_n+b+\epsilon_i=w^Tx_i+b+\epsilon_i=X\hat w$$
-   $$X=
-     \begin{pmatrix}
-     x_1^T & 1 \\
-     x_2^T & 1 \\
-     \vdots & \vdots \\
-     x_n^T & 1
-   \end{pmatrix},
-   \hat w = \begin{pmatrix}
-     w \\
-     b
-     \end{pmatrix}$$
+   ==最小二乘法=={.important}是线性回归的核心，目标是通过找到一条最佳拟合直线（或超平面），最小化预测值与真实值之间的误差平方和。
+    - **应用场景**：房价预测、销售预测等。
+    - **假设**：特征与目标之间存在线性关系，误差服从正态分布。
 
-3. Step3：误差项
+2. **Step 2：线性回归模型**
+    - **数据集**：$X = \{x_1, x_2, \dots, x_n\}$，其中 $x_i \in \mathbb{R}^d$ 是 $d$ 维特征向量；目标值 $y = \{y_1, y_2, \dots, y_n\}$，$y_i \in \mathbb{R}$ 是连续值。
+    - **模型**：假设预测值为线性函数：  
+      $$  
+      \hat{y}_i = w_0 + w_1 x_{i1} + w_2 x_{i2} + \dots + w_d x_{id} = w^T x_i  
+      $$  
+      其中：
+        - $w = [w_0, w_1, \dots, w_d]^T$ 是权重向量（$w_0$ 为截距）。
+        - $x_i = [1, x_{i1}, x_{i2}, \dots, x_{id}]^T$（添加偏置项 1）。
+    - **目标函数（损失函数）**：最小化误差平方和（Sum of Squared Errors, SSE）：  
+      $$  
+      J(w) = \sum_{i=1}^n (y_i - \hat{y}_i)^2 = \sum_{i=1}^n (y_i - w^T x_i)^2  
+      $$  
+      或矩阵形式：  
+      $$  
+      J(w) = (y - Xw)^T (y - Xw)  
+      $$  
+      其中：
+        - $X \in \mathbb{R}^{n \times (d+1)}$ 是特征矩阵。
+        - $y \in \mathbb{R}^n$ 是目标向量。
+   > **解释**：$J(w)$ 衡量预测值 $\hat{y}_i$ 与真实值 $y_i$ 的总偏差，目标是找到使 $J(w)$ 最小的 $w$。
 
-   $\epsilon_i$服从均值为零的正态分布，即$\epsilon_i \sim N(0,\sigma^{2})$
-   
+3. **Step 3：算法流程（最小二乘法）**  
+   ==损失函数==：
+   $$  
+   J(w) = (y - Xw)^T (y - Xw)  
    $$
-   P(\varepsilon_{i})=\frac{1}{\sqrt{2\pi}\sigma}exp(-\frac{\varepsilon_{i}^{2}}{2\sigma^{2}})
-   $$
-   - 均值为零：表示误差项的平均影响为零，即正误差和负误差在长期中会相互抵消。
-   - 方差为$\sigma^2$: 给定一组数据值与均值之间差异的平方的平均值为$\sigma^2$(数据的集中程度)
+   最小二乘法通过解析解或迭代优化求解最佳权重 $w$。
+    - ==**步骤 1：定义目标并求解**=={.note}  
+      为了最小化 $J(w)$，对 $w$ 求导并令导数为零：  
+      $$  
+      \frac{\partial J}{\partial w} = -2 X^T (y - Xw) = 0  
+      $$  
+      解得：  
+      $$  
+      X^T X w = X^T y  
+      $$
+    - ==**步骤 2：计算权重**=={.note}    
+      如果 $X^T X$ 可逆，直接求解：  
+      $$  
+      w = (X^T X)^{-1} X^T y  
+      $$  
+      这称为**正规方程（Normal Equation）**，是最小二乘法的解析解。
+    - ==**步骤 3：预测**=={.note}  
+      用计算出的 $w$ 预测新样本：  
+      $$  
+      \hat{y} = X_{\text{new}} w  
+      $$
+   > **注意**：若 $X^T X$ 不可逆（比如特征共线性），需要正则化（如岭回归）或数值方法。
 
-4. Step4：极大似然估计求解$\hat w$
-    $$P(y_i | x_i; \hat w)=\frac{1}{\sqrt{2\pi}\sigma}exp(-\frac{(y_i-X\hat w)^2}{2\sigma^{2}})$$
+4. **Step 4：假设与限制**  
+   最小二乘法依赖以下假设：
+    - **线性假设**：特征与目标之间是线性关系。
+    - **独立性**：样本之间相互独立。
+    - **正态误差**：误差 $\epsilon = y - \hat{y}$ 服从均值为 0 的正态分布。
+    - **同方差**：误差的方差在所有样本上相同。
+    - ==**限制**=={.caution}：
+        - 对噪声和异常值敏感。
+        - 当特征数 $d$ 接近或超过样本数 $n$ 时，$X^T X$ 可能不可逆。
+   > **解释**：违反假设可能导致模型偏差增大或不稳定。
 
-   >解释：将$P(\varepsilon_{i})$转化为关于$\hat w$的函数，目的是为了求解出$\hat w$。
-   > 
-   >在给定输入$x_i$、$\hat w$的条件下，输出$y_i$的条件概率
-   - 极大似然估计
-   > 极大似然估计（Maximum Likelihood Estimation，简称 MLE）是一种统计估计方法，旨在通过选择参数值使得观测数据在该参数下出现的概率最大化。它是基于数据的已知分布模型来估计未知参数的一种常用方法。
-   $$\begin{array} {rcl}L(\hat w) & = & \prod\limits_{i=1}^mp(y_{i}\mid x_{i};\hat w) & = & \prod\limits_{i=1}^m\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y_{i}-X\hat w)^2}{2\sigma^2}\right) \end{array}$$
-   $$\ln L(\hat w)=\ln\prod_{i=1}^m\frac{1}{\sqrt{2\pi}\sigma}\exp\left(-\frac{(y_{i}-X\hat w)^2}{2\sigma^2}\right)=m\ln\frac{1}{\sqrt{2\pi}\sigma}-\frac{1}{2\sigma^2}\sum_{i=1}^{m}(y_{i}-X\hat w)^2$$
-   >为了使每一个$y_i$的值出现的概率尽可能大(所有$y_i$的乘积最大)，所以要有$\sum\limits_{i=1}^{m}(X\hat w-y_{i})^2$尽可能小。
-
-5. Step5：最后得到$\hat w$的值
-
-   对于函数损失函数$J(\hat w) = \frac{1}{m}\sum\limits_{i=1}^{m}(X\hat w-y_{i})^2$求$\hat w$的偏导以求其最小值，这里运用线性代数的知识：
-    >1. $\alpha$为矩阵，则有$\alpha^{2}=\alpha^{T}\alpha$
-    >2. $\frac{\partial \hat w^TX^TX\hat w}{\partial \hat w}=X^TX\hat w$
-
-    >$$J(\hat{w}) = \frac{1}{m} \sum_{i=1}^{m} (X \hat{w} - y_i)^2 \tag{1}$$
-    >$$J(\hat{w}) = \frac{1}{m} \| X \hat{w} - y \|^2 \tag{2}$$
-    >
-    >$$J(\hat{w}) = \frac{1}{m} (X \hat{w} - y)^T (X \hat{w} - y) \tag{3}$$
-    >
-    >$$\frac{\partial J(\hat{w})}{\partial \hat{w}} = \frac{2}{m} X^T (X \hat{w} - y) \tag{4}$$
-    >
-    >$$\frac{2}{m} X^T (X \hat{w} - y) = 0 \tag{5}$$
-    >
-    >$$X^T (X \hat{w} - y) = 0 \tag{6}$$
-    >
-    >$$X^T X \hat{w} = X^T y \tag{7}$$
-    >
-    >$$\hat{w} = (X^T X)^{-1} X^T y \tag{8}$$
-
-   即令偏导为0，化简得:$\hat w^*=\left(X^TX\right)^{-1}X^Ty$
-   >[!tip]
-   > $\sum\limits_{i=1}^{m}(X\hat w-y_{i})^2$事实上为每一个X对应的拟合后平面的值与其真实值之间的差值的平方之和，
-   >
-   >我们需要做的就是怎么调整$\hat w$，使这个平方之和最小。
-   >
-   >tips：[普通最小二乘法（OLS）](https://scikit-learn.org/stable/auto_examples/linear_model/plot_ols.html)是一种通过最小化数据点和回归模型之间误差的平方和来求解回归模型参数的方法，即使MSE最小化。(MSE: 均方误差)
+5. **Step 5：优化与评估**  
+   线性回归的效果需要评估和优化：
+    - **评估指标**：
+        - **均方误差（MSE）**：  
+          $$  
+          \text{MSE} = \frac{1}{n} \sum_{i=1}^n (y_i - \hat{y}_i)^2  
+          $$
+        - **决定系数（$R^2$）**：衡量模型对数据的解释能力，取值 $[0, 1]$，越接近 1 越好：  
+          $$  
+          R^2 = 1 - \frac{\sum (y_i - \hat{y}_i)^2}{\sum (y_i - \bar{y})^2}  
+          $$  
+          其中 $\bar{y}$ 是目标均值。
+    - **优化方法**：
+        - **特征选择**：去除不相关或共线性的特征。
+        - **正则化**：引入 L2（岭回归）或 L1（Lasso）惩罚，避免过拟合。
+        - **梯度下降**：当数据量大或 $X^T X$ 不可逆时，可用迭代法替代正规方程：  
+          $$  
+          w \leftarrow w - \eta \frac{\partial J}{\partial w}  
+          $$  
+          其中 $\eta$ 是学习率。
+   > [!tip]
+   > ==最小二乘法(OLS)=={.important}是一种通过最小化数据点和回归模型之间误差的平方和来求解回归模型参数的方法，即使MSE最小化。(MSE: 均方误差)
    > 以几何的角度来说，最小二乘法就是在多维空间中找到一个最优的超平面，使得数据点与该超平面之间的误差最小化。
+   > 
+   > **Tips**：[线性回归实现](https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LinearRegression.html) 可参考 scikit-learn 的 `LinearRegression`。
+   
 :::
 
 ### 简单线性回归代码
