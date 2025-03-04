@@ -132,4 +132,8 @@ export default defineUserConfig({
             }
         },
     }),
+    define: {
+        // 将环境变量注入到客户端
+        __GITHUB_TOKEN__: JSON.stringify(process.env.GITHUB_TOKEN || ''),
+    },
 })
