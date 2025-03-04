@@ -31,7 +31,6 @@
   },
   "dependencies": {
     "artplayer": "^5.2.2",
-    "dotenv": "^16.4.7",
     "mermaid": "^11.4.1",
     "vuepress-plugin-tags": "1.0.2"
   }
