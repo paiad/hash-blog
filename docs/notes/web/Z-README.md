@@ -11,7 +11,10 @@ permalink: /web/
 [//]: # (  <LinkCard title="CrystalLaser" href="https://herbseeker.fun"></LinkCard>)
 [//]: # (</CardGrid>)
 
-### 文件上传小助手
-<CardGrid>
-    <LinkCard title="FileUpload" href="/file/upload/"></LinkCard>
-</CardGrid>
+[//]: # (### 文件上传小助手)
+
+[//]: # (<CardGrid>)
+
+[//]: # (    <LinkCard title="FileUpload" href="/file/upload/"></LinkCard>)
+
+[//]: # (</CardGrid>)
