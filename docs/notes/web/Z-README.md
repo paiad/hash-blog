@@ -1,5 +1,5 @@
 ---
-title: 🌈Tools
+title: 🌈Web Tools
 createTime: 2025/01/11 10:24:35
 permalink: /web/
 ---
@@ -14,7 +14,5 @@ permalink: /web/
 ### 文件上传小助手
 
 <CardGrid>
-
     <LinkCard title="FileUpload" href="/file/upload/"></LinkCard>
-
 </CardGrid>

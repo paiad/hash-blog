@@ -94,7 +94,7 @@ export default {
   methods: {
     async fetchGithubToken() {
       try {
-        const response = await fetch('http://localhost:9090/api/token/github/get');
+        const response = await fetch('http://39.105.191.246:8088/api/token/github/get');
         if (!response.ok) {
           throw new Error(`获取 token 失败: ${response.status} ${response.statusText}`);
         }
