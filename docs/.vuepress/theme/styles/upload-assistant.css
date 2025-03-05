@@ -154,6 +154,22 @@ a {
     padding: 15px;
     border-radius: 8px;
     box-shadow: 0 4px 12px rgba(10, 209, 200, 0.1);
+    animation: fadeToWhiteAndDisappear 3.14s linear forwards; /* 延长到 15 秒，使用线性缓动 */
+    opacity: 1; /* 初始完全不透明 */
+}
+
+@keyframes fadeToWhiteAndDisappear {
+    0% {
+        background: linear-gradient(135deg, #9ecedc, #65d3af, #dbef83);
+        opacity: 1; /* 初始完全不透明 */
+    }
+    50% {
+        background: linear-gradient(135deg, #9ecedc, #65d3af, #dbef83);; /* 最终背景为白色 */
+        opacity: 0.628; /* 完全透明，元素消失 */
+    }100% {
+        background: linear-gradient(135deg, #9ecedc, #65d3af, #dbef83);; /* 最终背景为白色 */
+        opacity: 0; /* 完全透明，元素消失 */
+    }
 }
 
 .loading-spinner {
