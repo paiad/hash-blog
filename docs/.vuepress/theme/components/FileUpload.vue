@@ -87,14 +87,14 @@ export default {
         case 'doc':
         case 'docx': return '📝';
         case 'txt': return '📜';
-        default: return '📁';
+        default: return '📁' ;
       }
     },
   },
   methods: {
     async fetchGithubToken() {
       try {
-        const response = await fetch('http://39.105.191.246:8088/api/token/github/get');
+        const response = await fetch("https://ad.paiad.online/api/token/github/get");
         if (!response.ok) {
           throw new Error(`获取 token 失败: ${response.status} ${response.statusText}`);
         }
