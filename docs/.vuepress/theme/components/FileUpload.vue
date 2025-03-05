@@ -104,7 +104,8 @@ export default {
         }
         this.githubToken = result.data.trim(); // 提取 data 中的 token 并去除空白
       } catch (error) {
-        alert('初始化 token 失败，请检查后端服务或网络！');
+        // alert('初始化 token 失败，请检查后端服务或网络！');
+        alert('请用浏览器打开，如有其他问题可联系管理员！');
       }
     },
     onDragOver() { this.isDragging = true; },
@@ -139,7 +140,7 @@ export default {
         return;
       }
       if (!this.githubToken) {
-        alert("GitHub Token 未加载，请刷新页面或检查后端！");
+        alert('请用浏览器打开，如有其他问题可联系管理员！');
         return;
       }
 
