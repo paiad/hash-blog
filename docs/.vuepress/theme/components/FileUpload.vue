@@ -353,12 +353,12 @@ a {
 }
 
 .upload-success {
-  margin-top: 15px; /* 缩小外边距 */
-  color: #202124;
-  background-color: white;
-  padding: 15px;
-  border-radius: 6px; /* 缩小圆角 */
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1); /* 缩小阴影 */
+  margin-top: 10px; /* 稍微收紧间距 */
+  color: #1a1a1a; /* 更柔和的文字颜色 */
+  background: linear-gradient(135deg, #9ecedc, #65d3af, #dbef83); /* 添加渐变背景 */
+  padding: 15px; /* 保持原有内边距 */
+  border-radius: 8px; /* 稍大的圆角，现代感 */
+  box-shadow: 0 4px 12px rgba(10, 209, 200, 0.1); /* 更自然的阴影，匹配渐变色 */
 }
 
 .loading-spinner {
