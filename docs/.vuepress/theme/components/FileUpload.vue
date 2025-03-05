@@ -38,7 +38,7 @@
         </div>
       </div>
       <div v-if="fileUrl" class="upload-success">
-        <p>恭喜您！文件已成功上传！</p>
+        <p>🎉恭喜您！文件已成功上传！🎉</p>
       </div>
     </div>
     <!-- 上传成功弹窗 -->
@@ -103,9 +103,7 @@ export default {
           throw new Error(`后端返回异常: ${result.msg || 'token 为空'}`);
         }
         this.githubToken = result.data.trim(); // 提取 data 中的 token 并去除空白
-        console.log('Fetched Token:', this.githubToken);
       } catch (error) {
-        console.error('获取 GitHub token 失败:', error);
         alert('初始化 token 失败，请检查后端服务或网络！');
       }
     },
@@ -155,8 +153,6 @@ export default {
         const apiUrl = `https://api.github.com/repos/${this.githubRepo}/contents/${filePath}`;
 
         try {
-          console.log('Uploading with Token:', this.githubToken);
-          console.log('API URL:', apiUrl);
           const response = await fetch(apiUrl, {
             method: "PUT",
             headers: {
@@ -171,7 +167,6 @@ export default {
 
           if (!response.ok) {
             const errorData = await response.json();
-            console.error('GitHub API Error:', errorData);
             throw new Error(`上传失败: ${errorData.message}`);
           }
 
@@ -180,8 +175,7 @@ export default {
           this.showSuccessModal = true;
           this.reset();
         } catch (error) {
-          console.error("上传错误:", error);
-          alert(`上传出错：${error.message}`);
+          alert(`上传出错，请及时联系管理员！`);
         } finally {
           this.isUploading = false;
         }
