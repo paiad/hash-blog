@@ -25,6 +25,13 @@ const pythonNote = defineNoteConfig({
                 'Decision-Tree','Ensemble-Learning','Support-Vector-Machine'],
             collapsed: false
         },
+        {
+            dir: 'deep-learning',
+            text: '🧳Deep Learning',
+            link: '/python/dl/',
+            items: ['deep-learning'],
+            collapsed: false
+        },
     ]
 })
 
