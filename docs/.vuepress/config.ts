@@ -113,13 +113,13 @@ export default defineUserConfig({
             comment: {
               provider: "Giscus",
               comment: true,
-              repo: "Pai3141/hash",
+              repo: "paiad/hash-blog",
               repoId: "R_kgDONrr8kQ",
               category: "Announcements",
               categoryId: "DIC_kwDONrr8kc4CnNps",
               mapping: 'pathname',
               reactionsEnabled: true,
-              inputPosition: 'top',
+              inputPosition: 'bottom',
             },
 
             /**

@@ -28,6 +28,7 @@ aside: left
   <RepoCard repo="hiroi-sora/Umi-OCR" />
   <RepoCard repo="AlistGo/alist" />
   <RepoCard repo="anuraghazra/github-readme-stats" />
+  <RepoCard repo="deepseek-ai/awesome-deepseek-integration" />
 </CardGrid>
 
 ### Books
