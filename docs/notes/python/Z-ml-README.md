@@ -1,5 +1,5 @@
 ---
-title: 🪀Machine Learning
+title: Machine Learning
 createTime: 2025/02/01 00:25:47
 aside: false
 permalink: /python/ml/

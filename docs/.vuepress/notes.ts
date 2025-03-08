@@ -11,23 +11,23 @@ const pythonNote = defineNoteConfig({
         // },
         {
             dir: 'base',
-            text: '🐛Python Base',
+            text: 'Python Base',
             link: '/python/base/',
             items: ['Basic_learning', 'Deep_and_shallow_copy', 'Iterator_and_generator', 'Examination'],
             collapsed: true
         },
         {
             dir: 'machine-learning',
-            text: '🪀Machine Learning',
+            text: 'Machine Learning',
             link: '/python/ml/',
             items: ['Linear-Regression','Gradient-Descent','Cross-Validation',
                 'Confusion-Matrix','Logistic-Regression','Clustering-Algorithm',
-                'Decision-Tree','Ensemble-Learning','Support-Vector-Machine'],
+                'Decision-Tree','Ensemble-Learning','Support-Vector-Machine',"KNN"],
             collapsed: false
         },
         {
             dir: 'deep-learning',
-            text: '🧳Deep Learning',
+            text: 'Deep Learning',
             link: '/python/dl/',
             items: ['deep-learning'],
             collapsed: false
