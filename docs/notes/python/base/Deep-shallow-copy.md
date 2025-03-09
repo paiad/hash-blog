@@ -3,8 +3,8 @@ title: 深拷贝和浅拷贝
 createTime: 2024/11/12 20:33:42
 permalink: /python/lsdw28dd/
 ---
+<LinkCard title = "Python的深浅拷贝" href = "https://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.html"/>
 
-- [Python的深浅拷贝](https://www.runoob.com/w3cnote/python-understanding-dict-copy-shallow-or-deep.html)
 ## 赋值操作
 ```python
 a = [1,2,3,['apple','banana']]

@@ -3,8 +3,7 @@ title: 迭代器和生成器
 createTime: 2024/12/04 17:26:13
 permalink: /python/w03r7n9o/
 ---
-
-- [Python的迭代器和生成器](https://www.runoob.com/python3/python3-iterator-generator.html)
+<LinkCard title = "Python的迭代器和生成器" href = "https://www.runoob.com/python3/python3-iterator-generator.html"/>
 
 ## 迭代器
 迭代器是一个可以记住遍历的位置的对象。

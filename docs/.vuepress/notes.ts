@@ -13,7 +13,7 @@ const pythonNote = defineNoteConfig({
             dir: 'base',
             text: 'Python Base',
             link: '/python/base/',
-            items: ['Basic_learning', 'Deep_and_shallow_copy', 'Iterator_and_generator', 'Examination'],
+            items: ['Basic-learning', 'Deep-shallow-copy', 'Iterator-generator', 'Immutable-object.md'],
             collapsed: true
         },
         {
@@ -29,7 +29,7 @@ const pythonNote = defineNoteConfig({
             dir: 'deep-learning',
             text: 'Deep Learning',
             link: '/python/dl/',
-            items: ['deep-learning'],
+            items: ['Softmax-Classifier'],
             collapsed: false
         },
     ]
