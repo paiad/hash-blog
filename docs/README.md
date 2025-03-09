@@ -3,7 +3,7 @@ home: true
 config:
   -
     type: banner
-    banner: ./image/star-mountain.jpg
+    banner: ./image/railway.png
     full: ture
     bannerMask:
       light: 0
@@ -20,7 +20,5 @@ config:
           theme: alt
           text: 📍 Go To Github
           link: https://github.com
-#  - type: blog
-
 ---
 
