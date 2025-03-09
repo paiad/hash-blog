@@ -18,8 +18,8 @@ permalink: /article/dncjusfd/
 > 1. 第5行: 需要将你的需要生成的二位码对应的连接换为你自己的：https://xxx.xxx.xxx
 > 2. 第37行: 若你需要在二维码中添加图片请将下方的Hash.png换为你自己已存在的图片路径
 > 3. 其他关于二维码的自定义细节，请自己调整代码实现
-> 4. EH二维码:   [https://paiad.online](https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/hash_qrcode.png)
-> 5. CN二维码:   [https://paiad.top](https://raw.githubusercontent.com/Pai3141/PictureBed/main/img/hash_qrcode_cn.png)
+> 4. EH二维码:   [https://paiad.online](https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/img/hash_qrcode.png)
+> 5. CN二维码:   [https://paiad.top](https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/img/hash_qrcode_cn.png)
 
 
 
