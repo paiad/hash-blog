@@ -29,6 +29,7 @@ aside: left
   <RepoCard repo="AlistGo/alist" />
   <RepoCard repo="anuraghazra/github-readme-stats" />
   <RepoCard repo="deepseek-ai/awesome-deepseek-integration" />
+  <RepoCard repo="CorentinTh/it-tools" />
 </CardGrid>
 
 ### Books
