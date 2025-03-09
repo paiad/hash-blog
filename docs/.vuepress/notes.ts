@@ -9,13 +9,13 @@ const pythonNote = defineNoteConfig({
         //     icon: 'skill-icons:nix-light',
         //     text: 'Hash Learning',
         // },
-        {
-            dir: 'base',
-            text: 'Python Base',
-            link: '/python/base/',
-            items: ['Basic-learning', 'Deep-shallow-copy', 'Iterator-generator', 'Immutable-object.md'],
-            collapsed: true
-        },
+        // {
+        //     dir: 'base',
+        //     text: 'Python Base',
+        //     link: '/python/base/',
+        //     items: ['Basic-learning', 'Deep-shallow-copy', 'Iterator-generator', 'Immutable-object.md'],
+        //     collapsed: true
+        // },
         {
             dir: 'machine-learning',
             text: 'Machine Learning',
