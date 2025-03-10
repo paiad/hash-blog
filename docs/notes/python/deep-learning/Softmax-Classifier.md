@@ -3,7 +3,7 @@ title: Softmax分类器
 createTime: 2025/03/09 15:01:08
 permalink: /python/python/ml/cjfdn42s/
 ---
-### Softmax分类器步骤分析
+### 步骤分析
 ::: steps
 1. Step1：分类问题概述
 

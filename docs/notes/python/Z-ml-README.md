@@ -26,3 +26,4 @@ permalink: /python/ml/
 - [决策树](machine-learning/Decision-Tree.md)
 - [集成学习](machine-learning/Ensemble-Learning)
 - [支持向量机](machine-learning/Support-Vector-Machine.md)
+- [K近邻算法](machine-learning/KNN.md)

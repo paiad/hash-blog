@@ -14,7 +14,7 @@ export const navbar = defineNavbarConfig([
                 text: 'Language',
                 icon: 'devicon:vscode',
                 items: [
-                    {icon: 'proicons:python', text: 'Python', link: '/notes/python/Z-base-README.md'},
+                    {icon: 'proicons:python', text: 'Python', link: '/notes/python/Z-ml-README.md'},
                     // { icon: 'proicons:python', text: 'Python', link: '/notes/python/Z-ml-README.md' },
                 ],
             },
