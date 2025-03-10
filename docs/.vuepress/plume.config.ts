@@ -25,12 +25,12 @@ export default defineThemeConfig({
         // { icon: { svg: hashIcon, name: 'hashIcon' }, link: 'https://github.com/Pai3141/pai' },
         {icon: 'github', link: 'https://github.com'},
         // {icon:'discord',link:"https://discord.gg/6p9kP9rdhD"},
-        // {icon: {svg: '<span class="vpi-social-emoji"></span>', name: 'emoji'}, link: 'https://getemoji.com'},
-        // {icon: {svg: '<span class="vpi-social-iconify"></span>', name: 'iconify'}, link: 'https://icon-sets.iconify.design/'},
-        {
-            icon: {svg: '<span class="vpi-social-grok"></span>', name: 'grok'},
-            link: 'https://grok.com/chat/'
-        },
+        {icon: {svg: '<span class="vpi-social-emoji"></span>', name: 'emoji'}, link: 'https://getemoji.com'},
+        {icon: {svg: '<span class="vpi-social-iconify"></span>', name: 'iconify'}, link: 'https://icon-sets.iconify.design/'},
+        // {
+            // icon: {svg: '<span class="vpi-social-grok"></span>', name: 'grok'},
+            // link: 'https://grok.com/chat/'
+        // },
         {
             icon: {svg: '<span class="vpi-social-file-upload"></span>', name: 'sitemap'},
             link: 'https://paiad.online/file/upload'
