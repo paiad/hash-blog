@@ -1,5 +1,6 @@
 ---
-title: 🦀网络应用编程(Rust)
+title: 网络应用编程
+icon: teenyicons:rust-outline
 createTime: 2024/11/30 17:30:05
 permalink: /network/tx4jgaxf/
 ---

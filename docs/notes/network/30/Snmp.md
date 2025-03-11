@@ -1,5 +1,6 @@
 ---
-title: 🐣计算机网络管理
+title: 计算机网络管理
+icon: oui:app-index-management
 createTime: 2024/12/06 11:37:01
 permalink: /network/n0rmn2lz/
 ---

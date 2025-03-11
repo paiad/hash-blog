@@ -48,7 +48,7 @@ const networkNote = defineNoteConfig({
             dir: '30',
             text: '大三上',
             link: '/network/30/',
-            items: ['NetworkSecurity', 'OperatingSystem', 'RT-SW', 'SDN', 'Snmp', 'Rust'],
+            items: ['NetworkSecurity', 'OperatingSystem', 'RT-SW', 'Rust', 'SDN', 'Snmp'],
             collapsed: true
         },
         {

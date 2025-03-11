@@ -1,5 +1,6 @@
 ---
-title: 🥝路由与交换
+title: 路由与交换
+icon: tabler:router
 createTime: 2024/11/17 00:18:19
 permalink: /network/o6pj1ty3/
 #watermark:

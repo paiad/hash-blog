@@ -1,5 +1,6 @@
 ---
-title: 🍀软件定义网络
+title: 软件定义网络
+icon: token:sdn
 createTime: 2024/11/26 17:06:52
 permalink: /network/imb9omso/
 ---
