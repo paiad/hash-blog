@@ -38,28 +38,28 @@ const pythonNote = defineNoteConfig({
 const networkNote = defineNoteConfig({
     dir: 'network',
     link: '/network',
-    sidebar: "auto"
-    // sidebar: [
-    //     // {
-    //     //     icon: 'logos:ink',
-    //     //     text: 'Network Learning',
-    //     // },
-    //     {
-    //         dir: '30',
-    //         text: '大三上',
-    //         link: '/network/',
-    //         items: ['NetworkSecurity', 'OperatingSystem', 'RT-SW', 'SDN', 'Snmp', 'Rust'],
-    //         collapsed: true
-    //     },
-    //     {
-    //         dir: '31',
-    //         text: '大三下',
-    //         link: '/network/',
-    //         items: ['CyberDefense', 'MachineLearning', 'CloudComputing', 'IoT', 'English'],
-    //         collapsed: false
-    //     },
-    //
-    // ]
+    // sidebar: "auto"
+    sidebar: [
+        // {
+        //     icon: 'logos:ink',
+        //     text: 'Network Learning',
+        // },
+        {
+            dir: '30',
+            text: '大三上',
+            link: '/network/30/',
+            items: ['NetworkSecurity', 'OperatingSystem', 'RT-SW', 'SDN', 'Snmp', 'Rust'],
+            collapsed: true
+        },
+        {
+            dir: '31',
+            text: '大三下',
+            link: '/network/31/',
+            items: ['CyberDefense', 'MachineLearning', 'CloudComputing', 'IoT', 'English'],
+            collapsed: false
+        },
+
+    ]
 })
 
 const websiteNote = defineNoteConfig({
