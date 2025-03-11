@@ -11,10 +11,10 @@ export const navbar = defineNavbarConfig([
         text: '笔记',
         items: [
             {
-                text: 'Language',
-                icon: 'devicon:vscode',
+                text: 'Cloud',
+                icon: 'logos:google-cloud',
                 items: [
-                    {icon: 'proicons:python', text: 'Python', link: '/notes/python/Z-ml-README.md'},
+                    {icon: 'material-symbols:cloud-outline', text: 'X-Learning', link: '/notes/python/Z-ml-README.md'},
                     // { icon: 'proicons:python', text: 'Python', link: '/notes/python/Z-ml-README.md' },
                 ],
             },
