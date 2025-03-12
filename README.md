@@ -1,6 +1,6 @@
 # Hash Blog🚀
 ## Project Overview
-![](https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/paiad-hash-blog.png)
+![](https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/img/blog-e1.jpg)
 [`Hash Blog`](https://paiad.online) is a personal blog built using VuePress and custom themes. The theme of this blog is inspired by [Plume](https://theme-plume.vuejs.press).
 
 ## Installation

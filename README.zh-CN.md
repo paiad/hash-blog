@@ -1,6 +1,6 @@
 # Hash 博客 🚀
 ## 项目概述
-![](https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/paiad-hash-blog.png)
+![](https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/img/blog-e1.jpg)
 [`Hash Blog`](https://paiad.top) 是一个使用 VuePress 和自定义主题构建的个人博客。此博客的主题灵感来源于 [Plume](https://theme-plume.vuejs.press)。
 
 ## 安装
