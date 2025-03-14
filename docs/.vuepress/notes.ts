@@ -29,7 +29,7 @@ const pythonNote = defineNoteConfig({
             dir: 'deep-learning',
             text: 'Deep Learning',
             link: '/python/dl/',
-            items: ['Softmax-Classifier','Neural-Network'],
+            items: ['Softmax-Classifier','Neural-Network','Deep-Learning'],
             collapsed: false
         },
     ]
