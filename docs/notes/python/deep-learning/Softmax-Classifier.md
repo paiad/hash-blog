@@ -1,7 +1,7 @@
 ---
 title: Softmax分类器
 createTime: 2025/03/09 15:01:08
-permalink: /python/python/ml/cjfdn42s/
+permalink: /python/cjfdn42s/
 ---
 ### 步骤分析
 ::: steps

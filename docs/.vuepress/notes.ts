@@ -84,6 +84,6 @@ const modelNote = defineNoteConfig({
 export const notes = defineNotesConfig({
     dir: 'notes',
     link: '/',
-    notes: [networkNote, pythonNote, websiteNote, modelNote],
+    notes: [networkNote, pythonNote, websiteNote],
 })
 
