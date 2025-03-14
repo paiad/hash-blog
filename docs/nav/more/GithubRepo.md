@@ -30,6 +30,7 @@ aside: left
   <RepoCard repo="anuraghazra/github-readme-stats" />
   <RepoCard repo="deepseek-ai/awesome-deepseek-integration" />
   <RepoCard repo="CorentinTh/it-tools" />
+  <RepoCard repo="vastsa/FileCodeBox" />
 </CardGrid>
 
 ### Books
