@@ -25,7 +25,7 @@ permalink: /python/cnlb4wvg/
 ### NVIDIA
 在cmd命令行中查看自己的显卡型号和系统信息
 ```bash
-nvida-smi
+nvidia-smi
 ```
 根据自己的显卡，下载对应的Nvidia驱动程序
 <CardGrid>
@@ -47,7 +47,7 @@ nvida-smi
 ```bash
 pip3 install torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu118
 ```
-如下图所示，出现True，即是安装成功
+如下图所示，出现True，即安装成功
 ```bash
 (pytorch-3.12) C:\Users\USER>python
 Python 3.12.9 | packaged by conda-forge | (main, Mar  4 2025, 22:37:18) [MSC v.1943 64 bit (AMD64)] on win32
@@ -56,3 +56,63 @@ Type "help", "copyright", "credits" or "license" for more information.
 >>> torch.cuda.is_available()
 True
 ```
+
+>[!info]
+> ==CUDA==是NVIDIA的并行计算平台，用类C语言通过GPU加速任务，适合大量并行运算，如机器学习等。
+> 核心是利用GPU多线程执行“内核”函数。
+
+### Jupyter
+<CardGrid>
+    <LinkCard icon="devicon:jupyter" title="Jupyter" href="https://jupyter.org/"/>
+</CardGrid>
+
+```bash
+jupyter notebook
+```
+
+---
+
+### PyTorch加载数据初认识
+:::code-tabs
+@tab load_data.py
+```python
+import os
+from torch.utils.data import Dataset
+
+class MyDataset(Dataset):
+    def __init__(self, root_dir, label_dir):
+        self.root_dir = root_dir
+        self.label_dir = label_dir
+        # 图片所属文件夹路径
+        self.path = os.path.join(root_dir, label_dir)
+        # 图片所属文件夹路径的图片名列表枚举
+        self.img_path = os.listdir(self.path)
+    def __getitem__(self, idx):
+        img_name= self.img_path[idx]
+        img_item_path = os.path.join(self.path, img_name)
+        img = Image.open(img_item_path)
+        label = self.label_dir
+        return img, label
+    
+    def __len__(self):
+        return len(self.img_path)
+
+# 数据集所在根目录        
+root_dir = '../datasets/hymenoptera_data/train'
+
+ants_label_dir = 'ants'
+bees_label_dir = 'bees'
+ants_dataset = MyDataset(root_dir, ants_label_dir)
+bees_dataset = MyDataset(root_dir, bees_label_dir)
+
+img_ant, label_ant = ants_dataset[1]
+img_bee, label_bee = bees_dataset[1]
+
+img_ant.show()
+img_bee.show()
+
+# 总数据集
+train_set = ants_dataset + bees_dataset
+len(train_set)
+```
+:::

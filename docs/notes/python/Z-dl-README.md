@@ -19,4 +19,7 @@ permalink: /python/dl/
     <LinkCard icon="devicon:pytorch" size="5em" title="PyTorch" href="https://pytorch.org">
         PyTorch 是一个开源的深度学习框架，以其动态计算图和灵活性著称，广泛用于研究和生产环境，支持 GPU 加速。
     </LinkCard>
+    <LinkCard icon="devicon:jupyter" title="Jupyter" href="https://jupyter.org/">
+        Jupyter 是一个开源的交互式笔记本工具，支持多种编程语言（如Python），广泛用于数据分析、可视化和教学，允许代码、文本和图表集成显示。
+    </LinkCard>
 </CardGrid>
