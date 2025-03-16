@@ -31,9 +31,12 @@ aside: left
   <RepoCard repo="deepseek-ai/awesome-deepseek-integration" />
   <RepoCard repo="CorentinTh/it-tools" />
   <RepoCard repo="vastsa/FileCodeBox" />
+  <RepoCard repo="carbon-app/carbon" />
+  <RepoCard repo="yoshi389111/github-profile-3d-contrib" />
 </CardGrid>
 
 ### Books
 <CardGrid>
   <RepoCard repo="EbookFoundation/free-programming-books" />
+  <RepoCard repo="jaywcjlove/reference" />
 </CardGrid>
