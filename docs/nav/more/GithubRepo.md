@@ -8,12 +8,13 @@ aside: left
 ### Machine Learning
 <RepoCard repo="scikit-learn/scikit-learn" />
 
-
-### Blog
+### Docker Images
 <CardGrid>
-  <RepoCard repo="vuejs/vuepress" />
-  <RepoCard repo="vuejs/vitepress" />
-  <RepoCard repo="pengzhanbo/vuepress-theme-plume" />
+  <RepoCard repo="AlistGo/alist" />
+  <RepoCard repo="CorentinTh/it-tools" />
+  <RepoCard repo="vastsa/FileCodeBox" />
+  <RepoCard repo="usememos/memos" />
+  <RepoCard repo="modelscope/FunASR" />
 </CardGrid>
 
 ### Project
@@ -26,11 +27,8 @@ aside: left
 <CardGrid>
   <RepoCard repo="CherryHQ/cherry-studio" />
   <RepoCard repo="hiroi-sora/Umi-OCR" />
-  <RepoCard repo="AlistGo/alist" />
   <RepoCard repo="anuraghazra/github-readme-stats" />
   <RepoCard repo="deepseek-ai/awesome-deepseek-integration" />
-  <RepoCard repo="CorentinTh/it-tools" />
-  <RepoCard repo="vastsa/FileCodeBox" />
   <RepoCard repo="carbon-app/carbon" />
   <RepoCard repo="yoshi389111/github-profile-3d-contrib" />
 </CardGrid>
@@ -40,3 +38,11 @@ aside: left
   <RepoCard repo="EbookFoundation/free-programming-books" />
   <RepoCard repo="jaywcjlove/reference" />
 </CardGrid>
+
+### Blog
+<CardGrid>
+  <RepoCard repo="vuejs/vuepress" />
+  <RepoCard repo="vuejs/vitepress" />
+  <RepoCard repo="pengzhanbo/vuepress-theme-plume" />
+</CardGrid>
+
