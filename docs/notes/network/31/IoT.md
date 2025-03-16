@@ -32,6 +32,11 @@ permalink: /network/57j0dndx/
 
 WSN、EPC、CPS、M2M的辨析
 
+<ImageCard image="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/img/stepping-motor-e1.jpg"/>
+
+>[!important]
+> - $\theta_s = \frac{360^\circ}{Z_r \cdot N}$
+> - $n = \frac{f \theta_s}{360^\circ}\cdot60 = \frac{f \theta_s}{6^\circ}$(r/min)
 
 ### 测试1
 ```html
