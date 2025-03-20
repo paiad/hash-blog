@@ -21,6 +21,7 @@ permalink: /site/guide/
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/doubao-color.png" title="Doubao" href="https://www.doubao.com/"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/gemini-color.png" title="Gemini" href="https://gemini.google.com/app"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobehub-chat" href="https://lobechat.com/chat"></LinkCard>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/icon/siliconcloud-color.png" title="SiliconFlow" href="https://cloud.siliconflow.cn/models"></LinkCard>
 </CardGrid>
 
 #### Icon Library
