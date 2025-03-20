@@ -23,6 +23,10 @@ permalink: /python/cnlb4wvg/
 | 显示所有环境信息         | `conda info -e`                       |
 | 删除环境 | `conda env remove --name env_name`    |
 ### 🌟NVIDIA
+>[!info]
+> - `nvcc -V`返回版本号可以判断是否安装了cuda
+> - `nvidia-smi`显示的是当前版本驱动可以支持的最高的cuda版本
+
 在cmd命令行中查看自己的显卡型号和系统信息
 ```bash
 nvidia-smi
@@ -117,6 +121,9 @@ len(train_set)
 ```
 :::
 ### TensorBoard
+>[!important]
+> `TensorBoard` 是 TensorFlow 提供的可视化工具，主要用于 深度学习模型的训练过程和结果分析
+
 :::code-tabs
 @tab TensorBoard.py
 ```python
@@ -131,6 +138,10 @@ writer.close()
 :::
 
 ### Transforms
+>[!important]
+> `Transforms` 通常指的是 数据变换，在深度学习和数据处理领域，它主要用于对数据进行预处理，以提高模型的训练效果和泛化能力。
+>`torchvision.transforms` 是 PyTorch 提供的 数据增强 和 预处理 工具，主要用于图像数据处理。
+> 
 :::code-tabs
 @tab useful_transforms.py
 ```python
@@ -186,7 +197,43 @@ writer.close()
 
 
 
-### torchvision
-[torchvision document](https://pytorch.org/vision/stable/)
+### torchvision中的数据集的使用
+:::code-tabs
+@tab torchvision.py
+```python
+import torchvision
+from torch.utils.tensorboard import SummaryWriter
+
+# train_set = torchvision.datasets.CIFAR10(root='./dataset', train=True, download=True)
+# test_set = torchvision.datasets.CIFAR10(root='./dataset', train=False, download=True)
+#
+# print(test_set[0])
+# # 打印类别数
+# print(test_set.classes)
+#
+# img, target = test_set[0]
+# print(test_set.classes[target])
+# img.show()
+
+
+dataset_transform = torchvision.transforms.Compose([
+    torchvision.transforms.ToTensor()
+])
+
+train_set = torchvision.datasets.CIFAR10(root='./dataset', train=True, transform=dataset_transform, download=True)
+test_set = torchvision.datasets.CIFAR10(root='./dataset', train=False, transform=dataset_transform, download=True)
+
+print(test_set[0])
+
+writer = SummaryWriter('logs')
+for i in range(10):
+    img, target = test_set[i]
+    writer.add_image('test_set', img, i)
+
+writer.close()
+
+```
+:::
+
 
 

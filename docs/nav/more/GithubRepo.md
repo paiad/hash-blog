@@ -37,6 +37,7 @@ aside: left
 <CardGrid>
   <RepoCard repo="EbookFoundation/free-programming-books" />
   <RepoCard repo="jaywcjlove/reference" />
+  <RepoCard repo="freeCodeCamp/freeCodeCamp" />
 </CardGrid>
 
 ### Blog
