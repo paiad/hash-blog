@@ -24,6 +24,12 @@ permalink: /site/guide/
     <LinkCard icon="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/icon/siliconcloud-color.png" title="SiliconFlow" href="https://cloud.siliconflow.cn/models"></LinkCard>
 </CardGrid>
 
+#### AI Agent
+<CardGrid>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/icon/coze.png" size="5em" title="Coze" href="https://www.coze.com"/>
+    <LinkCard icon="https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/icon/dify-color.png" size="5em" title="Dify" href="https://ima.qq.com/"/>
+</CardGrid>
+
 #### Icon Library
 
 <CardGrid>
@@ -33,6 +39,12 @@ permalink: /site/guide/
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/lobehub-color.png" title="lobehub-icon" href="https://lobehub.com/zh/icons"></LinkCard>
     <LinkCard icon="https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/bytedance-color.png" title="IconPark" href="https://iconpark.oceanengine.com/official"></LinkCard>
     <LinkCard icon="https://www.gstatic.com/android/keyboard/emojikitchen/20201001/u1f431/u1f431_u1f422.png" title="emojimix" href="https://tikolu.net/emojimix/"></LinkCard>
+</CardGrid>
+
+#### Knowledge Base
+<CardGrid>
+    <LinkCard icon="https://cherry-ai.com/assets/cherry_logo-DWMVjalI.png" size="5em" title="Cherry Studio" href="https://cherry-ai.com"/>
+    <LinkCard icon="https://qbnovel.qq.com/static/353eac8f6c283745f02dddb66e7c6ec4f1c3252f8e6146d4ccd07ffaf70cfddc" size="5em" title="ima" href="https://ima.qq.com/"/>
 </CardGrid>
 
 ### Help Assistant
