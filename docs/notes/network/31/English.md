@@ -11,7 +11,6 @@ A. ROM
 B. Hard disks
 C. RAM
 D. Solid-state storage
-
 ```
 ::: details 点我查看答案 & 解析
 ['B']
@@ -23,10 +22,9 @@ A. personal computers
 B. midrange computers
 C. supercomputers
 D. mainframe computers
-
 ```
 ::: details 点我查看答案 & 解析
-['D']
+['A']
 :::
 
 ```html
@@ -35,10 +33,9 @@ A. Utilities
 B. Application software
 C. Browser software
 D. Operating system
-
 ```
 ::: details 点我查看答案 & 解析
-['D']
+['A']
 :::
 
 ```html
@@ -47,10 +44,9 @@ A. wearables
 B. macrocomputers
 C. midranges
 D. microcomputers
-
 ```
 ::: details 点我查看答案 & 解析
-['B']
+['A']
 :::
 
 ```html
@@ -59,10 +55,9 @@ A. Communication
 B. System unit
 C. Secondary storage
 D. Input/output devices
-
 ```
 ::: details 点我查看答案 & 解析
-['A']
+['B']
 :::
 
 ```html
@@ -71,10 +66,9 @@ A. Hard disk, input/output, secondary storage, and display devices
 B. System unit, input/output, secondary storage, and communication
 C. System unit, input/output, secondary storage, and primary  storage
 D. Hard disk, modem, RAM, and microprocessor
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['B']
 :::
 
 ```html
@@ -83,10 +77,9 @@ A. midrange
 B. mobile
 C. operating
 D. utility
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['B']
 :::
 
 ```html
@@ -95,10 +88,9 @@ A. Ports
 B. RAM
 C. ROM
 D. Bus
-
 ```
 ::: details 点我查看答案 & 解析
-['A']
+['B']
 :::
 
 ```html
@@ -107,10 +99,9 @@ A. typology
 B. hardware
 C. software
 D. compiler
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['B']
 :::
 
 ```html
@@ -119,10 +110,9 @@ A. tablet
 B. subnotebook
 C. desktop
 D. laptop
-
 ```
 ::: details 点我查看答案 & 解析
-['D']
+['A']
 :::
 
 ```html
@@ -131,10 +121,9 @@ A. Solid-state storage
 B. Cloud computing
 C. Distributed databases
 D. Personal computers
-
 ```
 ::: details 点我查看答案 & 解析
-['A']
+['C']
 :::
 
 ```html
@@ -143,10 +132,9 @@ A. People
 B. Internet
 C. Procedures
 D. Data
-
 ```
 ::: details 点我查看答案 & 解析
-['B']
+['C']
 :::
 
 ```html
@@ -155,10 +143,9 @@ A. RAM
 B. DVD
 C. Hard drive
 D. ROM
-
 ```
 ::: details 点我查看答案 & 解析
-['B']
+['A']
 :::
 
 ```html
@@ -167,7 +154,6 @@ A. Software applications
 B. Programs
 C. Hardware applications
 D. People
-
 ```
 ::: details 点我查看答案 & 解析
 ['D']
@@ -179,10 +165,9 @@ A. application software
 B. World Wide Web (or, “the web”.
 C. Internet of Things
 D. operating system
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['B']
 :::
 
 ```html
@@ -191,7 +176,6 @@ A. OneNote
 B. worksheet
 C. database
 D. presentation
-
 ```
 ::: details 点我查看答案 & 解析
 ['D']
@@ -203,7 +187,6 @@ A. solid state
 B. flash
 C. hard disk
 D. optical disc
-
 ```
 ::: details 点我查看答案 & 解析
 ['D']
@@ -215,10 +198,9 @@ A. Worksheet
 B. Presentation
 C. Document
 D. Database
-
 ```
 ::: details 点我查看答案 & 解析
-['B']
+['A']
 :::
 
 ```html
@@ -227,10 +209,9 @@ A. Compiler
 B. System software
 C. Programming
 D. Hardware
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['D']
 :::
 
 ```html
@@ -239,10 +220,9 @@ A. Internet of Things
 B. network
 C. wireless
 D. connectivity
-
 ```
 ::: details 点我查看答案 & 解析
-['A']
+['C']
 :::
 
 ```html
@@ -251,10 +231,9 @@ A. Database
 B. Document
 C. Presentation
 D. Worksheet
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['A']
 :::
 
 ```html
@@ -263,10 +242,9 @@ A. operating system
 B. systems unit
 C. network
 D. cloud
-
 ```
 ::: details 点我查看答案 & 解析
-['B']
+['C']
 :::
 
 ```html
@@ -275,10 +253,9 @@ A. computer
 B. program
 C. application
 D. procedure
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['B']
 :::
 
 ```html
@@ -287,10 +264,9 @@ A. Database management software and application software
 B. Operating system software and utilities software
 C. System analysis software and data warehousing software
 D. System software and application software
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['D']
 :::
 
 ```html
@@ -299,10 +275,9 @@ A. Midrange computers
 B. Supercomputers
 C. Personal computers
 D. Mainframe computers
-
 ```
 ::: details 点我查看答案 & 解析
-['A']
+['C']
 :::
 
 ```html
@@ -311,10 +286,9 @@ A. Microsoft  Access
 B. Procedures
 C. Hardware
 D. System software
-
 ```
 ::: details 点我查看答案 & 解析
-['B']
+['D']
 :::
 
 ```html
@@ -323,10 +297,9 @@ A. Letter
 B. Memo
 C. Term paper
 D. Spreadsheet
-
 ```
 ::: details 点我查看答案 & 解析
-['A']
+['D']
 :::
 
 ```html
@@ -335,10 +308,9 @@ A. midrange
 B. macro
 C. laptop
 D. personal
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['D']
 :::
 
 ```html
@@ -347,10 +319,9 @@ A. Communication
 B. Primary
 C. Input/output
 D. Secondary
-
 ```
 ::: details 点我查看答案 & 解析
-['A']
+['D']
 :::
 
 ```html
@@ -359,7 +330,6 @@ A. laptops
 B. smartphones
 C. tablets
 D. notebooks and laptops
-
 ```
 ::: details 点我查看答案 & 解析
 ['B']
@@ -371,10 +341,9 @@ A. shareware
 B. desktop
 C. system software
 D. application software
-
 ```
 ::: details 点我查看答案 & 解析
-['D']
+['C']
 :::
 
 ```html
@@ -383,10 +352,9 @@ A. Hard disk
 B. RAM
 C. Optical discs
 D. Solid-state storage
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['B']
 :::
 
 ```html
@@ -394,10 +362,9 @@ D. Solid-state storage
 A. Application
 B. System
 C. Database management
-
 ```
 ::: details 点我查看答案 & 解析
-['A']
+['B']
 :::
 
 ```html
@@ -406,7 +373,6 @@ A. Microprocessor and memory
 B. Microphone and speakers
 C. Monitor and printer
 D. Keyboard and mouse
-
 ```
 ::: details 点我查看答案 & 解析
 ['A']
@@ -418,7 +384,6 @@ A. Midrange
 B. Super
 C. Wireless
 D. Cloud
-
 ```
 ::: details 点我查看答案 & 解析
 ['D']
@@ -430,7 +395,6 @@ A. Mainframe
 B. Midrange
 C. Micro
 D. Laptop
-
 ```
 ::: details 点我查看答案 & 解析
 ['A']
@@ -442,10 +406,9 @@ A. Optical disks
 B. Hard disks
 C. RAM
 D. ROM
-
 ```
 ::: details 点我查看答案 & 解析
-['C']
+['A']
 :::
 
 ```html
@@ -454,10 +417,9 @@ A. software
 B. data
 C. the Internet
 D. cloud computing
-
 ```
 ::: details 点我查看答案 & 解析
-['D']
+['B']
 :::
 
 ```html
@@ -466,10 +428,9 @@ A. operating system
 B. system unit
 C. database program
 D. network
-
 ```
 ::: details 点我查看答案 & 解析
-['A']
+['D']
 :::
 
 ```html
@@ -478,10 +439,9 @@ A. procedures
 B. database management
 C. compiling
 D. data processing
-
 ```
 ::: details 点我查看答案 & 解析
-['B']
+['A']
 :::
 
 ```html
@@ -490,10 +450,9 @@ A. programs
 B. the Internet
 C. the Cloud
 D. the equipment that processes data
-
 ```
 ::: details 点我查看答案 & 解析
-['D']
+['A']
 :::
 
 ```html
@@ -502,7 +461,6 @@ A. Application  software
 B. Operating  system
 C. Device  driver
 D. System  software
-
 ```
 ::: details 点我查看答案 & 解析
 ['B']
@@ -514,10 +472,9 @@ A. Superphones
 B. Smartphones
 C. Midrange devices
 D. Wearables
-
 ```
 ::: details 点我查看答案 & 解析
-['D']
+['B']
 :::
 
 ```html
@@ -526,10 +483,9 @@ A. Browsers
 B. Stand-alone operating systems
 C. Utilities
 D. Real-time  operating systems
-
 ```
 ::: details 点我查看答案 & 解析
-['D']
+['A']
 :::
 
 ```html
@@ -538,7 +494,6 @@ A. Midrange
 B. Microcomputer
 C. Supercomputer
 D. Mainframe
-
 ```
 ::: details 点我查看答案 & 解析
 ['A']
@@ -546,207 +501,181 @@ D. Mainframe
 
 ```html
 46.Smartphones  are the most widely used [填空1]  computers and are designed to fit into the palm of one hand.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['personal']}
 :::
 
 ```html
 47.Increased  use of mobile or wireless communication devices and cloud computing  has been termed “the [填空1]  revolution.”
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['wireless']}
 :::
 
 ```html
 48.[填空1]  storage  devices do not lose data or programs after the electrical power is  turned off.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['Secondary']}
 :::
 
 ```html
 49.Desktop,  laptop, and tablet computers, and mobile devices are classified as  [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['personalcomputers']}
 :::
 
 ```html
 50.The  type of media that uses laser technology to store data and programs  is [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['opticaldisc']}
 :::
 
 ```html
 51.Software  is another name for [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['programs']}
 :::
 
 ```html
 52.The  five types of personal computers are: desktops, laptops, tablets,  smartphones, and [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['wearables']}
 :::
 
 ```html
 53.The  most widely used personal computers are [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['smartphones']}
 :::
 
 ```html
 54.[填空1]  computing uses the Internet and the web to shift many computer  activities from a user’s computer to computers on the  Internet.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['Cloud']}
 :::
 
 ```html
 55.The  [填空1]  is the continuing development of the Internet that allows everyday  objects embedded with electronic devices to send and receive data  over the Internet.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['InternetofThings']}
 :::
 
 ```html
 56.In  an information system, the rules or guidelines for people to follow  are called [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['procedures']}
 :::
 
 ```html
 57.[填空1]  software is a collection of programs that helps the computer manage  its own resources and enables application software to interact with  computer hardware.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['System']}
 :::
 
 ```html
 58.[填空1]  are cell phones with wireless connections to the Internet.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['Smartphones']}
 :::
 
 ```html
 59.The  component of the information system that is described as raw,  unprocessed facts, including text, numbers, images, and sounds, is  called [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['data']}
 :::
 
 ```html
 60.A(n)  [填空1]  file might contain audience handouts and speaker notes in addition  to electronic slides.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['presentation']}
 :::
 
 ```html
 61.[填空1]  use(s) rigid metallic platters to store programs and very large data  files.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['Harddisks']}
 :::
 
 ```html
 62.In  most cases, the word "software" is interchangeable with  the word [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['program']}
 :::
 
 ```html
 63.[填空1]  is the component of the information system that is described as the  equipment that processes data to create information.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['Hardware']}
 :::
 
 ```html
 64.[填空1]  are the most important part of any information system.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['People']}
 :::
 
 ```html
 65."Background"  software that helps the computer manage its own internal resources  is called [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['systemsoftware']}
 :::
 
 ```html
 66.The  equipment that processes data in order to create information is  called the [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['hardware']}
 :::
 
 ```html
 67.The  Internet is the largest [填空1]  in the world.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['network']}
 :::
 
 ```html
 68.A(n)  [填空1]  is a communications system connecting two or more computers.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['network']}
 :::
 
 ```html
 69.Application  software can be categorized as either general-purpose, specialized,  or [填空1]  apps.
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['mobile']}
 :::
 
 ```html
 70.A  microcomputer that is smaller, lighter, and less powerful than a  notebook, and which has a touch-sensitive screen, is called a  [填空1].
-
 ```
 ::: details 点我查看答案 & 解析
-
+{'1': ['teblet']}
 :::
 
 ```html
 71.Insurance companies are most likely to use personal computers to process information about millions of policyholders.  ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['false']
@@ -754,7 +683,6 @@ D. Mainframe
 
 ```html
 72.A word processor is an example of system software.  ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['false']
@@ -762,7 +690,6 @@ D. Mainframe
 
 ```html
 73.To be an effective and efficient computer user, you need to recognize the role of information technology in your personal and professional life.   ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
@@ -770,7 +697,6 @@ D. Mainframe
 
 ```html
 74.Another name for a midrange computer is “server.” ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
@@ -778,7 +704,6 @@ D. Mainframe
 
 ```html
 75.Secondary storage will retain data when the computer is turned off. ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
@@ -786,7 +711,6 @@ D. Mainframe
 
 ```html
 76.RAM will retain data when the computer is turned off.  ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['false']
@@ -794,7 +718,6 @@ D. Mainframe
 
 ```html
 77.The most common input devices are the mouse and the keyboard. ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
@@ -802,7 +725,6 @@ D. Mainframe
 
 ```html
 78.Software is another name for a program or programs. ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
@@ -810,7 +732,6 @@ D. Mainframe
 
 ```html
 79.Smartphones are a type of personal computer that do not need input, output, processing, or storage.   ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['false']
@@ -818,7 +739,6 @@ D. Mainframe
 
 ```html
 80.Two important components of the system unit are the keyboard and the hard disk.   ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['false']
@@ -826,7 +746,6 @@ D. Mainframe
 
 ```html
 81.System software might be described as end-user software. ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['false']
@@ -834,7 +753,6 @@ D. Mainframe
 
 ```html
 82.System software is a collection of programs.   ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
@@ -842,7 +760,6 @@ D. Mainframe
 
 ```html
 83.The parts of an information system are people, procedures, software, hardware, data, and the Internet. ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
@@ -850,7 +767,6 @@ D. Mainframe
 
 ```html
 84.Solid-state storage uses rigid metallic platters to store data using the magnetic charges on the disk's surface.  ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
@@ -858,7 +774,6 @@ D. Mainframe
 
 ```html
 85.Highly structured and organized data is stored in database files. ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
@@ -866,7 +781,6 @@ D. Mainframe
 
 ```html
 86.Four common types of files are document files, worksheet files, database files, and presentation files. ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
@@ -874,7 +788,6 @@ D. Mainframe
 
 ```html
 87.Antivirus software is a Windows utility that is unnecessary as long as you are careful browsing the Internet. ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['false']
@@ -882,7 +795,6 @@ D. Mainframe
 
 ```html
 88.A system unit consists of the keyboard and the monitor. ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['false']
@@ -890,7 +802,6 @@ D. Mainframe
 
 ```html
 89.Application software is "background" software which helps the computer manage its own internal resources.  ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['false']
@@ -898,11 +809,11 @@ D. Mainframe
 
 ```html
 90.The purpose of software is to convert data into information. ( )
-
 ```
 ::: details 点我查看答案 & 解析
 ['true']
 :::
+
 
 ### 测试2
 ### 测试3

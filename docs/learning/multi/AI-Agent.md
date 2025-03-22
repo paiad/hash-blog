@@ -17,13 +17,13 @@ AI Agent架构图
 ### 搭建个人知识库
 > <CardGrid>
 >     <LinkCard icon="https://cherry-ai.com/assets/cherry_logo-DWMVjalI.png" size="5em" title="Cherry Studio" href="https://cherry-ai.com"/>
->     <LinkCard icon="https://qbnovel.qq.com/static/353eac8f6c283745f02dddb66e7c6ec4f1c3252f8e6146d4ccd07ffaf70cfddc" size="5em" title="ima" href="https://ima.qq.com/"/>
+>     <LinkCard icon="https://qbnovel.qq.com/static/353eac8f6c283745f02dddb66e7c6ec4f1c3252f8e6146d4ccd07ffaf70cfddc" size="5em" title="ima.copilot" href="https://ima.qq.com/"/>
 > </CardGrid>
 
 #### Cherry Studio
 @[bilibili](114175481219601 28905770606)
 
-#### ima
+#### ima.copilot
 @[bilibili](114175481219601 28905834120)
 
 ### 什么是RAG？
