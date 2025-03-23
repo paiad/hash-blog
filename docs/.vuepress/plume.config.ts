@@ -32,10 +32,6 @@ export default defineThemeConfig({
             // link: 'https://grok.com/chat/'
         // },
         {
-            icon: {svg: '<span class="vpi-social-file-upload"></span>', name: 'sitemap'},
-            link: 'https://paiad.online/file/upload'
-        },
-        {
             icon: {svg: '<span class="vpi-social-sitemap"></span>', name: 'sitemap'},
             link: 'https://paiad.online/sitemap.xml'
         },

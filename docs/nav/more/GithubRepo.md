@@ -38,6 +38,7 @@ aside: left
   <RepoCard repo="EbookFoundation/free-programming-books" />
   <RepoCard repo="jaywcjlove/reference" />
   <RepoCard repo="freeCodeCamp/freeCodeCamp" />
+  <RepoCard repo="youngyangyang04/leetcode-master" />
 </CardGrid>
 
 ### Blog
