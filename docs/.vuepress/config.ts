@@ -10,7 +10,7 @@ export default defineUserConfig({
     head: [
         // 设置 favor.ico，.vuepress/public 下
         [
-            'link', {rel: 'icon', href: '/favicon.ico'}
+            'link', {rel: 'icon', href: '.vuepress/public/favicon.ico'}
         ],
 
         // 引入自定义字体
