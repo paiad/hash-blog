@@ -19,19 +19,19 @@
   "devDependencies": {
     "@vuepress-reco/vuepress-plugin-bgm-player": "1.1.4",
     "@vuepress/bundler-vite": "2.0.0-rc.20",
-    "@vuepress/plugin-back-to-top": "2.0.0-rc.79",
-    "@vuepress/plugin-nprogress": "2.0.0-rc.79",
+    "@vuepress/plugin-back-to-top": "2.0.0-rc.86",
+    "@vuepress/plugin-nprogress": "2.0.0-rc.86",
     "http-server": "^14.1.1",
-    "sass-embedded": "^1.85.0",
-    "typescript": "^5.7.3",
+    "sass-embedded": "^1.86.0",
+    "typescript": "^5.8.2",
     "vue": "^3.5.13",
     "vuepress": "2.0.0-rc.20",
     "vuepress-plugin-ribbon": "1.1.6",
-    "vuepress-theme-plume": "1.0.0-rc.132"
+    "vuepress-theme-plume": "1.0.0-rc.137"
   },
   "dependencies": {
     "artplayer": "^5.2.2",
-    "mermaid": "^11.4.1",
+    "mermaid": "^11.6.0",
     "vuepress-plugin-tags": "1.0.2"
   }
 }
