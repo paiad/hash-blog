@@ -10,7 +10,7 @@ export default defineUserConfig({
     head: [
         // 设置 favor.ico，.vuepress/public 下
         [
-            'link', {rel: 'icon', href: 'https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/Hash.png'}
+            'link', {rel: 'icon', href: './image/Hash.png', type: 'image/png'},
         ],
 
         // 引入自定义字体
