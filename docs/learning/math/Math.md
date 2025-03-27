@@ -3,12 +3,12 @@ title: 🔍Math
 tags: 
   - Latex
   - Math
-createTime: 2024/11/04 19:50:54
 permalink: /article/9w55damt/
-cover:
-  url: ../image/math-pencil.png
-  layout: left
-  ratio: 0.6
+createTime: 2024/11/04 19:50:54
+cover: "../image/math-pencil.png"
+coverStyle:
+    layout: left
+    ratio: 0.6
 excerpt:
   <mark>高数</mark>是每一位大学生离不开的课题。笔者在学习期间，
   收集了许多关于高数的公式定理以及相应的例题，在此分享出来，供读者参考。

@@ -1,16 +1,16 @@
 ---
 title: 🌻自定义二维码
 createTime: 2025/01/15 18:43:16
+permalink: /article/dncjusfd/
 tags:
   - QRCode
-cover:
-  url: ../image/hash_qrcode.png
-  layout: right
-  ratio: 1.0
-  width: 150
+cover: ../image/hash_qrcode.png
+coverStyle:
+    layout: right
+    ratio: 1.0
+    width: 150
 excerpt:
   本文介绍了使用Python生成自定义二维码的代码示例，包括如何嵌入URL并在二维码中心添加logo。通过调整二维码的参数，如错误校正级别、尺寸等，生成带有自定义图像的二维码，并保存显示生成的图片。 
-permalink: /article/dncjusfd/
 #sticky: 3141592
 ---
 >[!tip]
