@@ -45,6 +45,7 @@ aside: left
 <CardGrid>
   <RepoCard repo="vuejs/vuepress" />
   <RepoCard repo="vuejs/vitepress" />
+  <RepoCard repo="imsyy/vitepress-theme-curve" />
   <RepoCard repo="pengzhanbo/vuepress-theme-plume" />
 </CardGrid>
 
