@@ -23,10 +23,10 @@ AI Agent架构图
 > </CardGrid>
 
 #### Cherry Studio
-@[bilibili autoplay=0](114175481219601 28905770606)
+> 🍒 Cherry Studio is a desktop client that supports for multiple LLM providers. Support deepseek-r1.
 
 #### ima.copilot
-@[bilibili autoplay=0](114175481219601 28905834120)
+> ima.copilot（简称ima）是一款以知识库为核心的智能工作台产品，已接入腾讯混元大模型和DeepSeek R1模型满血版。
 
 ### 什么是RAG？
 >RAG 是 Retrieval-Augmented Generation 的缩写，中文可以翻译为`“检索增强生成”`。它是一种结合了信息检索（Retrieval）和生成式模型（Generation）的技术，

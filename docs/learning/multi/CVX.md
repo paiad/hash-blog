@@ -204,5 +204,70 @@ title('UAV Trajectory with User and Eavesdroppers (3D)');
 legend('UAV Path', 'User', 'Eavesdropper 1', 'Eavesdropper 2', 'Eavesdropper 3', 'Start', 'End');
 view(-37.5, 30); % 设置视角，便于观察
 hold off;
+
+% 绘制保密速率随迭代次数的变化
+figure;
+plot(1:5, secrecy_rate, 'b-o', 'LineWidth', 1.5, 'MarkerSize', 8);
+grid on;
+xlabel('Iteration Number');
+ylabel('Secrecy Rate (bits/s)');
+title('Secrecy Rate vs. Iteration Number');
+legend('Secrecy Rate');
+disp('Secrecy Rate for each iteration:');
+disp(secrecy_rate);
 ```
 
+### 代码中的关键公式与意义
+1. 初始化与系统参数
+```matlab
+N = 100; % 时间槽数量
+x0 = linspace(0, 400, N)'; % 初始 x 坐标
+y0 = zeros(N, 1); % 初始 y 坐标
+H = 100 * ones(N, 1); % UAV 飞行高度
+x_o = 0; y_o = 0; x_f = 400; y_f = 0; % 起点和终点坐标
+x_b = 200; y_b = 200; % 用户（destination）坐标
+x_e = 20; y_e = 250; x_e2 = 300; y_e2 = 50; x_e3 = 50; y_e3 = 100; % 三个窃听者坐标
+v = 25; % UAV 最大速度 (m/s) 
+```
+
+2. 信噪比与传输功率
+```matlab
+p = 0.1 * ones(N, 1); % 传输功率 20dBm (0.1 W)
+p_e = 0.1 * ones(N, 1); % 窃听者功率 (假设相同)
+gammar = 10^(11.4) * p; % 用户信噪比
+gammar_e = 10^(11.4) * p_e; % 窃听者信噪比
+```
+
+3. CVX 优化问题
+```matlab
+cvx_begin
+variable x(n) nonnegative % 优化变量
+maximize(x(6*N+1)) % 目标：最大化最小保密速率
+subject to
+% 用户和窃听者的速率下界约束
+for k = 1:N
+RDL = log2(1 + gammar(k) ./ ((x0(k)-x_b)^2 + (y0(k)-y_b)^2 + H(k)^2));
+REL = log2(1 + gammar_e(k) ./ ((x0(k)-x_e)^2 + (y0(k)-y_e)^2 + H(k)^2));
+REL2 = log2(1 + gammar_e(k) ./ ((x0(k)-x_e2)^2 + (y0(k)-x_e2)^2 + H(k)^2));
+REL3 = log2(1 + gammar_e(k) ./ ((x0(k)-x_e3)^2 + (y0(k)-x_e3)^2 + H(k)^2));
+
+        ADL = gammar(k) ./ (log(2) * ((x0(k)-x_b)^2 + (y0(k)-y_b)^2 + H(k)^2 + gammar(k)) .* ((x0(k)-x_b)^2 + (y0(k)-y_b)^2 + H(k)^2));
+        AEL = gammar_e(k) ./ (log(2) * ((x0(k)-x_e)^2 + (y0(k)-y_e)^2 + H(k)^2 + gammar_e(k)) .* ((x0(k)-x_e)^2 + (y0(k)-y_e)^2 + H(k)^2));
+        % ... (类似计算 AEL2, AEL3, BDL, BEL, CDL, CEL 等)
+        
+        x(2*N+k) <= RDL - ADL .* (square(x(k)) + square(x(N+k))) - BDL .* x(k) - CDL .* x(N+k);
+        x(3*N+k) <= REL - AEL .* (square(x(k)) + square(x(N+k))) - BEL .* x(k) - CEL .* x(N+k);
+        % ... (类似约束 x(4*N+k), x(5*N+k))
+    end
+    % 保密速率约束
+    sum(A) <= -x(6*N+1); % A = x(j) - x(i)
+    sum(A1) <= -x(6*N+1);
+    sum(A2) <= -x(6*N+1);
+    % 速度约束
+    for jj = 1:N-1
+        square(x0(jj+1) + x(jj+1) - x0(jj) - x(jj)) + square(y0(jj+1) + x(N+jj+1) - y0(jj) - x(N+jj)) <= v^2;
+    end
+    square(x0(1) + x(1) - x_o) + square(y0(1) + x(N+1) - y_o) <= v^2;
+    square(x_f - x(N) - x0(N)) + square(y_f - x(N+N) - y0(N)) <= v^2;
+cvx_end
+```
