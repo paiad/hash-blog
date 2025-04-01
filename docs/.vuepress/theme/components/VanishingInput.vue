@@ -142,7 +142,7 @@ onMounted(() => {
 
 function changePlaceholder(): void {
   intervalRef.value = window.setInterval(() => {
-    currentPlaceholder.value = (currentPlaceholder.value + 1) % props.placeholders.length;
+    currentPlaceholder.value = Math.floor(Math.random() * props.placeholders.length);
   }, 3000);
 }
 
