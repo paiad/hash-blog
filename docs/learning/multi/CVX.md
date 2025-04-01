@@ -2099,3 +2099,213 @@ writematrix(final_trajectory, filename_traj, 'WriteMode', 'append');
 disp(['无人机轨迹数据已保存为: ' filename_traj]);
 
 ```
+
+
+
+
+```原论文
+% 清空工作区变量，关闭所有图形窗口
+clc
+clear all
+close all
+
+% 初始化参数
+N = 100;                    % 路径点的数量
+x0 = linspace(0, 400, N)';  % 初始x坐标，从0到400线性分布
+y0 = zeros(N, 1);          % 初始y坐标，全部为0
+H = 100 * ones(N, 1);      % 无人机飞行高度，固定为100米
+x_o = 0; y_o = 0;          % 起点坐标 (0,0)
+x_f = 400; y_f = 0;        % 终点坐标 (400,0)
+x_b = 200; y_b = 200;      % 用户位置坐标 (200,200)
+x_e = 50; y_e = 250;  % 窃听者1位置坐标 (50,250)
+x_e2 = 350; y_e2 = 175;     % 窃听者2位置坐标 (300,50)
+x_e3 = 50; y_e3 = 100;     % 窃听者3位置坐标 (50,100)
+v = 20;                    % 无人机最大速度限制 (米/秒)
+
+% 用于存储每次迭代的保密速率
+secrecy_rate_noris = zeros(1, 5);
+
+% 主优化循环，执行5次迭代
+for mm = 1:5
+    % 初始化功率参数
+    p = 0.1 * ones(N, 1);      % 传输功率20dBm (0.1 W)
+    p_e = 0.1 * ones(N, 1);    % 窃听者功率18dBm (这里假设与用户相同)
+    gammar = 10^(11.4) * p;    % 用户信噪比
+    gammar_e = 10^(11.4) * p_e;% 窃听者信噪比
+    
+    % CVX优化部分 - 使用凸优化求解无人机轨迹
+    n = 6 * N + 1;             % 变量总数
+    cvx_begin
+        variable x(n) nonnegative  % 定义非负优化变量
+        maximize(x(6*N+1))        % 目标：最大化保密速率下界
+        
+        % 添加约束条件
+        subject to
+        % 对每个路径点计算速率约束
+        for k = 1:N
+            % 计算用户和窃听者的信道容量（基于距离和信噪比）
+            RDL = log2(1 + gammar(k) ./ ((x0(k)-x_b)^2 + (y0(k)-y_b)^2 + H(k)^2));
+            REL = log2(1 + gammar_e(k) ./ ((x0(k)-x_e)^2 + (y0(k)-y_e)^2 + H(k)^2));
+            REL2 = log2(1 + gammar_e(k) ./ ((x0(k)-x_e2)^2 + (y0(k)-x_e2)^2 + H(k)^2));
+            REL3 = log2(1 + gammar_e(k) ./ ((x0(k)-x_e3)^2 + (y0(k)-x_e3)^2 + H(k)^2));
+            
+            % 计算一阶泰勒近似系数
+            ADL = gammar(k) ./ (log(2) * ((x0(k)-x_b)^2 + (y0(k)-y_b)^2 + H(k)^2 + gammar(k)) .* ((x0(k)-x_b)^2 + (y0(k)-y_b)^2 + H(k)^2));
+            AEL = gammar_e(k) ./ (log(2) * ((x0(k)-x_e)^2 + (y0(k)-y_e)^2 + H(k)^2 + gammar_e(k)) .* ((x0(k)-x_e)^2 + (y0(k)-y_e)^2 + H(k)^2));
+            AEL2 = gammar_e(k) ./ (log(2) * ((x0(k)-x_e2)^2 + (y0(k)-x_e2)^2 + H(k)^2 + gammar_e(k)) .* ((x0(k)-x_e2)^2 + (y0(k)-x_e2)^2 + H(k)^2));
+            AEL3 = gammar_e(k) ./ (log(2) * ((x0(k)-x_e3)^2 + (y0(k)-x_e3)^2 + H(k)^2 + gammar_e(k)) .* ((x0(k)-x_e3)^2 + (y0(k)-x_e3)^2 + H(k)^2));
+            
+            % 计算梯度项
+            BDL = -2 * (x_b - x0(k)) .* ADL;
+            BEL = -2 * (x_e - x0(k)) .* AEL;
+            BEL2 = -2 * (x_e2 - x0(k)) .* AEL2;
+            BEL3 = -2 * (x_e3 - x0(k)) .* AEL3;
+            CDL = -2 * (y_b - y0(k)) .* ADL;
+            CEL = -2 * (y_e - y0(k)) .* AEL;
+            CEL2 = -2 * (y_e2 - y0(k)) .* AEL2;
+            CEL3 = -2 * (y_e3 - y0(k)) .* AEL3;
+            
+            % 添加速率约束（使用一阶泰勒近似）
+            x(2*N+k) <= RDL - ADL .* (square(x(k)) + square(x(N+k))) - BDL .* x(k) - CDL .* x(N+k);
+            x(3*N+k) <= REL - AEL .* (square(x(k)) + square(x(N+k))) - BEL .* x(k) - CEL .* x(N+k);
+            x(4*N+k) <= REL2 - AEL2 .* (square(x(k)) + square(x(N+k))) - BEL2 .* x(k) - CEL2 .* x(N+k);
+            x(5*N+k) <= REL3 - AEL3 .* (square(x(k)) + square(x(N+k))) - BEL3 .* x(k) - CEL3 .* x(N+k);
+        end   
+        
+        % 定义辅助变量，用于保密速率计算
+        i = (2*N+1):(3*N);
+        j = (3*N+1):(4*N);
+        A = x(j) - x(i);
+        A1 = x(j+N) - x(i);
+        A2 = x(j+2*N) - x(i);
+        
+        % 添加距离相关约束
+        for kk = 1:N
+            dd = (x0(kk)-x_b)^2 + (y0(kk)-y_b)^2 + H(kk)^2;    % 到用户的距离平方
+            de1 = (x0(kk)-x_e)^2 + (y0(kk)-y_e)^2 + H(kk)^2;   % 到窃听者1的距离平方
+            de2 = (x0(kk)-x_e2)^2 + (y0(kk)-y_e2)^2 + H(kk)^2; % 到窃听者2的距离平方
+            de3 = (x0(kk)-x_e3)^2 + (y0(kk)-y_e3)^2 + H(kk)^2; % 到窃听者3的距离平方
+            if (dd >= de1)
+                A(kk) = 0;  % 如果到用户的距离大于窃听者1，则约束为0
+            end
+            if (dd >= de2)
+                A1(kk) = 0; % 如果到用户的距离大于窃听者2，则约束为0
+            end
+            if (dd >= de3)
+                A2(kk) = 0; % 如果到用户的距离大于窃听者3，则约束为0
+            end
+        end
+        
+        % 添加保密速率约束
+        sum(A) <= -x(6*N+1);
+        sum(A1) <= -x(6*N+1);
+        sum(A2) <= -x(6*N+1);
+        
+        % 添加速度约束
+        for jj = 1:N-1
+            % 相邻点之间的距离不得超过最大速度平方
+            square(x0(jj+1) + x(jj+1) - x0(jj) - x(jj)) + square(y0(jj+1) + x(N+jj+1) - y0(jj) - x(N+jj)) <= v^2;
+        end
+        % 起点和终点的速度约束
+        square(x0(1) + x(1) - x_o) + square(y0(1) + x(N+1) - y_o) <= v^2;
+        square(x_f - x(N) - x0(N)) + square(y_f - x(N+N) - y0(N)) <= v^2;
+    cvx_end
+    
+    % 更新无人机位置
+    x0 = x0 + x(1:N);      % 更新x坐标
+    y0 = y0 + x(N+1:2*N);  % 更新y坐标
+    
+    % 计算实际保密速率
+    rate = []; rate_u = []; rate_e0 = [];
+    for l = 1:N 
+        % 计算用户和窃听者的实际速率
+        rate_u = log2(1 + 10^(11.4) * 0.1 / (100^2 + (x_b-x0(l))^2 + (y_b-y0(l))^2));
+        rate_e = log2(1 + 10^(11.4) * 0.1 / (100^2 + (x_e-x0(l))^2 + (y_e-y0(l))^2));
+        rate_e2 = log2(1 + 10^(11.4) * 0.1 / (100^2 + (x_e2-x0(l))^2 + (y_e2-y0(l))^2));
+        rate_e3 = log2(1 + 10^(11.4) * 0.1 / (100^2 + (x_e3-x0(l))^2 + (y_e3-y0(l))^2));
+        rate_e0 = max([rate_e, rate_e2, rate_e3]);  % 取窃听者中的最大速率
+        rate(l) = max(rate_u - rate_e0, 0);        % 计算保密速率（非负）
+    end
+    secrecy_rate_noris(mm) = sum(rate)/N;  % 存储每次迭代的平均保密速率
+end
+
+% 准备绘图数据（添加起点和终点）
+x0 = [0; x0; x_f];
+y0 = [0; y0; y_f];
+z0 = [0; H; 0];  % 添加高度维度，起点和终点在地面 (z=0)，路径在 H=100
+
+% 计算无人机速度
+for i = 1:size(x0)-1
+    uav_speed(i) = sqrt((x0(i+1)-x0(i))^2 + (y0(i+1)-y0(i))^2);
+end 
+
+% 绘制2D轨迹图
+figure;
+plot(x0, y0, 'b-', 'LineWidth', 1.5); % 无人机路径
+hold on;
+
+% 绘制用户和窃听者位置
+plot(x_b, y_b, 'ro', 'MarkerSize', 10, 'LineWidth', 2);
+text(x_b+5, y_b+5, 'User', 'FontSize', 12);
+
+plot(x_e, y_e, 'kx', 'MarkerSize', 10, 'LineWidth', 2);
+text(x_e+5, y_e+5, 'Eavesdropper 1', 'FontSize', 12);
+
+plot(x_e2, y_e2, 'kx', 'MarkerSize', 10, 'LineWidth', 2);
+text(x_e2+5, y_e2+5, 'Eavesdropper 2', 'FontSize', 12);
+
+plot(x_e3, y_e3, 'kx', 'MarkerSize', 10, 'LineWidth', 2);
+text(x_e3+5, y_e3+5, 'Eavesdropper 3', 'FontSize', 12);
+
+% 绘制起点和终点
+plot(x0(1), y0(1), 'g^', 'MarkerSize', 12, 'LineWidth', 2);
+text(x0(1)+5, y0(1)+5, 'Start', 'FontSize', 12);
+
+plot(x0(end), y0(end), 'ms', 'MarkerSize', 12, 'LineWidth', 2);
+text(x0(end)+5, y0(end)+5, 'End', 'FontSize', 12);
+
+% 设置图形属性
+grid on;
+xlabel('X coordinate');
+ylabel('Y coordinate');
+title('UAV Trajectory with User and Eavesdroppers (2D)');
+legend('UAV Path', 'User', 'Eavesdropper 1', 'Eavesdropper 2', 'Eavesdropper 3', 'Start', 'End');
+hold off;
+
+% 绘制保密速率随迭代次数变化图
+figure;
+plot(1:5, secrecy_rate_noris, 'b-o', 'LineWidth', 1.5, 'MarkerSize', 8);
+grid on;
+xlabel('Iteration Number');
+ylabel('Secrecy Rate (bits/s)');
+title('Secrecy Rate vs. Iteration Number');
+legend('Secrecy Rate');
+
+% 显示每次迭代的保密速率
+disp('Secrecy Rate for each iteration:');
+disp(secrecy_rate_noris);
+
+%% 将保密速率数据保存为CSV文件
+filename = 'E:\MATLAB\RIS-UAV-Security\test\test\secrecy_rate_noris.csv';  % 定义文件名
+writematrix(secrecy_rate_noris', filename);  % 保存数据（转置为列向量）
+
+disp(['保密速率数据已保存为: ' filename]);
+
+
+%% 准备完整轨迹数据（包含起点、中间点和终点）
+final_trajectory = [x0, y0, [0; H; 0]];  % 包含x,y,z坐标
+
+% 保存为CSV文件
+filename_traj = 'E:\MATLAB\RIS-UAV-Security\test\test\uav_trajectory_noris.csv';
+
+% 添加列标题
+headers = {'X_coordinate(m)', 'Y_coordinate(m)', 'Z_coordinate(m)'};
+fid = fopen(filename_traj, 'w');
+fprintf(fid, '%s,%s,%s\n', headers{:});
+fclose(fid);
+
+% 写入数据
+writematrix(final_trajectory, filename_traj, 'WriteMode', 'append');
+
+disp(['无人机轨迹数据已保存为: ' filename_traj]);
+```
