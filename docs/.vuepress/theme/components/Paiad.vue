@@ -1,9 +1,13 @@
 <template>
   <div>
     <!-- 主框架 -->
-    <div class="flex h-[70vh] flex-col items-center justify-center px-4">
-      <h2 class="mb-10 text-center text-xl text-black sm:mb-20 sm:text-5xl dark:text-white">
-        𝑺𝒑𝒆𝒂𝒌 𝒂𝒔 𝒐𝒏𝒆 𝒘𝒊𝒔𝒉𝒆𝒔
+    <div class="flex h-[70vh] flex-col items-center justify-center px-2111">
+      <h2 class="mb-10 text-center text-xl text-black sm:mb-12 sm:text-5xl dark:text-white">
+        <LetterPullup
+            words="𝑺𝒑e𝒂𝒌 𝒂𝒔 𝒐𝒏𝒆 𝒘𝒊𝒔𝒉𝒆𝒔"
+            :delay="0.110"
+            class="text-black dark:text-white text-6xl"
+        />
       </h2>
       <VanishingInput
           v-model="text"
@@ -25,12 +29,22 @@
   </div>
 </template>
 
+<style scoped>
+html, body {
+  margin: 0;
+  padding: 0;
+  width: 100%;
+  height: 100%;
+}
+</style>
+
 <script setup lang="ts">
 import { ref } from "vue";
 import axios from 'axios';
 import { useDarkMode } from 'vuepress-theme-plume/composables';
 import VanishingInput from "./VanishingInput.vue";
 import ParticlesBg from "./ParticlesBg.vue";
+import LetterPullup from "./LetterPullup.vue";
 
 const isDark = useDarkMode();
 const text = ref("");
