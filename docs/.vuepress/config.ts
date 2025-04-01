@@ -29,7 +29,8 @@ export default defineUserConfig({
                 rel: 'stylesheet',
                 href: 'https://fonts.googleapis.com/css2?family=Dancing+Script&display=swap'
             }
-        ]
+        ],
+        ['link', { rel: 'stylesheet', href: '/theme/styles/tailwind.css' }],
     ],
 
     bundler: viteBundler(),

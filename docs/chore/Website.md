@@ -5,7 +5,7 @@ tags:
   - Technology
 draft: true
 createTime: 2024/11/08 21:32:31
-#permalink: /article/76px1e7z/
+permalink: /article/3b24leb6/
 ---
 ## 阿里云
 [Alibaba Cloud](https://cn.aliyun.com)
