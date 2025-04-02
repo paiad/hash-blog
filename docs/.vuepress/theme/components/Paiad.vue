@@ -22,7 +22,7 @@
         class="absolute inset-0"
         :quantity="314"
         :ease="100"
-        :color="isDark ? '#4ca5dc' : '#e8709a'"
+        :color="isDark ? '#4ca5dc' : '#41b291'"
         :staticity="10"
         refresh
     />

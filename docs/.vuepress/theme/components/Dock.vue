@@ -58,6 +58,12 @@ export default {
           url: 'https://cloud.siliconflow.cn/models'
         },
         {
+          name: 'Gemini',
+          icon: 'https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/gemini-color.png',
+          darkIcon: 'https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/gemini-color.png',
+          url: 'https://gemini.google.com/app'
+        },
+        {
           name: 'Grok',
           icon: 'https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/icon/grok-copy.svg',
           darkIcon: 'https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/icon/grok-v1.png',
@@ -74,7 +80,7 @@ export default {
           icon: 'https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/doubao-color.png',
           darkIcon: 'https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/doubao-color.png',
           url: 'https://www.doubao.com'
-        }
+        },
       ]
     }
   },
@@ -86,7 +92,7 @@ export default {
       const baseScale = 1.5;
 
       if (distance === 0) {
-        return `scale(${baseScale}) translateY(-5px)`;
+        return `scale(${baseScale}) translateY(1px)`;
       } else if (distance <= 1) {
         return `scale(${1 + (baseScale - 1) * 0.1}) translateY(0px)`;
       } else if (distance <= 2) {
