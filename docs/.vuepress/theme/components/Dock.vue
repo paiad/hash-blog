@@ -166,7 +166,7 @@ onMounted(() => {
 
 /* 暗黑模式 */
 .macos-dock.dark-mode .dock-container {
-  background: rgba(50, 50, 50, 0.7);
+  background: rgba(50, 50, 50, 0.05);
   box-shadow:
       0 0 0 1px rgba(0, 0, 0, 0.1),
       0 4px 20px rgba(0, 0, 0, 0.3);
