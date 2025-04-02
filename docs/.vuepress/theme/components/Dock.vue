@@ -43,7 +43,7 @@ export default {
           name: 'Deepseek',
           icon: 'https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/deepseek-color.png',
           darkIcon: 'https://cdn.jsdelivr.net/gh/Pai3141/picture-bed@main/icon/deepseek-color.png',
-          url: 'https://siliconcloud.com'
+          url: 'https://chat.deepseek.com'
         },
         {
           name: 'ChatGPT',
