@@ -27,6 +27,7 @@
         refresh
     />
   </div>
+  <Dock />
 </template>
 
 <style scoped>
@@ -45,6 +46,7 @@ import { useDarkMode } from 'vuepress-theme-plume/composables';
 import VanishingInput from "./VanishingInput.vue";
 import ParticlesBg from "./ParticlesBg.vue";
 import LetterPullup from "./LetterPullup.vue";
+import Dock from "./Dock.vue";
 
 const isDark = useDarkMode();
 const text = ref("");
