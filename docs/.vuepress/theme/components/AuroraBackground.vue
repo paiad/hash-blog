@@ -32,7 +32,7 @@
 </template>
 
 <script setup lang="ts">
-import { cn } from "../lib/utils";
+import { cn } from "../composables/utils";
 
 interface AuroraBackgroundProps {
   radialGradient?: boolean;
