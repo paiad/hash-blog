@@ -5,12 +5,12 @@ import {plumeTheme} from 'vuepress-theme-plume'
 export default defineUserConfig({
     base: '/',
     lang: 'zh-CN',
-    title: '𝑯𝒂𝒔𝒉',
+    title: '𝑷𝒂𝒊𝒂𝒅',
     description: '',
     head: [
         // 设置 favor.ico，.vuepress/public 下
         [
-            'link', {rel: 'icon', href: './image/Hash.png', type: 'image/png'},
+            'link', {rel: 'icon', href: './image/windmill.png', type: 'image/png'},
         ],
 
         // 引入自定义字体

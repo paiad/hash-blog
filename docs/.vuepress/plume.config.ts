@@ -6,11 +6,11 @@ import {notes} from './notes'
  * @see https://theme-plume.vuejs.press/config/basic/
  */
 export default defineThemeConfig({
-    logo: './image/Hash.png',
+    logo: './image/windmill.png',
 
     appearance: true,
     profile: {
-        avatar: 'https://cdn.jsdelivr.net/gh/Pai3141/PictureBed@main/img/Hash.png',
+        avatar: 'https://cdn.jsdelivr.net/gh/paiad/picture-bed@main/icon/windmill.png',
         name: 'Paiad',
         description: '',
         circle: true,
