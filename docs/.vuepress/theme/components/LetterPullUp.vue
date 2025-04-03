@@ -29,13 +29,13 @@
 import { Motion } from "motion-v";
 import { cn } from "../lib/utils";
 
-interface LetterPullupProps {
+interface LetterPullUpProps {
   class?: string;
   words: string;
   delay?: number;
 }
 
-const props = defineProps<LetterPullupProps>();
+const props = defineProps<LetterPullUpProps>();
 
 const letters = "𝑺𝒑e𝒂𝒌, , 𝒂𝒔, , 𝒐𝒏𝒆, , 𝒘𝒊𝒔𝒉𝒆𝒔".split(",");
 
