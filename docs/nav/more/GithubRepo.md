@@ -6,7 +6,10 @@ draft: true
 aside: left
 ---
 ### Machine Learning
-<RepoCard repo="scikit-learn/scikit-learn" />
+<CardGrid>
+  <RepoCard repo="scikit-learn/scikit-learn" />
+  <RepoCard repo="d2l-ai/d2l-zh" />
+</CardGrid>
 
 ### Docker Images
 <CardGrid>
