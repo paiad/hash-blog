@@ -1,132 +1,107 @@
 <template>
-  <div class="not-found">
-    <img src="../public/gif/wind.gif" alt="" />
-    <button class="home-button" @click="goHome">
-      <span>当前页被风吹走啦~</span>
-    </button>
+  <div class="error-page relative min-h-screen overflow-hidden flex items-center justify-center">
+    <SnowfallBg
+        color="ADD8E6"
+        class="absolute inset-0"
+        :min-radius="0.2"
+        :max-radius="5"
+        :speed="0.5"
+    />
+
+    <div class="container mx-auto px-4 relative z-10 text-center">
+      <!-- 简约数字效果 -->
+      <div class="error-number mb-8">
+        <div class="text-[12rem] md:text-[20rem] font-bold text-white opacity-90 tracking-tighter">
+          404
+        </div>
+      </div>
+
+      <!-- 动态文字效果 -->
+      <h1 class="text-3xl md:text-4xl font-medium text-white mb-6">
+        <span class="typing-text">页面消失了，或许只是暂时躲藏在雪中...</span>
+      </h1>
+
+      <!-- 简约按钮组 -->
+      <div class="flex flex-col sm:flex-row gap-4 justify-center">
+        <button
+            @click="goHome"
+            class="px-6 py-3 bg-blue-600 hover:bg-blue-700 rounded-2xl text-white font-medium transition-all duration-300"
+        >
+          返回首页
+        </button>
+      </div>
+    </div>
   </div>
 </template>
 
-<script>
-export default {
-  name: '404',
-  components: {},
-  methods: {
-    goHome() {
-      this.$router.push('/'); // 使用 Vue Router 跳转到首页
-    }
+<script setup lang="ts">
+import SnowfallBg from "../theme/components/SnowfallBg.vue";
+import { onMounted } from 'vue';
+import { useRouter } from 'vue-router';
+
+const router = useRouter();
+
+const goHome = () => {
+  router.push('/');
+};
+
+const contactSupport = () => {
+  // 这里可以替换为实际的联系方式
+  window.location.href = 'mailto:support@example.com';
+};
+
+onMounted(() => {
+  // 添加打字机效果
+  const typingText = document.querySelector('.typing-text');
+  if (typingText) {
+    const text = typingText.textContent || '';
+    typingText.textContent = '';
+
+    let i = 0;
+    const typing = setInterval(() => {
+      if (i < text.length) {
+        typingText.textContent += text.charAt(i);
+        i++;
+      } else {
+        clearInterval(typing);
+      }
+    }, 100);
   }
-}
+});
 </script>
 
 <style scoped>
-/* 确保容器充满视口但不溢出 */
-.not-found {
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  position: fixed;
-  top: 0;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.error-page {
+  background: linear-gradient(135deg, #1e3a8a 0%, #0c4a6e 100%);
 }
 
-/* 强制约束 GIF 图片 */
-.not-found img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
+.error-number {
+  position: relative;
+}
+
+.error-number::after {
+  content: '';
   position: absolute;
-  top: 0;
-  left: 0;
-  z-index: 1;
+  bottom: 20px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 150px;
+  height: 2px;
+  background: rgba(255, 255, 255, 0.3);
 }
 
-/* 返回首页按钮样式 */
-.home-button {
-  position: relative;
-  z-index: 2;
-  padding: 14px 32px;
-  font-size: 18px;
-  color: #fff;
-  background: linear-gradient(135deg, #1e90ff, #00ced1); /* 渐变背景 */
-  border: none;
-  border-radius: 50px; /* 默认圆润 */
-  cursor: pointer;
-  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
-  transition: all 0.3s ease-in-out;
+.typing-text {
+  border-right: 2px solid white;
+  white-space: nowrap;
   overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+  display: inline-block;
+  padding-right: 4px;
 }
 
-/* 按钮内的文字 */
-.home-button span {
-  position: relative;
-  z-index: 3;
-  text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease-in-out;
-}
-
-
-/* 悬浮效果：灵动扩展 */
-.home-button:hover {
-  transform: scale(1.1) translateY(-4px);
-  border-radius: 40px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.35);
-  animation: bounce 0.5s ease-in-out;
-}
-
-/* 悬浮时光晕展开 */
-.home-button:hover::before {
-  transform: translate(-50%, -50%) scale(1);
-}
-
-/* 悬浮时文字微调 */
-.home-button:hover span {
-  transform: scale(1.05);
-}
-
-/* 点击效果：灵动岛动感 */
-.home-button:active {
-  animation: dynamicIsland 0.6s ease-in-out; /* 点击时触发灵动岛动画 */
-  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
-}
-
-/* 悬浮动画：弹性效果 */
-@keyframes bounce {
-  0% {
-    transform: scale(1) translateY(0);
-  }
-  50% {
-    transform: scale(1.15) translateY(-6px);
-  }
-  100% {
-    transform: scale(1.1) translateY(-4px);
-  }
-}
-
-/* 点击动画：灵动岛效果 */
-@keyframes dynamicIsland {
-  0% {
-    transform: scale(0.95); /* 初始轻微缩小 */
-    border-radius: 50px;
-  }
-  30% {
-    transform: scale(1.2) translateY(-5px); /* 快速扩展并上移 */
-    border-radius: 35px; /* 形状变化 */
-  }
-  60% {
-    transform: scale(1.05) translateY(0); /* 回弹 */
-    border-radius: 45px;
-  }
-  100% {
-    transform: scale(1); /* 恢复原状 */
-    border-radius: 50px;
+@media (max-width: 768px) {
+  .error-number::after {
+    width: 100px;
+    bottom: 10px;
   }
 }
 </style>
