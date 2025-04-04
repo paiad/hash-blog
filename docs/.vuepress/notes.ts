@@ -64,15 +64,21 @@ const networkNote = defineNoteConfig({
 })
 
 
-const modelNote = defineNoteConfig({
-    dir: 'model',
-    link: '/article/model',
+const leetCodeNote = defineNoteConfig({
+    dir: 'leetcode',
+    link: '/leetcode',
     sidebar: [
         {
-            text: '大模型',
-            link: '/article/model/',
-            items: ['Begin'],
-            collapsed: true
+            dir: '',
+            text: 'LeetCode',
+            link: '/leetcode/',
+        },
+        {
+            dir: 'hash-table',
+            text: '哈希表',
+            link: '/leetcode/hash-table/',
+            items: 'auto',
+            collapsed: false
         },
     ]
 })
@@ -81,6 +87,6 @@ const modelNote = defineNoteConfig({
 export const notes = defineNotesConfig({
     dir: 'notes',
     link: '/',
-    notes: [networkNote, pythonNote,],
+    notes: [networkNote, pythonNote, leetCodeNote],
 })
 

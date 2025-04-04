@@ -23,9 +23,7 @@ export const navbar = defineNavbarConfig([
                 icon: 'emojione-v1:four-leaf-clover',
                 items: [
                     {icon: 'carbon:network-public', text: 'Network', link: '/notes/network/Z-README-30.md'},
-                    // { icon: 'mingcute:vue-line', text: 'Web Tools', link: '/notes/web/Z-README-30.md' },
-                    // { icon: 'eos-icons:atom-electron', text: 'Tools', link: '/notes/web/Z-README-30.md' },
-                    // { icon: 'carbon:model-alt', text: 'Model', link: '/notes/model/Z-README-30.md' },
+                    {icon: 'simple-icons:leetcode', text: 'LeetCode', link: '/notes/leetcode/README.md'},
                 ],
             },
         ],
