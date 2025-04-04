@@ -63,10 +63,6 @@ const networkNote = defineNoteConfig({
     ]
 })
 
-const websiteNote = defineNoteConfig({
-    dir: 'web',
-    link: '/web',
-})
 
 const modelNote = defineNoteConfig({
     dir: 'model',
@@ -85,6 +81,6 @@ const modelNote = defineNoteConfig({
 export const notes = defineNotesConfig({
     dir: 'notes',
     link: '/',
-    notes: [networkNote, pythonNote, websiteNote],
+    notes: [networkNote, pythonNote,],
 })
 

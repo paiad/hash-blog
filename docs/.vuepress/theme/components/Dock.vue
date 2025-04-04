@@ -125,7 +125,7 @@ onMounted(() => {
 .dock-container {
   display: flex;
   align-items: flex-end;
-  background: rgba(235, 235, 235, 0.7);
+  background: transparent;
   backdrop-filter: blur(30px) saturate(180%);
   border-radius: 18px;
   padding: 8px 10px;
