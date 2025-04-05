@@ -80,6 +80,13 @@ const leetCodeNote = defineNoteConfig({
             items: 'auto',
             collapsed: false
         },
+        {
+            dir: 'character-string',
+            text: '字符串',
+            link: '/leetcode/character-string/',
+            items: 'auto',
+            collapsed: false
+        },
     ]
 })
 
